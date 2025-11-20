@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.7.0",
-    "generatedAt": "2025-11-20T05:48:22.596Z",
+    "version": "1.8.0",
+    "generatedAt": "2025-11-20T08:10:00.505Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -374,6 +374,13 @@
             "sortOrder": 1,
             "description": "",
             "isSelected": false
+          },
+          {
+            "id": "bc3a5a50-7975-4af6-9835-80e3935f6cff",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg",
+            "sortOrder": 0,
+            "description": "",
+            "isSelected": true
           }
         ],
         "exterior": [
@@ -2369,7 +2376,15 @@
     "templateType": "gallery_sidebar",
     "images": [
       {
-        "logo": []
+        "logo": [
+          {
+            "id": "ef0043f6-8bc3-4ac0-a6aa-a5fccaaba5ba",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/logo/1763618038214-f0ja28dfv48.png",
+            "sortOrder": 0,
+            "description": "",
+            "isSelected": true
+          }
+        ]
       }
     ],
     "seo": {
@@ -3032,9 +3047,9 @@
                   "images": []
                 },
                 "experience": {
+                  "benefits": [],
                   "features": [],
-                  "additionalInfos": [],
-                  "benefits": []
+                  "additionalInfos": []
                 }
               }
             ]
