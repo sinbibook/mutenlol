@@ -1,0 +1,308 @@
+/* Font Face */
+@font-face {
+    font-family: 'Chosunilbo';
+    src: url('../fonts/ChosunNm.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Continuous';
+    src: url('../fonts/continuous.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Chosunilbo', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background: #e8ebe6;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+/* Mobile viewport fix */
+@supports (-webkit-touch-callout: none) {
+    html {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Ensure no extra space from line-height */
+.hero-section,
+.main-section {
+    line-height: 1;
+}
+
+/* Hero Fade In Effect for all pages */
+.hero-section,
+.main-section.fullscreen-slider,
+.fullscreen-slider-container,
+.hero-slider-section {
+    opacity: 0;
+    animation: heroFadeIn 1.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chosunilbo', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #7a8471;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Common Layout Classes */
+.page-content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+/* Main Section */
+.main-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 990; /* 헤더(z-index: 999) 아래 - 헤더가 슬라이더 위에 오버레이됨 */
+}
+
+.content-wrap {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Scroll Animation Styles */
+.animate-element {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.about-title.animate-element {
+    transform: translateY(30px);
+    transition-delay: 0.1s;
+}
+
+.about-title.animate-element.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About Title */
+.about-title {
+    font-family: 'Chosunilbo', serif;
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #7a8471;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* About Description */
+.about-description-wrap {
+    text-align: center;
+    padding: 120px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 27인치 모니터급 큰 화면에서만 80% */
+@media (min-width: 1920px) {
+    .content-wrap {
+        width: 80%;
+    }
+}
+
+/* 모바일에서 content-wrap 패딩 제거 및 main-section 조정 */
+@media (max-width: 768px) {
+    .main-section {
+        margin-top: -85px;
+    }
+
+    .content-wrap {
+        padding: 0;
+    }
+
+    .about-description-wrap {
+        padding: 80px 0;
+        margin: 0 -20px;
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* Scrolling Marquee */
+.marquee-section {
+    padding: 0;
+    overflow: hidden;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-text {
+    display: inline-block;
+    animation: marquee 60s linear infinite;
+    font-family: 'ChosunNm', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #7a8471;
+    letter-spacing: 8px;
+    font-style: italic;
+}
+
+.marquee-text span {
+    padding-right: 80px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Full Banner Section */
+.full-banner {
+    height: 70vh;
+    background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Desktop only - parallax effect */
+@media (min-width: 1024px) {
+    .full-banner {
+        background-attachment: fixed;
+    }
+}
+
+/* Responsive Marquee */
+@media (max-width: 768px) {
+    .marquee-text {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .marquee-text span {
+        padding-right: 50px;
+    }
+
+    .full-banner {
+        height: 60vh;
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+    .marquee-section {
+        padding: 10px 0;
+    }
+
+    .marquee-text {
+        font-size: 2rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+        animation: marquee 40s linear infinite;
+    }
+
+    .marquee-text span {
+        padding-right: 30px;
+    }
+
+    .full-banner {
+        height: 50vh;
+    }
+}

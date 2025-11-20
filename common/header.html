@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Component</title>
+    <link rel="stylesheet" href="styles/header.css">
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="강릉 뮤튼롤" />
+  <meta property="og:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 온전한 쉼,
+자연과 하나 되는 공간, 머무르다." />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+  <meta property="og:url" content="https://mutenlol.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="강릉 뮤튼롤" />
+  <meta name="twitter:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 온전한 쉼,
+자연과 하나 되는 공간, 머무르다." />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="top-header-content">
+            <div class="hamburger-button" id="hamburger-button">
+        <div class="toggle-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+            <div class="logo-container" onclick="navigateTo('home')">
+                <!-- <img data-logo src="images/mutenlol_logo.png" alt="로고" class="logo-image"> -->
+                <span class="logo-text" data-logo-text></span>
+            </div>
+            <div class="booking-buttons">
+                <button class="ybs-btn" data-ybs-booking>
+                    YBS
+                </button>
+                <button class="book-now-btn" data-booking-engine>
+                    BOOK NOW
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Header -->
+    <div class="side-header" id="side-header">
+        <button class="close-button" onclick="toggleSideHeader()" aria-label="메뉴 닫기"></button>
+        <div class="side-header-content">
+            <div class="side-content-top">
+                <!-- Side Header Top with Logo and Close Button -->
+                <div class="side-header-top">
+                    <div class="side-logo-container" onclick="navigateTo('home')">
+                        <span class="side-logo-text" data-logo-text></span>
+                    </div>
+                </div>
+                <div class="side-menu-grid">
+                    <!-- About Section -->
+                    <div class="menu-section">
+                        <h3 class="menu-section-title">About</h3>
+                        <ul class="menu-section-list">
+                            <li><a onclick="navigateTo('main')">메인</a></li>
+                            <li><a onclick="navigateTo('directions')">오시는길</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Spaces Section -->
+                    <div class="menu-section">
+                        <h3 class="menu-section-title expandable active" onclick="toggleMenuAccordion(this)">Spaces</h3>
+                        <ul class="menu-section-list accordion-content active" data-rooms-list>
+                            <li><a onclick="navigateTo('room')">객실명</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Specials Section -->
+                    <div class="menu-section">
+                        <h3 class="menu-section-title expandable active" onclick="toggleMenuAccordion(this)">Specials</h3>
+                        <ul class="menu-section-list accordion-content active" data-facilities-list>
+                            <li><a onclick="navigateTo('facility')">편의시설</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Reservation Section -->
+                    <div class="menu-section">
+                        <h3 class="menu-section-title">Reservation</h3>
+                        <ul class="menu-section-list">
+                            <li><a onclick="navigateTo('reservation')">예약안내</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Banner -->
+            <div class="side-content-bottom">
+                <!-- 숙소 외경이미지 ? 썸네일 이미지 ?  -->
+                <div class="side-image-banner" id="side-image-banner" data-side-banner-img></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Header Overlay for all pages -->
+    <div class="side-header-overlay" id="side-header-overlay"></div>
+
+    <!-- Preview Handler for Admin Integration -->
+    <script src="js/preview-handler.js"></script>
+
+    <!-- Header Footer Mapper -->
+    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+
+    <!-- Header and Footer Loader -->
+    <script src="js/header-footer-loader.js"></script>
+
+    <!-- Header script -->
+    <script src="js/common/header.js"></script>
+</body>
+</html>

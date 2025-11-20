@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="숙소 설명">
+    <meta name="keywords" content="SEO 키워드">
+    <title id="page-title">객실 안내 - 숙소명</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/common.css" as="style">
+    <link rel="preload" href="styles/room.css" as="style">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/slider.css">
+    <link rel="stylesheet" href="styles/room.css">
+
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="강릉 뮤튼롤 - 객실안내" />
+  <meta property="og:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 온전한 쉼,
+자연과 하나 되는 공간, 머무르다." />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+  <meta property="og:url" content="https://mutenlol.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="강릉 뮤튼롤 - 객실안내" />
+  <meta name="twitter:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 온전한 쉼,
+자연과 하나 되는 공간, 머무르다." />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+</head>
+<body>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="main-section fullscreen-slider">
+          <div class="fullscreen-slider-container">
+            <div class="fullscreen-slider-inner" data-room-slider>
+              <!-- 동적으로 슬라이드가 생성됩니다 -->
+            </div>
+
+            <!-- 하드코딩 fix! -->
+            <div class="fullscreen-slider-content">
+              <h2 class="fullscreen-slider-title centered">Room</h2>
+            </div>
+
+            <div class="fullscreen-slider-nav">
+              <span class="nav-arrow nav-prev">‹</span>
+              <span class="nav-current">01</span>
+              <span class="nav-divider">|</span>
+              <span class="nav-total">03</span>
+              <span class="nav-arrow nav-next">›</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="content-wrap">
+         <div class="room-description-wrap">
+          <!-- 객실 이름 매핑 -->
+          <h2 class="room-title animate-element" data-room-name></h2>
+          <div class="room-image-circle">
+            <!-- 객실 썸네일 이미지 매핑 -->
+            <img data-room-thumbnail src="" alt="객실 대표 이미지">
+          </div>
+          <!-- 객실 소개 매핑 -->
+          <p class="room-description animate-element" data-room-description></p>
+        </div>
+
+        <!-- 하드코딩 -->
+        <h2 class="room-info-title">Room Information</h2>
+        <section class="room-info-section">
+            <div class="room-info-container">
+              <!-- CUSTOM FIELD : 메인 소개 섹션 소개문구 매핑 -->
+               <p class="room-custom-description" data-room-info-description></p>
+                <div class="room-info-content">
+                    <div class="room-info-left">
+                        <!-- 객실 내부 이미지 4장 끝에서부터 순서대로 매핑 -->
+                        <div class="room-main-image">
+                            <img id="room-main-img" data-room-main-img src="" alt="객실 이미지">
+                        </div>
+                        <div class="room-thumbnails" data-room-thumbnails>
+                            <!-- 동적으로 썸네일이 생성됩니다 -->
+                        </div>
+                    </div>
+                    <div class="room-info-right">
+
+                        <!-- 객실 정보 매핑 -->
+                        <div class="room-details-grid">
+                            <div class="room-detail-item">
+                                <span class="detail-label">객실 크기</span>
+                                <span class="detail-value" data-room-size></span>
+                            </div>
+                            <div class="room-detail-item">
+                                <span class="detail-label">침대 타입</span>
+                                <span class="detail-value" data-room-bed-types></span>
+                            </div>
+                            <div class="room-detail-item">
+                                <span class="detail-label">객실 구성</span>
+                                <span class="detail-value" data-room-composition></span>
+                            </div>
+                            <div class="room-detail-item">
+                                <span class="detail-label">인원</span>
+                                <span class="detail-value" data-room-capacity></span>
+                            </div>
+                            <div class="room-detail-item">
+                                <span class="detail-label">체크인</span>
+                                <span class="detail-value" data-room-checkin></span>
+                            </div>
+                            <div class="room-detail-item">
+                                <span class="detail-label">체크아웃</span>
+                                <span class="detail-value" data-room-checkout></span>
+                            </div>
+                        </div>
+
+                        <!-- 객실 이용규칙/안내사항 매핑 -->
+                        <div class="room-usage-guide">
+                            <div class="usage-guide-content">
+                              <h4 class="usage-guide-title">객실 안내사항</h4>
+                              <p data-room-guide></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      </div>
+
+      <!-- 숙소 영문명 매핑-->
+      <div class="marquee-section">
+        <div class="marquee-container">
+          <div class="marquee-text" data-room-marquee>
+            <!-- 동적으로 영문명이 생성됩니다 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 객실 썸네일 0번쨰 매핑 -->
+      <section class="full-banner" data-room-banner></section>
+
+      <!-- CUSTOM FIELD : 갤러리 섹션 설명 매핑 -->
+      <section class="exterior-gallery-section">
+        <div class="gallery-container">
+          <!-- 갤러리 섹션 제목 매핑 -->
+          <h2 class="gallery-title" data-room-gallery-title></h2>
+
+          <!-- 갤러리 이미지 최대 5장 동적 변경 -->
+          <div class="dynamic-gallery" data-room-gallery>
+            <!-- 동적으로 갤러리 아이템이 생성됩니다 -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Include ImageWithFallback script -->
+    <script src="js/image-with-fallback.js"></script>
+
+    <!-- Common JavaScript -->
+    <script src="js/common.js"></script>
+
+    <!-- Image Helpers -->
+    <script src="js/image-helpers.js"></script>
+
+    <!-- Base Data Mapper -->
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+
+    <!-- Room Page Mapper -->
+    <script src="js/data-mapper/pages/room-mapper.js"></script>
+
+    <!-- Preview Handler for Admin Integration -->
+    <script src="js/preview-handler.js"></script>
+
+    <!-- Header Footer Mapper -->
+    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+
+    <!-- Header and Footer Loader -->
+    <script src="js/header-footer-loader.js"></script>
+
+    <!-- Fullscreen Slider Component -->
+    <script src="js/components/fullscreen-slider.js"></script>
+
+    <!-- Page-specific script -->
+    <script src="js/pages/room.js"></script>
+
+</body>
+</html>
