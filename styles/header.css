@@ -187,7 +187,7 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: 50vw;
+    width: 60vw;
     height: 100vh;
     background: linear-gradient(135deg, #faf9f7 0%, #f5f2ed 100%);
     box-shadow: 2px 0 30px rgba(0, 0, 0, 0.15);
@@ -195,6 +195,7 @@
     transition: left 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
     font-family: 'Chosunilbo', serif;
     display: flex;
+    overflow: hidden;
 }
 
 .side-header.expanded {
@@ -228,6 +229,7 @@
     width: 100%;
     background: transparent;
     padding: 20px 40px 40px 40px;
+    overflow: hidden auto;
 }
 
 .side-content-top {
