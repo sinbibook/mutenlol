@@ -186,7 +186,7 @@
 .side-header {
     position: fixed;
     top: 0;
-    left: -50vw;
+    left: -100%;
     width: 50vw;
     height: 100vh;
     background: linear-gradient(135deg, #faf9f7 0%, #f5f2ed 100%);

@@ -810,6 +810,11 @@
         width: 100%;
     }
 
+    /* 모바일에서 hero-slider 높이 증가 */
+    .hero-slider-container {
+        height: 60vh; /* 기존 비율을 무시하고 높이를 60vh로 설정 */
+    }
+
     .hero-subtitle {
         gap: 15px;
         margin-bottom: 30px;
