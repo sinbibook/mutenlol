@@ -573,12 +573,11 @@
 }
 
 .signature-title {
-    font-family: 'Continuous', serif;
-    font-size: 48px;
-    font-weight: 300;
+    font-family: 'Chosunilbo', serif;
+    font-size: 32px;
+    font-weight: 600;
     color: #7a8471;
     margin-bottom: 15px;
-    font-style: italic;
     opacity: 0;
     transform: scale(0.8);
     transition: all 1s ease;
@@ -927,7 +926,7 @@
     }
 
     .signature-title {
-        font-size: 32px;
+        font-size: 27px;
         text-align: center;
     }
 

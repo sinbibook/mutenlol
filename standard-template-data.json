@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.8.0",
-    "generatedAt": "2025-11-20T08:10:00.505Z",
+    "version": "1.9.0",
+    "generatedAt": "2025-11-25T06:19:07.030Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -53,9 +53,9 @@
       "representativeName": "정선미",
       "businessAddress": "강원특별자치도 강릉시 연곡면 영진 4길 39-11, 1동",
       "businessPhone": "",
-      "businessEmail": "사업장 이메일",
-      "businessType": "individual",
-      "businessCategory": null,
+      "businessEmail": "",
+      "businessType": "",
+      "businessCategory": "",
       "eCommerceRegistrationNumber": ""
     },
     "contractInfo": {
@@ -2597,7 +2597,7 @@
                     "id": "20d9723d-111a-4535-8c71-c98d991f67e8",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763617355174-48h55ijufnc.jpg",
                     "sortOrder": 7,
-                    "description": "boodlefighter_gang",
+                    "description": "boodle fighter",
                     "isSelected": true
                   },
                   {
@@ -2625,7 +2625,7 @@
                 "description": "당신이 누릴수 있는 모든것"
               },
               "signature": {
-                "title": "뮤튼롤 & 부들파이터",
+                "title": "Boodle Fighter",
                 "images": [
                   {
                     "id": "786e3956-3542-4dbe-9846-33eda3c7975e",
