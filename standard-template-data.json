@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.15.0",
-    "generatedAt": "2025-11-26T04:04:45.851Z",
+    "version": "1.16.0",
+    "generatedAt": "2025-11-26T04:07:33.350Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -281,7 +281,7 @@
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1763436978026-84eebtx4w2m.jpg",
-            "sortOrder": 1,
+            "sortOrder": 2,
             "description": "boodlefighter_gang",
             "isSelected": true
           },
@@ -299,7 +299,7 @@
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1763613760707-y9rwdeiryq.jpg",
-            "sortOrder": 2,
+            "sortOrder": 1,
             "description": "boodlefighter_gang",
             "isSelected": true
           },
