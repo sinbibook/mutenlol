@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.21.0",
-    "generatedAt": "2025-12-04T08:17:02.587Z",
+    "version": "1.22.0",
+    "generatedAt": "2025-12-04T08:25:13.412Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -2527,8 +2527,8 @@
                     "isSelected": false
                   },
                   {
-                    "id": "35cc68df-2c36-4d92-9932-7abd39f9bef2",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_closing/1763433776864-4y8or50akwp.jpg",
+                    "id": "32fa2464-3188-4083-9c69-657d89dd481e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_closing/1764836642827-apmmdwoildj.jpg",
                     "sortOrder": 1,
                     "description": "",
                     "isSelected": true
@@ -2552,17 +2552,17 @@
                     "isSelected": true
                   },
                   {
-                    "id": "2d3f799e-fb66-407f-bcf8-09531a8467e8",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763616789079-9x80rkf5o8j.jpg",
+                    "id": "fae5d4d2-a624-49eb-8b27-f47f6138f2e7",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-vpp8e83rckr.jpg",
                     "sortOrder": 1,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "a838c477-e1e8-4082-a6a8-370466876374",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-sf7ndoqw4b.jpg",
+                    "id": "b34468bc-b49c-4b9c-94aa-3f55a4855913",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-7gn67n2y7yy.jpg",
                     "sortOrder": 2,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true
                   },
                   {
@@ -2587,17 +2587,17 @@
                     "isSelected": true
                   },
                   {
-                    "id": "13fe5978-91b8-4339-8687-dfe460d926ee",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-mw9fwiybwhd.jpg",
+                    "id": "501b9bf2-14c1-4439-abf6-d7be04babc92",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-ho6sr36k9hc.jpg",
                     "sortOrder": 6,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "9c68e075-12c7-4a56-97cf-eff1fb61076c",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763616789079-be5fn7qtoxm.jpg",
+                    "id": "39381def-1044-4a1d-a85d-9f1b5cf41d03",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-mwgxlc4fto.jpg",
                     "sortOrder": 7,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true
                   },
                   {
