@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.22.0",
-    "generatedAt": "2025-12-04T08:25:13.412Z",
+    "version": "1.23.0",
+    "generatedAt": "2025-12-09T08:26:03.400Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -518,7 +518,7 @@
     "nameEn": "Gangneung mutenlol",
     "domain": "mutenlol.kr",
     "realtimeBookingId": "9763",
-    "ybsId": ""
+    "ybsId": "78863"
   },
   "rooms": [
     {
@@ -555,6 +555,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -757,6 +758,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -923,6 +925,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -1118,6 +1121,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -1291,6 +1295,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -1452,6 +1457,7 @@
         "침실분리형",
         "패밀리룸"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -1668,6 +1674,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -1842,6 +1849,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -2015,6 +2023,7 @@
       "roomStructures": [
         "복층"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -2197,6 +2206,7 @@
         "침실분리형",
         "패밀리룸"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
