@@ -536,32 +536,17 @@
 }
 
 .accordion-content.active {
-    max-height: 300px;
+    max-height: none;
 }
 
 .accordion-content.active.multi-column {
-    max-height: 150px; /* 멀티컬럼일 때는 더 낮은 높이 */
+    max-height: none;
 }
 
-/* Scrollable content for large lists */
+/* Scrollable 클래스가 있어도 스크롤 없이 전체 표시 */
 .accordion-content.active.scrollable {
-    max-height: 200px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #7a8471 transparent;
-}
-
-.accordion-content.active.scrollable::-webkit-scrollbar {
-    width: 4px;
-}
-
-.accordion-content.active.scrollable::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.accordion-content.active.scrollable::-webkit-scrollbar-thumb {
-    background: #7a8471;
-    border-radius: 2px;
+    max-height: none;
+    overflow-y: visible;
 }
 
 /* Hide hamburger button when side header is expanded - 데스크탑과 모바일 공통 */
