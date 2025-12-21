@@ -161,6 +161,11 @@
     transform: translateY(0);
 }
 
+/* 박스 내 두 번째 타이틀 (예약안내 등) 상단 간격 */
+.reservation-box-content + .reservation-box-title {
+    margin-top: 40px;
+}
+
 /* Box Content */
 .reservation-box-content {
     display: flex;

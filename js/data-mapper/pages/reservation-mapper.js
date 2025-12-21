@@ -123,6 +123,12 @@ class ReservationMapper extends BaseDataMapper {
         if (operationInfo && property.checkInOutInfo) {
             operationInfo.innerHTML = this._formatTextWithLineBreaks(property.checkInOutInfo);
         }
+
+        // 예약안내 텍스트 매핑
+        const reservationGuide = this.safeSelect('[data-reservation-guide]');
+        if (reservationGuide && property.reservationGuide) {
+            reservationGuide.innerHTML = this._formatTextWithLineBreaks(property.reservationGuide);
+        }
     }
 
     /**

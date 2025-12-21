@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.26.0",
-    "generatedAt": "2025-12-15T02:46:27.233Z",
+    "version": "1.27.0",
+    "generatedAt": "2025-12-21T22:45:29.349Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -90,19 +90,19 @@
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/26163087-c4c2-42dd-89e3-be039f803403/main/1764827499402-9jxg2prkq89.jpg",
             "sortOrder": 1,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/26163087-c4c2-42dd-89e3-be039f803403/main/1764827499402-6qqzfqpbmmp.jpg",
             "sortOrder": 2,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/26163087-c4c2-42dd-89e3-be039f803403/main/1764830121323-5o9qgzxiv6.jpg",
             "sortOrder": 0,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           }
         ]
@@ -129,13 +129,13 @@
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/d17b1af7-b592-4ac0-ae61-75df03040b6b/main/1764827500430-5qkfadthcgp.jpg",
             "sortOrder": 2,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/d17b1af7-b592-4ac0-ae61-75df03040b6b/main/1764830333331-0hu4ee77w9y.jpg",
             "sortOrder": 1,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           }
         ]
@@ -204,19 +204,19 @@
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6744a79d-7ccc-4e86-a9b7-6f9e6ccf1175/main/1763613981236-r45ksbufw8s.jpg",
             "sortOrder": 1,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6744a79d-7ccc-4e86-a9b7-6f9e6ccf1175/main/1763613981235-ip657ryz3ws.jpg",
             "sortOrder": 0,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6744a79d-7ccc-4e86-a9b7-6f9e6ccf1175/main/1763613981236-sfkevysw5jl.jpg",
             "sortOrder": 2,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           },
           {
@@ -261,7 +261,7 @@
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/0e38ad4a-4011-4ecf-9118-d7cbebf28017/main/1763613982744-qf0sbiuhel.jpg",
             "sortOrder": 0,
-            "description": "",
+            "description": "Mutenlol",
             "isSelected": true
           }
         ]
@@ -306,13 +306,13 @@
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1763617102213-05c0rifnljkv.jpg",
             "sortOrder": 5,
-            "description": "",
+            "description": "boodlefighter_gang",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1763617102213-fgt9sm070p.jpg",
             "sortOrder": 4,
-            "description": "",
+            "description": "boodlefighter_gang",
             "isSelected": true
           }
         ]
@@ -2403,7 +2403,7 @@
       "keywords": ""
     },
     "socialLinks": {
-      "instagram": "https://www.instagram.com/mutenlol?igsh=aGcycG0xZmtuOW5v"
+      "instagram": "https://www.instagram.com/mutenlol"
     },
     "customFields": {
       "pages": {
@@ -2567,14 +2567,14 @@
                     "id": "fae5d4d2-a624-49eb-8b27-f47f6138f2e7",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-vpp8e83rckr.jpg",
                     "sortOrder": 1,
-                    "description": "",
+                    "description": "Mutenlol",
                     "isSelected": true
                   },
                   {
                     "id": "b34468bc-b49c-4b9c-94aa-3f55a4855913",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-7gn67n2y7yy.jpg",
                     "sortOrder": 2,
-                    "description": "",
+                    "description": "Mutenlol",
                     "isSelected": true
                   },
                   {
@@ -2602,14 +2602,14 @@
                     "id": "501b9bf2-14c1-4439-abf6-d7be04babc92",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-ho6sr36k9hc.jpg",
                     "sortOrder": 6,
-                    "description": "",
+                    "description": "Mutenlol",
                     "isSelected": true
                   },
                   {
                     "id": "39381def-1044-4a1d-a85d-9f1b5cf41d03",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-mwgxlc4fto.jpg",
                     "sortOrder": 7,
-                    "description": "",
+                    "description": "Mutenlol",
                     "isSelected": true
                   },
                   {
