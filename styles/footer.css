@@ -1,6 +1,6 @@
 /* Footer Styles */
 .footer {
-    background-color: #7a8471;
+    background-color: var(--color-secondary);
     color: white;
     padding: 60px 0;
 }
@@ -38,7 +38,7 @@
 }
 
 .footer-logo-text {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 32px;
     font-weight: 700;
     color: white;
@@ -61,14 +61,14 @@
 }
 
 .footer-phone-text {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 24px;
     font-weight: 700;
     color: white;
 }
 
 .footer-info-line {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 14px;
     color: white;
     line-height: 1.8;
@@ -80,7 +80,7 @@
 }
 
 .footer-copyright p {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 12px;
     color: white;
     margin: 0;

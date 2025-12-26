@@ -25,10 +25,10 @@
 }
 
 .room-custom-description {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1.3rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     text-align: left;
     margin: -30px 0 40px 0;
     padding: 0;
@@ -36,10 +36,10 @@
 }
 
 .room-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 2.5rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin: 0 0 40px 0;
     opacity: 0;
     transform: translateY(20px);
@@ -54,7 +54,7 @@
     position: absolute;
     top: 50%;
     height: 1px;
-    background-color: #7a8471;
+    background-color: var(--color-secondary);
     width: 100px;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .room-description {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 1.1rem;
     color: #666;
     text-align: center;
@@ -95,7 +95,7 @@
     background-color: white;
     margin: 0 auto 40px auto;
     overflow: hidden;
-    border: 2px solid #7a8471;
+    border: 2px solid var(--color-secondary);
     opacity: 0;
     transform: scale(0.5) rotate(-180deg);
     transition: all 1s ease;
@@ -133,7 +133,7 @@
     right: -1px;
     border-style: solid;
     border-width: 0 0 0 0;
-    border-color: #e5e5e5 #e8ebe6;
+    border-color: #e5e5e5 var(--color-primary);
     z-index: 10;
     transition: border-width 0.6s ease;
 }
@@ -253,7 +253,7 @@
 }
 
 .room-thumb.active {
-    border-color: #7a8471;
+    border-color: var(--color-secondary);
 }
 
 .room-thumb img {
@@ -271,10 +271,10 @@
 }
 
 .room-info-title {
-    font-family: 'Continuous', serif;
+    font-family: var(--font-en-main);
     font-size: clamp(2.5rem, 4vw, 3.7rem);
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin: 0 0 -28px 0;
     letter-spacing: 4px;
     position: relative;
@@ -315,14 +315,14 @@
 }
 
 .detail-label {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1rem;
-    color: #7a8471;
+    color: var(--color-secondary);
     font-weight: 600;
 }
 
 .detail-value {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 1rem;
     color: #666;
     text-align: right;
@@ -343,21 +343,21 @@
 
 .usage-guide-content {
     border: 1px solid rgba(122, 132, 113, 0.3);
-    background-color: #e8ebe6;
+    background-color: var(--color-primary);
     padding: 25px;
     border-radius: 0;
 }
 
 .usage-guide-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1.2rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin: 0 0 15px 0;
 }
 
 .usage-guide-content p {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 1rem;
     color: #666;
     line-height: 1.6;
@@ -370,7 +370,7 @@
 /* Exterior Gallery Section */
 .exterior-gallery-section {
     padding: 100px 0;
-    background: #e8ebe6;
+    background: var(--color-primary);
 }
 
 .gallery-container {
@@ -387,10 +387,10 @@
 }
 
 .gallery-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 2rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     text-align: center;
     margin: 0 0 10px 0;
     letter-spacing: 3px;
@@ -409,8 +409,8 @@
     margin: 60px 0 20px 0;
     gap: 20px;
     transition: all 0.3s ease;
-    border-top: 2px solid #7a8471;
-    border-bottom: 2px solid #7a8471;
+    border-top: 2px solid var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
     padding: 20px 0;
 }
 
@@ -723,7 +723,7 @@
         right: 0;
         border-style: solid;
         border-width: 0 0 0 0;
-        border-color: #ddd #e8ebe6;
+        border-color: #ddd var(--color-primary);
         z-index: 10;
         transition: border-width 0.6s ease;
     }
@@ -740,7 +740,7 @@
         left: 0;
         border-style: solid;
         border-width: 0 0 0 0;
-        border-color: #e8ebe6 #ddd;
+        border-color: var(--color-primary) #ddd;
         z-index: 10;
         transition: border-width 0.6s ease;
     }
