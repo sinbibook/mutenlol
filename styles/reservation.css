@@ -9,16 +9,16 @@
 }
 
 .reservation-number {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 2rem;
     line-height: 1.6;
-    color: #7a8471;
+    color: var(--color-secondary);
     font-weight: bold;
     letter-spacing: 2px;
 }
 
 .reservation-description {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 1rem;
     line-height: 1.6;
     color: #666;
@@ -87,7 +87,7 @@
     right: -1px;
     border-style: solid;
     border-width: 0 0 0 0;
-    border-color: #ffffff #e8ebe6;
+    border-color: #ffffff var(--color-primary);
     z-index: 200;
     transition: border-width 0.6s ease;
 }
@@ -117,10 +117,10 @@
 
 /* Box Title */
 .reservation-box-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1.4rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin: 0 0 40px 0;
     position: relative;
     z-index: 100;
@@ -138,7 +138,7 @@
     position: absolute;
     top: 50%;
     height: 1px;
-    background-color: #7a8471;
+    background-color: var(--color-secondary);
     width: calc(50% - 80px);
 }
 
@@ -184,7 +184,7 @@
 
 /* Text Content Style for user-input mapping */
 .reservation-text-content {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 0.95rem;
     line-height: 1.8;
     color: #666;
@@ -192,7 +192,7 @@
     flex-direction: column !important;
     margin-top: 20px;
     padding: 15px 20px;
-    background-color: rgba(122, 132, 113, 0.05);
+    background-color: #f5f5f5;
     border-radius: 8px;
     border: 1px solid rgba(122, 132, 113, 0.1);
     white-space: pre-line; /* 사용자 입력 줄바꿈(\n) 처리 */
@@ -218,10 +218,10 @@
 }
 
 .operation-info-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1.1rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin-bottom: 15px;
     text-align: center;
 }
@@ -249,15 +249,15 @@
 }
 
 .detail-label {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1rem;
-    color: #7a8471;
+    color: var(--color-secondary);
     font-weight: 600;
     min-width: 120px;
 }
 
 .detail-value {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 1rem;
     color: #666;
     text-align: right;
@@ -294,9 +294,9 @@
 }
 
 .refund-section-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1.1rem;
-    color: #7a8471;
+    color: var(--color-secondary);
     font-weight: 600;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -320,13 +320,13 @@
     padding: 12px 16px;
     text-align: center;
     border: 1px solid rgba(106, 98, 71, 0.2);
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
 }
 
 .refund-table th {
     background: rgba(106, 98, 71, 0.1);
     font-weight: 600;
-    color: #7a8471;
+    color: var(--color-secondary);
     font-size: 0.95rem;
 }
 
@@ -366,7 +366,7 @@
     color: #333 !important;
     border: 1px solid #333;
     border-radius: 0;
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -398,14 +398,14 @@
 }
 
 .reservation-book-btn:hover {
-    background: #7a8471 !important;
+    background: var(--color-secondary) !important;
     color: white !important;
-    border-color: #7a8471;
+    border-color: var(--color-secondary);
     transform: translateX(2px) translateY(-1px);
 }
 
 .reservation-book-btn:hover::before {
-    border-color: #7a8471;
+    border-color: var(--color-secondary);
 }
 
 .reservation-book-btn:hover::after {

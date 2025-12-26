@@ -26,8 +26,8 @@
     width: 100%;
     gap: 50px;
     align-items: center;
-    border-top: 2px solid #7a8471;
-    border-bottom: 2px solid #7a8471;
+    border-top: 2px solid var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
     padding: 20px 0;
     justify-content: space-between;
 }
@@ -75,9 +75,9 @@
 }
 
 .subtitle-text {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 14px;
-    color: #7a8471;
+    color: var(--color-secondary);
     font-weight: 400;
     letter-spacing: 0.5px;
     white-space: nowrap;
@@ -86,16 +86,17 @@
 .subtitle-line {
     flex: 1;
     height: 1px;
-    background: #7a8471;
+    background: var(--color-secondary);
     opacity: 0.3;
 }
 
 .hero-title-property-name {
+    font-family: var(--font-ko-main);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: bold;
     line-height: 1.1;
     margin-bottom: 30px;
-    color: #7a8471;
+    color: var(--color-secondary);
     display: flex;
     flex-direction: column;
 }
@@ -135,7 +136,7 @@
 }
 
 .hero-description {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 17px;
     line-height: 1.6;
     color: #666;
@@ -205,9 +206,10 @@
 .slider-btn {
     width: 40px;
     height: 40px;
-    background: rgba(122, 132, 113, 0.7);
+    background: var(--color-secondary);
+    opacity: 0.8;
     color: white;
-    border: 2px solid rgba(122, 132, 113, 0.3);
+    border: 2px solid var(--color-secondary);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -226,7 +228,7 @@
 }
 
 .hero-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 18px;
     line-height: 1.6;
     color: #666;
@@ -252,7 +254,7 @@
 .essence-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin-bottom: 20px;
     opacity: 0;
     transform: translateY(30px);
@@ -268,7 +270,7 @@
     font-size: 1rem;
     line-height: 1.6;
     color: #666;
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease;
@@ -301,7 +303,7 @@
 .gallery-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin-bottom: 10px;
     opacity: 0;
     transform: translateY(30px);
@@ -317,7 +319,7 @@
     font-size: 1rem;
     line-height: 1.6;
     color: #666;
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease;
@@ -357,7 +359,7 @@
 .gallery-item {
     position: relative;
     overflow: visible;
-    background: #f8f6f2;
+    background: #f5f5f5;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     padding: 32px 32px 25px 32px; /* 폴라로이드 스타일 - 아래쪽 더 넓게 */
     display: flex;
@@ -436,10 +438,10 @@
 }
 
 .gallery-item-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 1rem;
     font-weight: bold;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin: 10px 0 15px 0;
     position: relative;
     text-align: center;
@@ -451,7 +453,7 @@
     position: absolute;
     top: 50%;
     height: 1px;
-    background-color: #7a8471;
+    background-color: var(--color-secondary);
     width: calc(50% - 70px);
 }
 
@@ -471,7 +473,7 @@
 .signature-container {
     margin: 0 auto;
     padding: 40px;
-    background-color: #d4d9cf;
+    background-color: #f5f5f5;
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease;
@@ -488,7 +490,7 @@
     right: -1px;
     border-style: solid;
     border-width: 0 0 0 0;
-    border-color: #e5e5e5 #e8ebe6;
+    border-color: #e5e5e5 var(--color-primary);
     z-index: 200;
     transition: border-width 0.6s ease;
 }
@@ -573,10 +575,10 @@
 }
 
 .signature-title {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-main);
     font-size: 32px;
     font-weight: 600;
-    color: #7a8471;
+    color: var(--color-secondary);
     margin-bottom: 15px;
     opacity: 0;
     transform: scale(0.8);
@@ -589,7 +591,7 @@
 }
 
 .signature-description {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 17px;
     line-height: 1.8;
     color: #666;
@@ -630,7 +632,7 @@
 
 .signature-thumb.active {
     opacity: 1;
-    border: 2px solid #7a8471;
+    border: 2px solid var(--color-secondary);
     padding: 3px;
 }
 
@@ -697,7 +699,7 @@
 }
 
 .closing-description {
-    font-family: 'Chosunilbo', serif;
+    font-family: var(--font-ko-sub);
     font-size: 18px;
     line-height: 1.6;
     color: white;
@@ -713,7 +715,7 @@
 }
 
 .closing-title {
-    font-family: 'Continuous', serif;
+    font-family: var(--font-en-main);
     font-size: 4rem;
     font-weight: bold;
     color: white;
