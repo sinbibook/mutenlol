@@ -1,30 +1,18 @@
-/* Theme CSS - 테마 변수 정의 (폰트, 색상) */
-/* 배포 시 이 파일만 덮어쓰면 됨 */
+/* CDN Fonts */
+@import url('https://fonts.cdnfonts.com/css/diphylleia');
 
-/* 폰트 정의 */
+/* Font Faces */
 @font-face {
-    font-family: 'Chosunilbo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Continuous';
-    src: url('../fonts/continuous.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Aritaburi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
 }
 
-/* 테마 변수 */
+/* CSS Variables */
 :root {
-    /* 폰트 */
-    --font-ko-main: 'Chosunilbo', serif;
-    --font-ko-sub: 'Chosunilbo', serif;
-    --font-en-main: 'Continuous', serif;
-
-    /* 색상 */
-    --color-primary: #fff8ef;
-    --color-secondary: #6c5f51;
+  --font-ko-main: 'Aritaburi', sans-serif;
+  --font-en-main: 'Diphylleia', sans-serif;
+  --color-primary: #e8ebe6;
+  --color-secondary: #7a8471;
 }
