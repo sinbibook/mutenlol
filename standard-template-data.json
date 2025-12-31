@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.29.0",
-    "generatedAt": "2025-12-29T01:26:05.025Z",
+    "version": "1.30.0",
+    "generatedAt": "2025-12-31T03:46:34.579Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -3125,6 +3125,27 @@
               }
             }
           ]
+        }
+      },
+      "theme": {
+        "font": {
+          "koSub": null,
+          "enMain": {
+            "cdn": "https://fonts.cdnfonts.com/css/diphylleia",
+            "key": "diphylleia",
+            "woff2": null,
+            "family": "Diphylleia"
+          },
+          "koMain": {
+            "cdn": null,
+            "key": "aritaburi",
+            "woff2": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff",
+            "family": "Aritaburi"
+          }
+        },
+        "color": {
+          "primary": "#e8ebe6",
+          "secondary": "#7a8471"
         }
       }
     }
