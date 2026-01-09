@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.32.0",
-    "generatedAt": "2026-01-05T03:11:13.252Z",
+    "version": "1.33.0",
+    "generatedAt": "2026-01-09T05:56:43.884Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -268,9 +268,9 @@
       },
       {
         "id": "6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef",
-        "name": "부들파이터 주문진점",
-        "description": "펜션 내 1층에 부들파이터 음식점이 있습니다.",
-        "usageGuide": "[부들파이터 강릉 - 여권없이 떠나는 필리핀 미식 여행]\n- 국내 최초이자 유일한 필리핀 퓨전 바베큐 브랜드\n- 육해공 바베큐를 한꺼번에 바나나잎 위에 담은 이색적인 구성\n- 남녀노소 연령/국적 불문 넓은 스펙트럼의 고객층\n\n* 뮤튼롤 숙박 고객 부들파이터 20% 할인 이벤트 중\n* 자세한 메뉴 및 내용은 캐치테이블 또는 네이버 플레이스 '부들파이터 강릉주문진점' 에서 확인 가능합니다.\n",
+        "name": "부들파이터 식사 패키지",
+        "description": "필리핀 퓨전 바베큐 전문점 '부들파이터' (펜션 1층 위치)\n식사 포함 객실 패키지 운영\n",
+        "usageGuide": "[부들파이터 강릉 - 여권없이 떠나는 필리핀 미식 여행]\n- 국내 최초이자 유일한 필리핀 퓨전 바베큐 브랜드\n- 육해공 바베큐를 한꺼번에 바나나잎 위에 담은 이색적인 구성\n- 남녀노소 연령/국적 불문 넓은 스펙트럼의 고객층\n\n* 뮤튼롤 숙박 고객 부들파이터 20% 할인 이벤트 중\n* 자세한 메뉴 및 내용은 캐치테이블 또는 네이버 플레이스 '부들파이터 강릉주문진점' 에서 확인 가능합니다.\n\n[부들파이터 식사 패키지]\n필리핀 퓨전 바베큐 전문점 '부들파이터' 식사 포함 패키지입니다. \n- 2인 기준 50,000원 이내 이용 가능 \n- 50,000원 초과 금액은 현장결제 \n- 부들파이터 운영시간에 맞춰 이용 가능 (수요일 휴무)\n- 패키지 이용 가능 객실 :  402호, 305호, 301호, 204호",
         "displayOrder": 10,
         "images": [
           {
@@ -310,9 +310,33 @@
             "isSelected": true
           },
           {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1767938072278-icd348fwg1.PNG",
+            "sortOrder": 1,
+            "description": "",
+            "isSelected": true
+          },
+          {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1763617102213-fgt9sm070p.jpg",
             "sortOrder": 4,
             "description": "boodlefighter_gang",
+            "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1767938072278-if05u0512p.PNG",
+            "sortOrder": 2,
+            "description": "",
+            "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1767938072278-johrxn0b8ma.PNG",
+            "sortOrder": 3,
+            "description": "",
+            "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/6eb2a2f0-ffb6-4ad8-80e5-caf6445711ef/main/1767938072278-i8n7y9laro9.PNG",
+            "sortOrder": 0,
+            "description": "",
             "isSelected": true
           }
         ]
@@ -3058,7 +3082,7 @@
             "sections": [
               {
                 "hero": {
-                  "title": "필리핀 퓨전 바베큐 전문점, 부들파이터",
+                  "title": "필리핀 퓨전 바베큐 전문점, 부들파이터\n식사 포함 객실 패키지 예약 가능",
                   "images": []
                 },
                 "about": {

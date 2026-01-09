@@ -708,6 +708,7 @@ class PreviewHandler {
                 switch (section) {
                     case 'hero':
                         mapper.mapHeroSlider();
+                        mapper.mapAboutSection(); // hero.title, hero.description 매핑
                         break;
                     case 'about':
                         mapper.mapAboutSection();
@@ -732,12 +733,33 @@ class PreviewHandler {
         } else if (page === 'facility') {
             if (window.FacilityMapper) {
                 const mapper = this.createMapper(FacilityMapper);
-                mapper.mapFacilityBasicInfo();
+
+                switch (section) {
+                    case 'hero':
+                        mapper.mapFullscreenSlider();
+                        mapper.mapBasicInfo();
+                        mapper.mapFirstSectionImage();
+                        break;
+                    case 'about':
+                        mapper.mapUsageGuide();
+                        break;
+                    case 'experience':
+                        mapper.mapSecondSection();
+                        break;
+                }
             }
         } else if (page === 'reservation') {
             if (window.ReservationMapper) {
                 const mapper = this.createMapper(ReservationMapper);
-                mapper.mapPage();
+
+                switch (section) {
+                    case 'hero':
+                        mapper.mapHeroSection();
+                        break;
+                    case 'about':
+                        mapper.mapReservationInfoSection();
+                        break;
+                }
             }
         } else if (page === 'directions') {
             if (window.DirectionsMapper) {
