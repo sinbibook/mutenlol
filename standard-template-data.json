@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.34.0",
-    "generatedAt": "2026-01-09T05:58:03.734Z",
+    "version": "1.35.0",
+    "generatedAt": "2026-01-09T07:34:25.962Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -3173,7 +3173,29 @@
         }
       },
       "popup": {
-        "popups": []
+        "popups": [
+          {
+            "id": "c4b07eae-4f2a-4211-aa20-8779d699c685",
+            "link": "",
+            "title": "",
+            "images": [
+              {
+                "id": "1a404cc0-4b70-4b0e-8b0b-67e76970a9fe",
+                "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/popup/1767944049008-ohyidt2dkkb.png",
+                "sortOrder": 0,
+                "description": "",
+                "isSelected": true,
+                "blockId": "c4b07eae-4f2a-4211-aa20-8779d699c685"
+              }
+            ],
+            "slider": false,
+            "enabled": true,
+            "endDate": null,
+            "sortOrder": 0,
+            "startDate": null,
+            "description": ""
+          }
+        ]
       }
     }
   }
