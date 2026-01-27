@@ -45,12 +45,10 @@ class HeaderFooterMapper extends BaseDataMapper {
 
         const property = this.data.property;
 
-        // Header 로고 텍스트 매핑 (data-logo-text 속성 사용)
+        // Header 로고 텍스트 매핑 (data-logo-text 속성 사용) - customFields 우선
         const logoTextElements = this.safeSelectAll('[data-logo-text]');
         logoTextElements.forEach(logoText => {
-            if (logoText && property.name) {
-                logoText.textContent = this.sanitizeText(property.name);
-            }
+            logoText.textContent = this.getPropertyName();
         });
 
         // Header 로고 이미지 매핑 (data-logo 속성 사용)
@@ -64,7 +62,7 @@ class HeaderFooterMapper extends BaseDataMapper {
                     console.warn('⚠️ 헤더 로고 이미지 로드 실패');
                 };
                 logoImage.src = logoUrl;
-                logoImage.alt = this.sanitizeText(property.name, '로고');
+                logoImage.alt = this.getPropertyName();
             }
         }
     }
@@ -84,29 +82,26 @@ class HeaderFooterMapper extends BaseDataMapper {
         // 시설 메뉴 동적 생성
         this.mapFacilityMenuItems();
 
-        // 예약 버튼에 realtimeBookingId 매핑
+        // 예약 버튼에 예약 URL 매핑
         this.mapReservationButtons();
     }
 
     /**
-     * 예약 버튼에 realtimeBookingId 매핑 및 클릭 이벤트 설정
+     * 예약 버튼에 예약 URL 매핑 및 클릭 이벤트 설정
      */
     mapReservationButtons() {
         if (!this.isDataLoaded || !this.data.property) {
             return;
         }
 
-        // realtimeBookingId 찾기
-        const realtimeBookingId = this.data.property.realtimeBookingId;
+        // 예약 URL 찾기 (전체 URL이 저장됨)
+        const bookingUrl = this.data.property.realtimeBookingId;
 
-        if (realtimeBookingId) {
-            // 예약 URL 생성
-            const bookingUrl = `https://www.bookingplay.co.kr/booking/1/${realtimeBookingId}`;
-
+        if (bookingUrl) {
             // 모든 BOOK NOW 버튼에 클릭 이벤트 설정
             const reservationButtons = document.querySelectorAll('[data-booking-engine]');
             reservationButtons.forEach(button => {
-                button.setAttribute('data-realtime-booking-id', realtimeBookingId);
+                button.setAttribute('data-booking-url', bookingUrl);
                 button.onclick = () => {
                     window.open(bookingUrl, '_blank');
                 };
@@ -288,7 +283,8 @@ class HeaderFooterMapper extends BaseDataMapper {
             const li = document.createElement('li');
             const a = document.createElement('a');
 
-            a.textContent = this.sanitizeText(room.name, '객실');
+            // customFields 우선
+            a.textContent = this.getRoomName(room);
             a.style.cursor = 'pointer';
 
             // 클릭 이벤트 추가
@@ -337,8 +333,8 @@ class HeaderFooterMapper extends BaseDataMapper {
     }
 
     /**
-     * Side Header 이미지 배너 매핑
-     * property.images[0].thumbnail 중 isSelected: true인 첫 번째 이미지 사용
+     * Side Header 이미지 배너 매핑 (customFields 우선)
+     * customFields.property.images (property_exterior) 사용
      */
     mapSideImageBanner() {
         if (!this.isDataLoaded) return;
@@ -346,22 +342,15 @@ class HeaderFooterMapper extends BaseDataMapper {
         const banner = this.safeSelect('[data-side-banner-img]');
         if (!banner) return;
 
-        // property.images 경로에서 썸네일 가져오기
-        const propertyImages = this.safeGet(this.data, 'property.images');
-        if (!propertyImages || !Array.isArray(propertyImages) || propertyImages.length === 0) return;
+        // customFields에서 property_exterior 카테고리 이미지 가져오기
+        const exteriorImages = this.getPropertyImages('property_exterior');
 
-        const thumbnails = this.safeGet(propertyImages[0], 'thumbnail');
-        if (!thumbnails || !Array.isArray(thumbnails) || thumbnails.length === 0) return;
+        if (exteriorImages.length === 0) {
+            banner.style.backgroundImage = `url('${ImageHelpers.EMPTY_IMAGE_WITH_ICON}')`;
+        } else {
+            banner.style.backgroundImage = `url('${exteriorImages[0].url}')`;
+        }
 
-        // isSelected: true이고 sortOrder로 정렬된 첫 번째 이미지 찾기
-        const selectedThumbnail = thumbnails
-            .filter(img => img.isSelected === true)
-            .sort((a, b) => a.sortOrder - b.sortOrder)[0];
-
-        if (!selectedThumbnail || !selectedThumbnail.url) return;
-
-        // 배경 이미지 설정
-        banner.style.backgroundImage = `url('${selectedThumbnail.url}')`;
         banner.style.backgroundSize = 'cover';
         banner.style.backgroundPosition = 'center';
         banner.style.backgroundRepeat = 'no-repeat';
@@ -390,14 +379,14 @@ class HeaderFooterMapper extends BaseDataMapper {
                     console.warn('⚠️ 푸터 로고 이미지 로드 실패');
                 };
                 footerLogoImage.src = logoUrl;
-                footerLogoImage.alt = this.sanitizeText(property.name, '로고');
+                footerLogoImage.alt = this.getPropertyName();
             }
         }
 
-        // Footer 로고 텍스트 매핑
+        // Footer 로고 텍스트 매핑 (customFields 우선)
         const footerLogoText = this.safeSelect('[data-footer-logo-text]');
-        if (footerLogoText && property.name) {
-            footerLogoText.textContent = this.sanitizeText(property.name);
+        if (footerLogoText) {
+            footerLogoText.textContent = this.getPropertyName();
         }
     }
 
@@ -454,9 +443,20 @@ class HeaderFooterMapper extends BaseDataMapper {
 
         // 저작권 정보 매핑
         const copyrightElement = this.safeSelect('[data-footer-copyright]');
-        if (copyrightElement && businessInfo.businessName) {
+        if (copyrightElement) {
             const currentYear = new Date().getFullYear();
-            copyrightElement.textContent = `© ${currentYear} ${businessInfo.businessName}. All rights reserved.`;
+
+            // 링크 요소 생성
+            const copyrightLink = document.createElement('a');
+            copyrightLink.href = 'https://sinbibook.com';
+            copyrightLink.textContent = `© ${currentYear} 신비서. All rights reserved.`;
+            copyrightLink.style.color = 'inherit';
+            copyrightLink.style.textDecoration = 'none';
+            copyrightLink.target = '_blank';
+
+            // 기존 내용을 비우고 링크 추가
+            copyrightElement.innerHTML = '';
+            copyrightElement.appendChild(copyrightLink);
         }
     }
 

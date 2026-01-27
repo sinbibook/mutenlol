@@ -102,22 +102,20 @@ class MainMapper extends BaseDataMapper {
     }
 
     /**
-     * Marquee 섹션 매핑
-     * property.nameEn → [data-main-marquee] 내부 span들 (uppercase)
+     * Marquee 섹션 매핑 (customFields 우선)
+     * customFields.property.nameEn → [data-main-marquee] 내부 span들 (uppercase)
      */
     mapMarqueeSection() {
         if (!this.isDataLoaded) return;
 
-        const property = this.safeGet(this.data, 'property');
         const marqueeContainer = this.safeSelect('[data-main-marquee]');
-
-        if (!marqueeContainer || !property || !property.nameEn) return;
+        if (!marqueeContainer) return;
 
         // 기존 span 제거
         marqueeContainer.innerHTML = '';
 
-        // 5개의 span 생성
-        const nameEnUpper = this.sanitizeText(property.nameEn, 'PROPERTY NAME').toUpperCase();
+        // 5개의 span 생성 (customFields 우선)
+        const nameEnUpper = this.getPropertyNameEn().toUpperCase();
 
         for (let i = 0; i < 5; i++) {
             const span = document.createElement('span');
@@ -127,8 +125,8 @@ class MainMapper extends BaseDataMapper {
     }
 
     /**
-     * Full Banner 이미지 매핑
-     * property.images[0].exterior → [data-main-banner] 배경 이미지
+     * Full Banner 이미지 매핑 (customFields 우선)
+     * customFields.property.images (property_exterior) → [data-main-banner] 배경 이미지
      */
     mapFullBanner() {
         if (!this.isDataLoaded) return;
@@ -136,29 +134,18 @@ class MainMapper extends BaseDataMapper {
         const banner = this.safeSelect('[data-main-banner]');
         if (!banner) return;
 
-        const propertyImages = this.safeGet(this.data, 'property.images');
-        const exteriorImages = this.safeGet(propertyImages?.[0], 'exterior');
+        // customFields에서 property_exterior 카테고리 이미지 가져오기
+        const exteriorImages = this.getPropertyImages('property_exterior');
 
-        // exterior 이미지 필터링 및 정렬
-        const sortedExterior = exteriorImages
-            ?.filter(img => img.isSelected === true)
-            .sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0)) || [];
-
-        const targetImage = sortedExterior[0];
-
-        if (targetImage && targetImage.url) {
-            // 배경 이미지 설정
-            banner.style.backgroundImage = `url('${targetImage.url}')`;
-            banner.style.backgroundSize = 'cover';
-            banner.style.backgroundPosition = 'center';
-            banner.style.backgroundRepeat = 'no-repeat';
+        if (exteriorImages.length > 0) {
+            banner.style.backgroundImage = `url('${exteriorImages[0].url}')`;
         } else {
-            // 이미지 없을 때 placeholder
             banner.style.backgroundImage = `url('${ImageHelpers.EMPTY_IMAGE_WITH_ICON}')`;
-            banner.style.backgroundSize = 'cover';
-            banner.style.backgroundPosition = 'center';
-            banner.style.backgroundRepeat = 'no-repeat';
         }
+
+        banner.style.backgroundSize = 'cover';
+        banner.style.backgroundPosition = 'center';
+        banner.style.backgroundRepeat = 'no-repeat';
     }
 
     /**

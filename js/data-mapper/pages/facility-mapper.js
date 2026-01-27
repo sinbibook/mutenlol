@@ -395,13 +395,14 @@ class FacilityMapper extends BaseDataMapper {
     }
 
     /**
-     * Marquee 매핑 (property.nameEn)
+     * Marquee 매핑 (customFields 우선)
      */
     mapMarquee() {
         const marqueeContainer = this.safeSelect('.marquee-text');
         if (!marqueeContainer) return;
 
-        const propertyNameEn = this.data.property?.nameEn || 'Property Name';
+        // customFields 우선
+        const propertyNameEn = this.getPropertyNameEn();
 
         marqueeContainer.innerHTML = '';
         for (let i = 0; i < 5; i++) {
@@ -412,47 +413,24 @@ class FacilityMapper extends BaseDataMapper {
     }
 
     /**
-     * Banner 매핑 (property exterior 이미지 1번째)
+     * Banner 매핑 (customFields 우선)
      */
     mapBanner() {
         const bannerSection = this.safeSelect('.full-banner');
         if (!bannerSection) return;
 
-        const propertyImages = this.data.property?.images;
-        if (!Array.isArray(propertyImages) || propertyImages.length === 0) {
-            bannerSection.style.backgroundImage = `url('${ImageHelpers.EMPTY_IMAGE_WITH_ICON}')`;
-            bannerSection.style.backgroundSize = 'cover';
-            bannerSection.style.backgroundPosition = 'center';
-            bannerSection.style.backgroundRepeat = 'no-repeat';
-            return;
-        }
+        // customFields에서 property_exterior 카테고리 이미지 가져오기
+        const exteriorImages = this.getPropertyImages('property_exterior');
 
-        // exterior 이미지 찾기
-        let exteriorImages = [];
-        for (const imageGroup of propertyImages) {
-            if (imageGroup.exterior && Array.isArray(imageGroup.exterior)) {
-                exteriorImages = imageGroup.exterior;
-                break;
-            }
-        }
-
-        const sortedExterior = exteriorImages
-            .filter(img => img.isSelected)
-            .sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
-
-        const firstExterior = sortedExterior[0];
-
-        if (firstExterior) {
-            bannerSection.style.backgroundImage = `url('${firstExterior.url}')`;
-            bannerSection.style.backgroundSize = 'cover';
-            bannerSection.style.backgroundPosition = 'center';
-            bannerSection.style.backgroundRepeat = 'no-repeat';
+        if (exteriorImages.length > 0) {
+            bannerSection.style.backgroundImage = `url('${exteriorImages[0].url}')`;
         } else {
             bannerSection.style.backgroundImage = `url('${ImageHelpers.EMPTY_IMAGE_WITH_ICON}')`;
-            bannerSection.style.backgroundSize = 'cover';
-            bannerSection.style.backgroundPosition = 'center';
-            bannerSection.style.backgroundRepeat = 'no-repeat';
         }
+
+        bannerSection.style.backgroundSize = 'cover';
+        bannerSection.style.backgroundPosition = 'center';
+        bannerSection.style.backgroundRepeat = 'no-repeat';
     }
 
     /**
@@ -548,11 +526,10 @@ class FacilityMapper extends BaseDataMapper {
         this.mapBanner();               // Banner
         this.mapGallery();              // Gallery
 
-        // 메타 태그 업데이트 (페이지별 SEO 적용)
-        const property = this.data.property;
+        // 메타 태그 업데이트 (페이지별 SEO 적용) - customFields 우선
         const pageSEO = {
-            title: (facility?.name && property?.name) ? `${facility.name} - ${property.name}` : 'SEO 타이틀',
-            description: facility?.description || property?.description || 'SEO 설명'
+            title: `${facility?.name || '시설'} - ${this.getPropertyName()}`,
+            description: facility?.description || this.data.property?.description || 'SEO 설명'
         };
         this.updateMetaTags(pageSEO);
 

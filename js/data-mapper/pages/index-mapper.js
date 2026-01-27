@@ -132,11 +132,10 @@ class IndexMapper extends BaseDataMapper {
             subtitleElement.textContent = this.sanitizeText(subtitle);
         }
 
-        // 숙소 영문명 매핑
-        const propertyNameEn = this.safeGet(this.data, 'property.nameEn');
+        // 숙소 영문명 매핑 (customFields 우선)
         const heroPropertyNameEn = this.safeSelect('[data-hero-property-name-en]');
-        if (heroPropertyNameEn && propertyNameEn) {
-            heroPropertyNameEn.textContent = this.sanitizeText(propertyNameEn);
+        if (heroPropertyNameEn) {
+            heroPropertyNameEn.textContent = this.getPropertyNameEn();
         }
 
         // 메인 소개 타이틀 매핑
@@ -417,11 +416,10 @@ class IndexMapper extends BaseDataMapper {
             descElement.innerHTML = this._formatTextWithLineBreaks(closingData?.description, '마무리 섹션 설명');
         }
 
-        // 숙소 영문명 매핑
-        const propertyNameEn = this.safeGet(this.data, 'property.nameEn');
+        // 숙소 영문명 매핑 (customFields 우선)
         const closingTitle = this.safeSelect('[data-closing-title]');
-        if (closingTitle && propertyNameEn) {
-            closingTitle.textContent = this.sanitizeText(propertyNameEn);
+        if (closingTitle) {
+            closingTitle.textContent = this.getPropertyNameEn();
         }
     }
 }
