@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.36.0",
-    "generatedAt": "2026-01-27T08:00:58.135Z",
+    "version": "1.37.0",
+    "generatedAt": "2026-01-30T05:46:12.684Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -52,10 +52,10 @@
       "businessNumber": "878-53-00938",
       "representativeName": "정선미",
       "businessAddress": "강원특별자치도 강릉시 연곡면 영진 4길 39-11, 1동",
-      "businessPhone": "",
-      "businessEmail": "",
-      "businessType": "",
-      "businessCategory": "",
+      "businessPhone": "010-3378-0150",
+      "businessEmail": "555@naver.com",
+      "businessType": "partnership",
+      "businessCategory": "숙박업",
       "eCommerceRegistrationNumber": ""
     },
     "contractInfo": {
@@ -3217,9 +3217,17 @@
             "title": "",
             "images": [
               {
+                "id": "12c83032-4f91-48df-a8d0-82db18e9e53e",
+                "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/popup/1769751958772-t952db5vud.png",
+                "sortOrder": 0,
+                "description": "",
+                "isSelected": true,
+                "blockId": "c4b07eae-4f2a-4211-aa20-8779d699c685"
+              },
+              {
                 "id": "1a404cc0-4b70-4b0e-8b0b-67e76970a9fe",
                 "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/popup/1767944049008-ohyidt2dkkb.png",
-                "sortOrder": 0,
+                "sortOrder": 1,
                 "description": "",
                 "isSelected": true,
                 "blockId": "c4b07eae-4f2a-4211-aa20-8779d699c685"
@@ -5259,6 +5267,7 @@
           ]
         }
       ]
-    }
+    },
+    "id": "c950d417-0cd5-4112-8957-2f9514ac2d59"
   }
 }
