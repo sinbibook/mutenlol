@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.38.0",
-    "generatedAt": "2026-03-05T01:28:21.453Z",
+    "version": "1.39.0",
+    "generatedAt": "2026-03-27T07:22:33.308Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -54,7 +54,7 @@
       "businessAddress": "강원특별자치도 강릉시 연곡면 영진 4길 39-11, 1동",
       "businessPhone": "010-3378-0150",
       "businessEmail": "555@naver.com",
-      "businessType": "partnership",
+      "businessType": "individual",
       "businessCategory": "숙박업",
       "eCommerceRegistrationNumber": ""
     },
@@ -381,6 +381,22 @@
     ],
     "refundPolicies": [
       {
+        "refundProcessingDays": 2,
+        "refundRate": 20
+      },
+      {
+        "refundProcessingDays": 3,
+        "refundRate": 30
+      },
+      {
+        "refundProcessingDays": 4,
+        "refundRate": 40
+      },
+      {
+        "refundProcessingDays": 5,
+        "refundRate": 50
+      },
+      {
         "refundProcessingDays": 6,
         "refundRate": 60
       },
@@ -403,22 +419,6 @@
       {
         "refundProcessingDays": 1,
         "refundRate": 10
-      },
-      {
-        "refundProcessingDays": 2,
-        "refundRate": 20
-      },
-      {
-        "refundProcessingDays": 3,
-        "refundRate": 30
-      },
-      {
-        "refundProcessingDays": 4,
-        "refundRate": 40
-      },
-      {
-        "refundProcessingDays": 5,
-        "refundRate": 50
       }
     ],
     "refundSettings": {
@@ -3244,9 +3244,30 @@
               }
             ],
             "slider": false,
-            "enabled": true,
+            "enabled": false,
             "endDate": null,
             "sortOrder": 0,
+            "startDate": null,
+            "description": ""
+          },
+          {
+            "id": "54efd102-5edd-4f7f-b694-84d013c23afc",
+            "link": "https://naver.me/F1rxCltN",
+            "title": "",
+            "images": [
+              {
+                "id": "53259fca-ea21-4b17-87a8-d7b14beecc44",
+                "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/popup/1774335570998-nq9cfgy0sb.png",
+                "sortOrder": 2,
+                "description": "",
+                "isSelected": true,
+                "blockId": "54efd102-5edd-4f7f-b694-84d013c23afc"
+              }
+            ],
+            "slider": false,
+            "enabled": true,
+            "endDate": null,
+            "sortOrder": 1,
             "startDate": null,
             "description": ""
           }
@@ -5259,7 +5280,6 @@
           ]
         }
       ]
-    },
-    "id": "c950d417-0cd5-4112-8957-2f9514ac2d59"
+    }
   }
 }

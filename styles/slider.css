@@ -155,6 +155,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .fullscreen-slider,
+    .fullscreen-slider-container {
+        height: 60vh;
+    }
+
     .fullscreen-slider-content {
         bottom: 120px;
         left: 20px;
