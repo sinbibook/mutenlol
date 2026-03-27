@@ -789,7 +789,7 @@
 
     .hero-section {
         /* padding: 0 20px 20px 20px; */
-        min-height: auto;
+        min-height: 50vh;
     }
 
     .hero-content {
@@ -811,9 +811,14 @@
         width: 100%;
     }
 
-    /* 모바일에서 hero-slider 높이 증가 */
+    /* 모바일에서 hero-slider 높이 */
     .hero-slider-container {
-        height: 60vh; /* 기존 비율을 무시하고 높이를 60vh로 설정 */
+        height: 50vh;
+    }
+
+    /* 모바일에서 closing-section 높이 */
+    .closing-section {
+        height: 60vh;
     }
 
     .hero-subtitle {
