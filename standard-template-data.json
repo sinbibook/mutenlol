@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.40.0",
-    "generatedAt": "2026-04-22T03:02:16.687Z",
+    "version": "1.41.0",
+    "generatedAt": "2026-04-27T05:49:10.919Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -2712,199 +2712,157 @@
                 "title": "muten: 음소거 lol: 박장대소 ",
                 "images": [
                   {
-                    "id": "12d81e8d-0f85-4960-9ba4-17f8e8341f89",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029720-ybowjmvjryn.jpg",
+                    "id": "75b6955c-c7c0-44c8-9d2b-f5e14cf723e6",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836047401-34ek8qtoquc.jpg",
                     "sortOrder": 0,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "0124bde8-b6e8-48b9-8964-cf95f2c3e724",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836047401-1ptwc3q9x6l.jpg",
-                    "sortOrder": 1,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "07d47d4a-39c7-4e90-a711-61f9ea62fac6",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836167575-uyj6wdyy2j.jpg",
-                    "sortOrder": 2,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "738471d1-3160-429b-8cbc-e2b764c84bfa",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836167574-9a7ca88ssmf.jpg",
-                    "sortOrder": 3,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "ccdf2996-1a56-47e9-94b6-e057d762bc5e",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836047400-o081sduhcv.jpg",
-                    "sortOrder": 4,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "db09268d-d61d-4651-a7cc-d252f100a00e",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029721-2u2ipkb7nzl.jpg",
-                    "sortOrder": 5,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "307953d0-0633-4b35-930b-bb23b7d00544",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029721-q4juc4tkko.jpg",
-                    "sortOrder": 6,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "6216a7af-4d7a-4fea-b9b9-ae1bbe31f6f4",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029722-x2g48ka268.jpg",
-                    "sortOrder": 7,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "75b6955c-c7c0-44c8-9d2b-f5e14cf723e6",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836047401-34ek8qtoquc.jpg",
-                    "sortOrder": 8,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "c603641b-3bf6-4144-852d-26b78994c33f",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029721-we325pol8h.jpg",
-                    "sortOrder": 9,
+                    "sortOrder": 1,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "42fd7254-3797-4440-a74c-1ae50b2e648b",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029721-qhf3ks65kz9.jpg",
-                    "sortOrder": 10,
+                    "sortOrder": 2,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "65918746-0979-4445-8e54-8934d7b0b7b2",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029722-scdouckpvo.jpg",
-                    "sortOrder": 11,
+                    "id": "12d81e8d-0f85-4960-9ba4-17f8e8341f89",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029720-ybowjmvjryn.jpg",
+                    "sortOrder": 3,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   },
                   {
-                    "id": "bb97db5b-d771-4faf-9886-f7def71f68a8",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029723-5lxpzb2kuyc.jpg",
-                    "sortOrder": 12,
+                    "id": "0124bde8-b6e8-48b9-8964-cf95f2c3e724",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836047401-1ptwc3q9x6l.jpg",
+                    "sortOrder": 4,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   },
                   {
-                    "id": "8f101729-19c2-45b5-9701-d0b6b201a356",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029723-gw15p1alvpi.jpg",
-                    "sortOrder": 13,
+                    "id": "07d47d4a-39c7-4e90-a711-61f9ea62fac6",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836167575-uyj6wdyy2j.jpg",
+                    "sortOrder": 5,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   },
                   {
-                    "id": "83c9a2ea-bf0c-4eb1-8a95-0a2e5593b98e",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029723-68hvfyew90t.jpg",
-                    "sortOrder": 14,
+                    "id": "738471d1-3160-429b-8cbc-e2b764c84bfa",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836167574-9a7ca88ssmf.jpg",
+                    "sortOrder": 6,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   },
                   {
-                    "id": "038df41a-e3c8-4fb4-8bf6-cbf1b78f2efa",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029723-39p0hnsyudw.jpg",
-                    "sortOrder": 15,
+                    "id": "ccdf2996-1a56-47e9-94b6-e057d762bc5e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1764836047400-o081sduhcv.jpg",
+                    "sortOrder": 7,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
+                  },
+                  {
+                    "id": "db09268d-d61d-4651-a7cc-d252f100a00e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029721-2u2ipkb7nzl.jpg",
+                    "sortOrder": 8,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "307953d0-0633-4b35-930b-bb23b7d00544",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029721-q4juc4tkko.jpg",
+                    "sortOrder": 9,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "c603641b-3bf6-4144-852d-26b78994c33f",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_hero/1763432029721-we325pol8h.jpg",
+                    "sortOrder": 10,
+                    "description": "",
+                    "isSelected": true
                   }
                 ],
-                "description": "자연과 하나 되는 공간, 머무르다.\n온전한 쉼",
+                "videos": [],
                 "mediaType": "image",
-                "videos": []
+                "description": "자연과 하나 되는 공간, 머무르다.\n온전한 쉼"
               },
               "closing": {
                 "title": "Mutenlol",
                 "images": [
                   {
-                    "id": "7a26e23e-1bae-4c99-a575-15d487622b72",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_closing/1763433622642-3cqccl3kbja.jpg",
-                    "sortOrder": 0,
-                    "description": "",
-                    "isSelected": false
-                  },
-                  {
                     "id": "32fa2464-3188-4083-9c69-657d89dd481e",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_closing/1764836642827-apmmdwoildj.jpg",
-                    "sortOrder": 1,
+                    "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   }
                 ],
-                "description": "Mutenlol",
+                "videos": [],
                 "mediaType": "image",
-                "videos": []
+                "description": "Mutenlol"
               },
               "essence": {
                 "title": "Special",
                 "images": [],
-                "description": "필리핀 퓨전 바베큐 전문점, 부들파이터",
+                "videos": [],
                 "mediaType": "image",
-                "videos": []
+                "description": "필리핀 퓨전 바베큐 전문점, 부들파이터"
               },
               "gallery": {
                 "title": "mutenlol gallery",
                 "images": [
                   {
-                    "id": "3d7adbf5-03f7-4897-b53a-11c89c8d8ea2",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763616789078-imr809qiy9.jpg",
+                    "id": "9fedd696-7ffd-4395-816a-4d5fffc9a48c",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-udvhmjxiy8o.jpg",
                     "sortOrder": 0,
-                    "description": "Mutenlol",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "fae5d4d2-a624-49eb-8b27-f47f6138f2e7",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-vpp8e83rckr.jpg",
-                    "sortOrder": 1,
-                    "description": "Mutenlol",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "b34468bc-b49c-4b9c-94aa-3f55a4855913",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-7gn67n2y7yy.jpg",
-                    "sortOrder": 2,
                     "description": "Mutenlol",
                     "isSelected": true
                   },
                   {
                     "id": "12b6e476-e863-4f4a-a36b-bf98e0080a17",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-488tc8ljagp.jpg",
-                    "sortOrder": 3,
-                    "description": "Mutenlol",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "16ef27e0-18f9-46fe-81a9-2ed38f6686c4",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-h96gxaovi5u.jpg",
-                    "sortOrder": 4,
-                    "description": "Mutenlol",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "9fedd696-7ffd-4395-816a-4d5fffc9a48c",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-udvhmjxiy8o.jpg",
-                    "sortOrder": 5,
+                    "sortOrder": 1,
                     "description": "Mutenlol",
                     "isSelected": true
                   },
                   {
                     "id": "501b9bf2-14c1-4439-abf6-d7be04babc92",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-ho6sr36k9hc.jpg",
+                    "sortOrder": 2,
+                    "description": "Mutenlol",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "3d7adbf5-03f7-4897-b53a-11c89c8d8ea2",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763616789078-imr809qiy9.jpg",
+                    "sortOrder": 3,
+                    "description": "Mutenlol",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "fae5d4d2-a624-49eb-8b27-f47f6138f2e7",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-vpp8e83rckr.jpg",
+                    "sortOrder": 4,
+                    "description": "Mutenlol",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "b34468bc-b49c-4b9c-94aa-3f55a4855913",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-7gn67n2y7yy.jpg",
+                    "sortOrder": 5,
+                    "description": "Mutenlol",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "16ef27e0-18f9-46fe-81a9-2ed38f6686c4",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-h96gxaovi5u.jpg",
                     "sortOrder": 6,
                     "description": "Mutenlol",
                     "isSelected": true
@@ -2938,9 +2896,9 @@
                     "isSelected": false
                   }
                 ],
-                "description": "당신이 누릴수 있는 모든것",
+                "videos": [],
                 "mediaType": "image",
-                "videos": []
+                "description": "당신이 누릴수 있는 모든것"
               },
               "signature": {
                 "title": "Boodle Fighter",
@@ -2972,25 +2930,11 @@
                     "sortOrder": 3,
                     "description": "뮤튼롤과 함께 필리핀 퓨전 바베큐를 느낄 수 있는 곳 ",
                     "isSelected": true
-                  },
-                  {
-                    "id": "48e5053e-b9d8-4f07-879e-9edc0f37e3b7",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_signature/1763433907476-qc505ynhdfq.jpg",
-                    "sortOrder": 4,
-                    "description": "뮤튼롤과 함께 필리핀 퓨전 바베큐를 느낄 수 있는 곳 ",
-                    "isSelected": false
-                  },
-                  {
-                    "id": "c24528dd-045c-49c4-900d-6c69c05fa0cf",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_signature/1763433826121-cuosltsmwd8.jpg",
-                    "sortOrder": 5,
-                    "description": "뮤튼롤과 함께 필리핀 퓨전 바베큐를 느낄 수 있는 곳 ",
-                    "isSelected": false
                   }
                 ],
-                "description": "뮤튼롤과 함께 필리핀 퓨전 바베큐를 느낄 수 있는 곳 ",
+                "videos": [],
                 "mediaType": "image",
-                "videos": []
+                "description": "뮤튼롤과 함께 필리핀 퓨전 바베큐를 느낄 수 있는 곳 "
               }
             }
           ]
