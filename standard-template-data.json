@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.43.0",
-    "generatedAt": "2026-05-18T02:46:55.843395078Z",
+    "version": "1.44.0",
+    "generatedAt": "2026-05-18T04:00:20.961866686Z",
     "templateType": "gallery_sidebar",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -11,7 +11,7 @@
     "name": "강릉 뮤튼롤",
     "description": "강릉 뮤튼롤\nmuten: 음소거 lol: 박장대소 \n온전한 쉼, 자연과 하나 되는 공간, 머무르다.",
     "subtitle": "아름다운 바다를 품고있는 뮤튼롤",
-    "address": "강원특별자치도 강릉시 연곡면 영진4길 39-11",
+    "address": "강원특별자치도 강릉시 연곡면 해안로 1391",
     "latitude": 37.8659062895335,
     "longitude": 128.846190341228,
     "contactPhone": "010-3378-0150",
@@ -636,7 +636,7 @@
     ],
     "nameEn": "Gangneung mutenlol",
     "domain": "mutenlol.kr",
-    "realtimeBookingId": "https://www.bookingplay.co.kr/booking/1/9763",
+    "realtimeBookingId": "https://map.naver.com/p/entry/place/1576877066",
     "ybsId": "78863"
   },
   "rooms": [
@@ -3587,6 +3587,12 @@
               }
             }
           ]
+        },
+        "layoutMap": {
+          "sections": [ ]
+        },
+        "nearbyAttractions": {
+          "sections": [ ]
         }
       },
       "theme": {
