@@ -1,0 +1,51 @@
+/* ===========================
+   공통 슬라이더 화살표 UI (.slider-arrows)
+   =========================== */
+
+.slider-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: var(--gap-24);
+  font-size: var(--fs-20);
+  font-family: var(--font-italiana);
+  color: var(--color-white);
+}
+
+.arrow-line {
+  width: 100px;
+  height: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s var(--ease-elegant), transform 0.2s var(--ease-elegant);
+}
+
+.arrow-line:hover {
+  opacity: 0.7;
+}
+
+.arrow-line-flip {
+  transform: scaleX(-1);
+}
+
+.arrow-num {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: var(--lh-36);
+}
+
+.arrow-divider {
+  width: 1px;
+  height: 11px;
+  border-right: 1px solid var(--color-white);
+}
+
+/* ===========================
+   BREAKPOINT: 960px (태블릿)
+   =========================== */
+@media screen and (max-width: 960px) {
+  .arrow-line {
+    width: 60px;
+  }
+}

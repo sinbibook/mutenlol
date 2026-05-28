@@ -1,1 +1,1 @@
-# template-gallery-sidebar-beige Template
+# template-fullpage-visual

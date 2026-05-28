@@ -1,785 +1,1064 @@
-/* Top Header Styles */
-.top-header {
+/* ===========================
+   공통 헤더 스타일 (common/header.html 용)
+   =========================== */
+
+.header {
+  position: fixed;        /* 스크롤해도 viewport 상단에 고정 */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 88px !important;
+  width: 210px !important;
+  object-fit: cover;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-reserve-btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-reservation {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 9px 25px;
+  border-radius: 50px;
+  font-size: var(--fs-15);
+  font-weight: 500;
+  font-family: var(--font-ko-main);
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-salmon {
+  background-color: var(--color-darksalmon);
+}
+
+.btn-gray {
+  background-color: var(--color-darkgray);
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background-color: var(--color-darksalmon);
+}
+
+/* ===========================
+   BREAKPOINT: 960px (태블릿)
+   =========================== */
+@media screen and (max-width: 960px) {
+  .header-reserve-btns {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    z-index: 999;
-    transition: all 0.3s ease;
-    font-family: var(--font-ko-main);
-}
-
-.top-header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    padding: 20px 0 10px 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    flex: 1;
-    justify-content: center;
-    z-index: 999;
-}
-
-.logo-image {
-    height: 40px;
-    width: auto;
-    display: block;
-}
-
-.logo-text {
-    font-family: var(--font-ko-main);
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--color-secondary);
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-/* 스크롤 시 로고 텍스트 숨김 */
-.top-header.scrolled .logo-text {
-   visibility: hidden;
-}
-
-/* Booking Buttons Container */
-.booking-buttons {
-    display: flex;
-    gap: 10px;
-    position: fixed;
-    top: 20px;
     right: 20px;
-    z-index: 1000;
+    bottom: 20px;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .header {
+    padding: 10px 30px;
+  }
+
+  .logo {
+    height: 60px !important;
+    width: auto !important;
+  }
 }
 
-/* YBS Button Styles */
-.ybs-btn {
-    padding: 10px 15px;
-    background: transparent;
-    color: var(--color-secondary) !important;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    font-family: var(--font-ko-main);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    text-decoration: none;
-    display: none; /* 기본적으로 숨김 */
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-    position: relative;
-}
+/* ===========================
+   BREAKPOINT: 420px (모바일)
+   =========================== */
+@media screen and (max-width: 420px) {
+  .logo {
+    height: 44px !important;
+  }
 
-.ybs-btn::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    transition: border-color 0.3s ease;
-}
-
-.ybs-btn::after {
-    content: none;
-}
-
-.ybs-btn:hover {
-    background: var(--color-secondary) !important;
-    color: white !important;
-    border-color: var(--color-secondary);
-    transform: translateX(2px) translateY(-1px);
-}
-
-.ybs-btn:hover::before {
-    border-color: var(--color-secondary);
-}
-
-.ybs-btn:hover::after {
-    transform: translateX(3px);
-}
-
-.ybs-btn.scrolled {
-    background: var(--color-secondary);
-    color: white !important;
-    border: 1px solid var(--color-secondary);
-}
-
-.book-now-btn {
-    position: relative;
-    padding: 10px 15px;
-    z-index: 1000;
-    padding: 10px 15px;
-    background: transparent;
-    color: var(--color-secondary) !important;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    font-family: var(--font-ko-main);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-}
-
-.book-now-btn.scrolled {
-    background: var(--color-secondary);
-    color: white !important;
-    border: 1px solid var(--color-secondary);
-}
-
-.book-now-btn::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    transition: border-color 0.3s ease;
-}
-
-.book-now-btn::after {
-    content: none;
-}
-
-.book-now-btn:hover {
-    background: var(--color-secondary) !important;
-    color: white !important;
-    border-color: var(--color-secondary);
-    transform: translateX(2px) translateY(-1px);
-}
-
-.book-now-btn:hover::before {
-    border-color: var(--color-secondary);
-}
-
-.book-now-btn:hover::after {
-    transform: translateX(3px);
-}
-
-/* Side Header Styles */
-.side-header {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 60vw;
-    height: 100vh;
-    background: #f5f5f5;
-    box-shadow: 2px 0 30px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    transition: left 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-    font-family: var(--font-ko-main);
-    display: flex;
-    overflow: hidden;
-}
-
-.side-header.expanded {
-    left: 0;
-}
-
-/* Overlay for when side header is open */
-.side-header-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.side-header-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.side-header-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    background: transparent;
-    padding: 20px 40px 40px 40px;
-    overflow: hidden auto;
-}
-
-.side-content-top {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.side-content-bottom {
-    margin-top: auto;
-}
-
-/* Side Header Top */
-.side-header-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20px;
-    padding-top: 5px;
-    border-bottom: 1px solid rgba(106, 98, 71, 0.2);
-    position: relative;
-}
-
-.side-logo-container {
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.side-logo-container:hover {
-    opacity: 0.8;
-}
-
-.side-logo-text {
-    font-family: var(--font-ko-main);
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--color-secondary);
-    white-space: normal;
-    line-height: 1.3;
-    text-align: center;
-    word-break: keep-all;
-}
-
-
-.side-menu-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.menu-section {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 0;
-}
-
-.menu-section-title {
-    font-family: var(--font-en-main);
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--color-secondary);
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--color-secondary);
-}
-
-.menu-section-title.expandable {
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.menu-section-title.expandable::after {
-    content: '▼';
-    position: absolute;
-    right: 0;
-    font-size: 12px;
-    transition: transform 0.3s ease;
-}
-
-.menu-section-title.expandable.active::after {
-    transform: rotate(180deg);
-}
-
-.menu-section-title.expandable:hover {
-    color: var(--color-secondary);
-}
-
-.menu-section-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.menu-section-list li {
-    width: 50%;
-    margin-bottom: 8px;
-}
-
-/* Multi-column layout for more than 4 items */
-.menu-section-list.multi-column {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: calc(4 * 32px); /* 고정 높이 */
-    align-content: flex-start;
-}
-
-.menu-section-list.multi-column li {
-    width: calc(50% - 10px);
+  .btn-reservation {
     height: 32px;
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .header-nav {
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    width: 24px;
+    gap: 6px;
+  }
+}
+
+/* ===========================
+   NAVIGATION PANEL (.menu-toggle 클릭 시 풀스크린 오버레이)
+   - 모든 셀렉터를 `.navigation` 부모로 스코프해 main.css 등 외부 스타일과 충돌 방지
+   - 기본 상태: <div class="navigation" hidden> → 화면 비표시
+   - 열림: hidden 속성 제거 + .is-open 클래스로 페이드인
+   =========================== */
+.navigation {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  display: flex;
+  align-items: stretch;
+  z-index: 9999;
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+  background-color: var(--color-white);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease-elegant) !important;
+  overflow: hidden;
+}
+.navigation.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.navigation[hidden] {
+  display: none !important;
+}
+
+/* main.css line ~140의 `.navigation-off { height: 170px; padding: 30 50 52 }` 룰을
+   완전히 덮어쓰기 위해 모든 속성에 !important + :hover까지 동일 값 강제 */
+.navigation .navigation-off,
+.navigation .navigation-off:hover {
+  height: 100% !important;
+  width: 100% !important;
+  flex: 1 !important;
+  position: relative !important;
+  background-color: var(--color-white) !important;
+  overflow: auto !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  font-size: var(--fs-17) !important;
+  color: var(--Black) !important;
+  text-align: left !important;
+}
+.navigation .navigation-off-child {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 100%;
+  width: 784px;
+  object-fit: cover;
+}
+.navigation .navigation-off-item {
+  position: absolute;
+  top: 224px;
+  left: 890px;
+  width: 897px;
+  height: var(--height-1);
+  z-index: 1;
+}
+.navigation .mask-group-parent,
+.navigation .navigation-off-inner {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.navigation .navigation-off-inner {
+  position: absolute;
+  top: 0;
+  left: 784px;
+  width: 1066px;
+  flex-direction: column;
+  text-align: center;
+  font-size: var(--fs-17);
+  color: var(--Black);
+  font-family: var(--font-ko-main);
+}
+.navigation .mask-group-parent {
+  width: 942px;
+  padding: 290px 152px 327px;     /* padding-top 310 → 290: room-parent 20px 위로 이동 */
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  gap: 82px;
+}
+.navigation .btn-r,
+.navigation .mask-group-icon {
+  margin: 0 !important;
+  position: absolute;
+  flex-shrink: 0;
+}
+.navigation .mask-group-icon {
+  height: 100vh !important;
+  width: 100% !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  left: 0 !important;
+  max-width: 100% !important;
+  max-height: 100vh !important;
+  overflow: hidden;
+  object-fit: cover;
+}
+/* btn-r (예약 / YBS / 닫기): 기존 헤더(.header)와 동일한 컨테이너 구조로 정렬
+   - .header: padding: 10px 50px (≤960: 10px 30px, ≤420: 동일), 로고 높이별로 컨테이너 높이 변경
+   - 데스크톱: 로고 88px → 컨테이너 108px
+   - ≤960:    로고 60px → 컨테이너 80px
+   - ≤420:    로고 44px → 컨테이너 64px
+   - 각 viewport에서 헤더 버튼과 동일한 y 좌표 보장 */
+.navigation .btn-r {
+  position: fixed !important;
+  top: 12px !important;                       /* 헤더 기준 12px 하단으로 이동 */
+  right: auto !important;
+  left: 0 !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: 108px !important;
+  margin: 0 !important;
+  padding: 10px 70px 10px 50px !important;    /* padding-right 50→70: 헤더 기준 20px 좌측으로 이동 */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 20px !important;
+  background: transparent !important;
+  z-index: 10001 !important;
+  box-sizing: border-box !important;
+}
+@media screen and (max-width: 960px) {
+  .navigation .btn-r {
+    height: 80px !important;
+    padding: 10px 30px !important;
+  }
+}
+@media screen and (max-width: 420px) {
+  .navigation .btn-r {
+    height: 64px !important;
+  }
+}
+/* close-icon 폭(24px) → menu-toggle 폭(30px)과 동일하게 맞춰 헤더의 예약/YBS와 같은 x좌표 보장 */
+.navigation .btn-r .close-icon {
+  width: 30px !important;
+  height: auto !important;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+/* 패널 내부 모든 요소 box-sizing 통일 — body 직속이라 .main의 box-sizing 룰 적용 안 됨 */
+.navigation,
+.navigation *,
+.navigation *::before,
+.navigation *::after {
+  box-sizing: border-box !important;
+}
+/* 예약 버튼 - 4각 모두 50px 라운드, 살몬 배경
+   기존 헤더 .btn-reservation.btn-salmon과 동일 룩앤필 */
+.navigation .button-reservation,
+.navigation .button-reservation:hover {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  width: auto !important;
+  padding: 9px 25px !important;
+  border-radius: 50px !important;
+  border: none !important;
+  background-color: var(--color-darksalmon) !important;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.navigation .button-reservation:hover {
+  background-color: var(--color-sienna, #bd5e47) !important;
+}
+.navigation .button-reservation-child {
+  display: none !important;
+}
+
+/* YBS 버튼 - 4각 모두 50px 라운드, 회색 배경
+   --color-darkgray-200은 프로젝트에 미정의 → --color-darkgray (#a0a0a0) 사용 */
+.navigation .button-ybs,
+.navigation .button-ybs:hover {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  width: auto !important;
+  padding: 9px 25px !important;
+  border-radius: 50px !important;
+  border: none !important;
+  background-color: var(--color-darkgray) !important;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.navigation .button-ybs:hover {
+  background-color: var(--color-dimgray, #6e6e6e) !important;
+}
+.navigation .button-ybs-child {
+  display: none !important;
+}
+
+/* 버튼 내부 텍스트(.div) - width/height auto로 풀어 텍스트가 잘리지 않도록 */
+.navigation .button-reservation .div,
+.navigation .button-ybs .div {
+  width: auto !important;
+  height: auto !important;
+  font-size: var(--fs-15) !important;
+  font-weight: 500 !important;
+  font-family: var(--font-ko-main) !important;
+  color: var(--color-white) !important;
+  letter-spacing: -0.01em !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.navigation .button-ybs-child {
+  width: var(--width-80);
+  position: relative;
+  display: none;
+  flex-shrink: 0;
+}
+.navigation .close-icon {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0);
+  background-color: transparent;
+  color: var(--color-secondary);
+  height: 25px;
+  width: 24px;
+  position: relative;
+}
+/* .txt (Reservation 라벨): .room-parent 내부의 세 번째 컬럼으로 배치 (room | special | txt)
+   main.css의 일반 .txt 룰(padding: 0 20px 0 30px)을 강제 0으로 덮어쓰기 */
+.navigation .room-parent .txt,
+.navigation .room-parent .txt:hover {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: var(--gap-18) !important;
+  z-index: 2;
+  flex-shrink: 0;
+}
+.navigation .reservation {
+  position: relative;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+/* room-parent / title 내부 a 태그: 기본 underline·색상 제거, 호버 시 밑줄 표시 */
+.navigation .room-parent a.reservation,
+.navigation .room-parent a.reservation:hover,
+.navigation .title a.specials,
+.navigation .title a.specials:hover {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* room-parent 내부 모든 a.reservation 링크 — hover/focus/active 시 모든 layout/font 동결
+   → "Reservation" 등 텍스트가 hover 때 흔들리는 문제 완전 차단 */
+.navigation .room-parent a.reservation,
+.navigation .room-parent a.reservation:hover,
+.navigation .room-parent a.reservation:focus,
+.navigation .room-parent a.reservation:active,
+.navigation .room-parent a.reservation:visited,
+.navigation .room-parent .txt a.reservation,
+.navigation .room-parent .txt a.reservation:hover,
+.navigation .room-parent .txt a.reservation:focus,
+.navigation .room-parent .txt a.reservation:active {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+  font-size: var(--fs-17) !important;
+  font-weight: 500 !important;
+  font-family: var(--font-ko-main) !important;
+  letter-spacing: -0.01em !important;
+  line-height: normal !important;
+  color: var(--Black) !important;
+  background: transparent !important;
+  outline: none !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  text-shadow: none !important;
+}
+.navigation .prologue {
+  height: 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-18);
+  z-index: 5;
+  flex-shrink: 0;
+}
+.navigation .div2 {
+  position: relative;
+  letter-spacing: -0.01em;
+}
+/* room-parent: room + special + txt 3컬럼 세로 정렬, 컬럼 폭 자동 + nowrap으로 텍스트 한 줄 유지 */
+/* room-parent: 4컬럼 (prologue/room/special/txt) — 항상 한 줄(nowrap) 유지
+   .title(4개 탭 버튼)도 한 세트라 같이 한 줄에 고정 */
+.navigation .room-parent {
+  height: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  flex-shrink: 0 !important;
+  margin-left: 50px !important;
+  text-align: center;
+  font-size: var(--fs-17);
+  color: var(--Black);
+  font-family: var(--font-ko-main);
+  white-space: nowrap;
+}
+/* 각 컬럼: room 리스트(가장 긴 객실 라벨) 너비 기준으로 4개 컬럼 가로폭 통일 + 가운데 정렬
+   hover 상태도 모두 포함 — hover 시 align-items가 다른 룰의 flex-start로 떨어져
+   텍스트가 좌측으로 점프하는 문제 차단 */
+.navigation .room-parent .prologue,
+.navigation .room-parent .prologue:hover,
+.navigation .room-parent .room,
+.navigation .room-parent .room:hover,
+.navigation .room-parent .special,
+.navigation .room-parent .special:hover,
+.navigation .room-parent .txt,
+.navigation .room-parent .txt:hover {
+  width: 230px !important;       /* room의 "305(유럽미장/자쿠지/오션..." 한 줄 폭 기준 */
+  flex: 0 0 230px !important;
+  white-space: nowrap !important;
+  align-items: center !important; /* column flex → 자식 가로 중앙 정렬, hover 시에도 유지 */
+  text-align: center !important;
+}
+/* room-parent 안에서 prologue: 동일 width + 가운데 정렬 */
+.navigation .room-parent .prologue {
+  height: auto !important;
+  justify-content: flex-start !important;
+}
+/* main.css의 .prologue:hover { font-size: 66px; text-align: left; ... } 룰이
+   navigation 패널 prologue까지 매칭되어 hover 시 글씨 크기·정렬 변동되는 문제 완전 차단
+   (텍스트는 자식 .div2, .reservation에 들어있음 — 부모와 자식 모두 잠금)
+   원본 .room-parent 안 prologue + 모바일 클론(.nav-mobile-accordion) 안 prologue 모두 적용 */
+.navigation .room-parent .prologue,
+.navigation .room-parent .prologue:hover,
+.navigation .room-parent .prologue .div2,
+.navigation .room-parent .prologue .div2:hover,
+.navigation .room-parent .prologue .reservation,
+.navigation .room-parent .prologue .reservation:hover {
+  font-size: var(--fs-17) !important;
+  font-family: var(--font-ko-main) !important;
+  font-weight: 500 !important;
+  color: var(--Black) !important;
+  text-align: center !important;
+  letter-spacing: -0.01em !important;
+  line-height: normal !important;
+  text-shadow: none !important;
+  /* layout 변동 방지: hover 시에도 동일한 레이아웃 강제 */
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  position: relative !important;
+}
+/* 부모 .prologue 컨테이너: hover 시에도 동일한 flex column 레이아웃 유지 */
+.navigation .room-parent .prologue,
+.navigation .room-parent .prologue:hover {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 18px !important;
+  width: auto !important;
+  height: auto !important;
+}
+/* 모바일 클론(.nav-mobile-accordion) prologue: 좌측 정렬 (모바일 아코디언 디자인) */
+.navigation .nav-mobile-accordion .prologue,
+.navigation .nav-mobile-accordion .prologue:hover,
+.navigation .nav-mobile-accordion .prologue .div2,
+.navigation .nav-mobile-accordion .prologue .div2:hover,
+.navigation .nav-mobile-accordion .prologue .reservation,
+.navigation .nav-mobile-accordion .prologue .reservation:hover {
+  font-size: var(--fs-17) !important;
+  font-family: var(--font-ko-main) !important;
+  font-weight: 500 !important;
+  color: var(--Black) !important;
+  text-align: left !important;
+  letter-spacing: -0.01em !important;
+  line-height: normal !important;
+  text-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  position: relative !important;
+}
+.navigation .nav-mobile-accordion .prologue,
+.navigation .nav-mobile-accordion .prologue:hover {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 18px !important;
+  width: auto !important;
+  height: auto !important;
+}
+/* 자식 .div2 / .reservation: 텍스트 블록 자체도 layout 잠금 */
+.navigation .room-parent .prologue .div2,
+.navigation .room-parent .prologue .div2:hover,
+.navigation .room-parent .prologue .reservation,
+.navigation .room-parent .prologue .reservation:hover,
+.navigation .nav-mobile-accordion .prologue .div2,
+.navigation .nav-mobile-accordion .prologue .div2:hover,
+.navigation .nav-mobile-accordion .prologue .reservation,
+.navigation .nav-mobile-accordion .prologue .reservation:hover {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  align-self: auto !important;
+}
+.navigation .room {
+  align-self: stretch;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-18);
+  z-index: 2;
+}
+/* 객실명이 길어질 때: room 줄 영역은 최대 200px, 초과 시 말줄임(...) 처리
+   → 텍스트가 길어도 가로폭이 늘어나거나 잘려보이지 않음 */
+.navigation .room-parent .room a.reservation {
+  display: block;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.navigation .room,
+.navigation .special,
+.navigation .title {
+  display: flex;
+  align-items: center;
+}
+.navigation .special {
+  height: 192px;
+  flex-direction: column;
+  gap: var(--gap-18);
+  z-index: 1;
+}
+.navigation .title {
+  margin: 0 !important;
+  position: absolute;
+  top: 165px;
+  right: -3px;
+  gap: 160px;         /* 데스크톱은 텍스트 컨텐트 폭 기준 자연 gap (이전 사용자 조정값) */
+  white-space: nowrap;
+  z-index: 5;
+  flex-shrink: 0;
+  padding-top: 30px;                /* 라인-버튼 사이 위쪽 여백 */
+  padding-bottom: 31px;             /* 46 → 31 (-15px, 검정라인 위로 이동) */
+}
+/* 검정 라인을 .title 양옆 20px씩 확장한 ::after 가상 요소로 그림
+   (border-bottom은 정확히 .title 폭에 맞아 짧아 보이는 문제 해결) */
+.navigation .title::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  bottom: 0;
+  height: 1px;
+  background-color: #000;
+  pointer-events: none;
+}
+/* 데스크톱: .specials 버튼 폭 자연(auto) — 기존 위치 유지
+   (반응형 ≤1700~ 에서는 각 미디어쿼리 안에서 폭 별도 지정) */
+.navigation .title .specials {
+  width: auto;
+  text-align: center;
+  flex-shrink: 0;
+}
+.navigation .specials {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0);
+  background-color: transparent;
+  position: relative;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  font-family: 'Cormorant', serif;
+  color: var(--Black);
+  text-align: center;
+  display: inline-block;
+}
+
+/* 메뉴 패널 열림 시 body 스크롤 잠금 */
+body.navigation-open {
+  overflow: hidden;
+}
+
+/* navigation 패널 내부 모든 자식 요소: hover 시 layout 시프트 / 애니메이션 완전 차단
+   main.css의 .button-reservation:hover, .button-ybs:hover, .btn-r:hover 등 일반 클래스명
+   글로벌 룰들이 패널 요소에 적용되며 발생하던 hover 시 미세 이동 제거
+   배경색 hover 효과(button-reservation/ybs)는 유지 */
+.navigation *,
+.navigation *:hover,
+.navigation *:focus,
+.navigation *:active {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* room-parent 영역 호버 wobble 차단 — pointer-events 차단 방식
+   - room-parent 자체와 column 컨테이너(.prologue/.room/.special/.txt)는 pointer-events: none
+     → 컨테이너에 :hover 자체가 발화 안 함 → .prologue:hover, .txt:hover 등 글로벌 룰 무력화
+   - <a class="reservation"> 링크만 pointer-events: auto → 클릭/hover 정상 동작
+   - <a> 자체는 글로벌 hover 룰이 없으므로 wobble 없음 */
+.navigation .room-parent,
+.navigation .room-parent .prologue,
+.navigation .room-parent .room,
+.navigation .room-parent .special,
+.navigation .room-parent .txt {
+  pointer-events: none !important;
+}
+.navigation .room-parent a,
+.navigation .room-parent a *,
+.navigation .room-parent .reservation,
+.navigation .room-parent .reservation * {
+  pointer-events: auto !important;
+}
+
+/* 링크(.reservation) hover/focus/active 시 모든 폰트/레이아웃 속성 강제 동결 */
+.navigation .room-parent a,
+.navigation .room-parent a:hover,
+.navigation .room-parent a:focus,
+.navigation .room-parent a:active,
+.navigation .room-parent a:visited,
+.navigation .room-parent .reservation,
+.navigation .room-parent .reservation:hover,
+.navigation .room-parent .div2,
+.navigation .room-parent .div2:hover {
+  font-size: var(--fs-17) !important;
+  font-family: var(--font-ko-main) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  line-height: normal !important;
+  color: var(--Black) !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+  outline: none !important;
+  border: 0 !important;
+  text-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+/* button-reservation / button-ybs base 스타일은 위쪽(line ~256)에 통합 정의됨
+   여기서 별도 override 불필요 (border-radius / background-color / 사이즈 등 모두 거기서 처리) */
+
+/* ≤1700: 좌측 이미지 축소 + .title/.room-parent 동일한 수평 레이아웃
+   둘 다 mask-group-parent 풀폭(left:0, right:0)으로 펼치고
+   동일한 padding-left/right 적용 + 내용 가운데 정렬 → 한 세트로 정렬 보장 */
+@media screen and (max-width: 1700px) {
+  .navigation .navigation-off-child {
+    width: 45vw !important;
+  }
+  .navigation .navigation-off-inner {
+    left: 45vw !important;
+    width: 55vw !important;
+  }
+  .navigation .navigation-off-item {
+    left: calc(45vw + 106px) !important;
+    width: calc(55vw - 169px) !important;
+  }
+  /* mask-group-parent: 942px 고정폭 해제 → inner 폭에 맞춰 100%로 축소
+     padding-left/right 152px 도 줄여 좌우 여백 확보 */
+  .navigation .mask-group-parent {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .navigation .title,
+  .navigation .room-parent {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    box-sizing: border-box !important;
+    width: calc(100% - 100px) !important;
+    justify-content: center !important;
+  }
+  /* room-parent 컬럼 폭 축소 + gap 축소 → 컨테이너 안에 들어맞도록
+     (:hover도 동일 값 강제 → hover 시 width 점프 방지) */
+  .navigation .room-parent .prologue,
+  .navigation .room-parent .prologue:hover,
+  .navigation .room-parent .room,
+  .navigation .room-parent .room:hover,
+  .navigation .room-parent .special,
+  .navigation .room-parent .special:hover,
+  .navigation .room-parent .txt,
+  .navigation .room-parent .txt:hover {
+    width: 200px !important;
+    flex: 0 0 200px !important;
+  }
+  .navigation .room-parent {
+    gap: 12px !important;
+  }
+  /* title을 room-parent와 동일한 grid 구조로: 4컬럼 200px + gap 12px
+     → 각 버튼의 중심·좌우 edge가 컬럼과 정확히 일치 */
+  .navigation .title {
+    gap: 12px !important;
+  }
+  .navigation .title .specials {
+    width: 200px !important;
+    text-align: center !important;
+  }
+}
+
+/* ≤1400: 좌·우 padding 50px씩 (동일 위치 정렬 유지) */
+@media screen and (max-width: 1400px) {
+  .navigation .navigation-off-child {
+    width: 38vw !important;
+  }
+  .navigation .navigation-off-inner {
+    left: 38vw !important;
+    width: 62vw !important;
+  }
+  .navigation .navigation-off-item {
+    left: calc(38vw + 106px) !important;
+    width: calc(62vw - 169px) !important;
+  }
+  .navigation .title,
+  .navigation .room-parent {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    box-sizing: border-box !important;
+    width: calc(100% - 100px) !important;
+    justify-content: center !important;
+  }
+  .navigation .mask-group-parent {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .navigation .room-parent .prologue,
+  .navigation .room-parent .prologue:hover,
+  .navigation .room-parent .room,
+  .navigation .room-parent .room:hover,
+  .navigation .room-parent .special,
+  .navigation .room-parent .special:hover,
+  .navigation .room-parent .txt,
+  .navigation .room-parent .txt:hover {
+    width: 170px !important;
+    flex: 0 0 170px !important;
+  }
+  .navigation .room-parent {
+    gap: 10px !important;
+  }
+  /* title을 room-parent와 동일 구조: 170px × 4 + gap 10px */
+  .navigation .title {
+    gap: 10px !important;
+  }
+  .navigation .title .specials {
+    width: 170px !important;
+    text-align: center !important;
+  }
+}
+
+/* ≤1250: 좌·우 padding 60px씩 (동일 위치 정렬 유지) */
+@media screen and (max-width: 1250px) {
+  .navigation .navigation-off-child {
+    width: 30vw !important;
+  }
+  .navigation .navigation-off-inner {
+    left: 30vw !important;
+    width: 70vw !important;
+  }
+  .navigation .navigation-off-item {
+    left: calc(30vw + 106px) !important;
+    width: calc(70vw - 169px) !important;
+  }
+  .navigation .title,
+  .navigation .room-parent {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    box-sizing: border-box !important;
+    width: calc(100% - 100px) !important;
+    justify-content: center !important;
+  }
+  .navigation .mask-group-parent {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .navigation .room-parent .prologue,
+  .navigation .room-parent .prologue:hover,
+  .navigation .room-parent .room,
+  .navigation .room-parent .room:hover,
+  .navigation .room-parent .special,
+  .navigation .room-parent .special:hover,
+  .navigation .room-parent .txt,
+  .navigation .room-parent .txt:hover {
+    width: 150px !important;
+    flex: 0 0 150px !important;
+  }
+  .navigation .room-parent {
+    gap: 8px !important;
+  }
+  /* title을 room-parent와 동일 구조: 150px × 4 + gap 8px */
+  .navigation .title {
+    gap: 8px !important;
+  }
+  .navigation .title .specials {
+    width: 150px !important;
+    text-align: center !important;
+  }
+}
+
+/* ≤1400: 좌측 이미지를 상단으로 이동 (수직 스택) — 컨텐츠 풀폭 확보
+   navigation-off를 column flex로 전환 + 자식들 absolute 해제
+   1100~1400 영역에서도 가로 분할이 너무 타이트해서 동일하게 vertical 레이아웃 적용 */
+@media screen and (max-width: 1400px) {
+  .navigation .navigation-off,
+  .navigation .navigation-off:hover {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: auto !important;
+  }
+  .navigation .navigation-off-child {
+    position: relative !important;
+    width: 100% !important;
+    height: 400px !important;
+    object-fit: cover;
+  }
+  .navigation .navigation-off-inner {
+    position: relative !important;
+    top: auto !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+  .navigation .navigation-off-item {
+    display: none;
+  }
+  /* mask-group-parent: column flex로 전환 → title과 room-parent 세로 스택
+     (default row flex일 때 title이 room-parent 옆으로 밀려 viewport 밖으로 나감) */
+  .navigation .mask-group-parent {
+    width: 100% !important;
+    padding: 80px 40px 60px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 5px !important;         /* 10 → 5: room-parent 추가 5px 위로 이동 */
+  }
+  /* title과 room-parent를 동일한 4컬럼 grid로 통일 → 컬럼 폭/위치가 자동으로 일치
+     동일한 컨테이너 폭(min(900px, 90%))에 repeat(4, 1fr) 적용으로 두 grid의
+     컬럼 트랙이 동일해져 위/아래 컬럼 center가 정렬됨 */
+  .navigation .title,
+  .navigation .room-parent {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: start !important;
+    column-gap: 0 !important;
+    row-gap: 30px !important;
+    width: min(900px, 90%) !important;
+    flex-wrap: nowrap !important;
+  }
+  /* title: 상단으로 (order: -1) + 가운데 정렬 + 가로 패딩/마진 리셋 (계산식 width 무효화) */
+  .navigation .title {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    margin: 0 0 30px 0 !important;  /* 검정라인 아래 room-parent와의 간격 30px */
+    padding: 0 0 16px 0 !important;
+    order: -1 !important;
+    align-self: center !important;
+  }
+  /* title의 specials 버튼: grid cell 내 자연 폭. 이전 nth-child 마진 핵 제거 */
+  .navigation .title .specials,
+  .navigation .title .specials:nth-child(3),
+  .navigation .title .specials:nth-child(4) {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+  }
+  /* room-parent: grid 4컬럼, 마진/패딩 리셋 */
+  .navigation .room-parent {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .navigation .room-parent .prologue,
+  .navigation .room-parent .prologue:hover,
+  .navigation .room-parent .room,
+  .navigation .room-parent .room:hover,
+  .navigation .room-parent .special,
+  .navigation .room-parent .special:hover,
+  .navigation .room-parent .txt,
+  .navigation .room-parent .txt:hover {
+    width: auto !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* ≤768 모바일: 패딩/이미지 높이 축소 + 원본 title/room-parent 숨기고 nav-mobile-accordion 사용 */
+@media screen and (max-width: 768px) {
+  .navigation .navigation-off-child {
+    height: 340px !important;       /* 140 → 340 (+200px) */
+  }
+  .navigation .mask-group-parent {
+    padding: 60px 20px 40px !important;
+    gap: 40px !important;
+  }
+  /* 원본 데스크톱용 .title / .room-parent 숨김 (JS가 동적 생성한 .nav-mobile-accordion으로 대체) */
+  .navigation .title,
+  .navigation .room-parent {
+    display: none !important;
+  }
+  /* 모바일 아코디언 컨테이너 */
+  .navigation .nav-mobile-accordion {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+  }
+  .navigation .nav-mobile-accordion .nav-tab {
     display: flex;
-    align-items: center;
-}
-
-.menu-section-list a {
-    color: var(--color-secondary);
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    cursor: pointer;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 100%;
-}
-
-.menu-section-list a:hover {
-    color: var(--color-secondary);
-}
-
-.side-image-banner {
+    flex-direction: column;
     width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all 0.3s ease;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.side-image-banner::before {
-    content: '';
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  /* 타이틀(specials 클론): 클릭 가능 + 좌측 정렬 + +/- 인디케이터 */
+  .navigation .nav-mobile-accordion .nav-tab-title {
+    cursor: pointer !important;
+    width: 100% !important;
+    padding: 16px 8px !important;
+    text-align: left !important;
+    user-select: none !important;
+    position: relative !important;
+    display: block !important;
+    margin: 0 !important;
+    font-size: 24px !important;
+    font-family: 'Cormorant', serif !important;
+    font-weight: 500 !important;
+    color: var(--Black) !important;
+    text-decoration: none !important;
+  }
+  .navigation .nav-mobile-accordion .nav-tab-title::after {
+    content: "+";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-/* Close Button - 데스크탑과 모바일 공통 */
-.side-header .close-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: transparent;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    width: 45px;
-    height: 45px;
-    color: var(--color-secondary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1002;
-    transition: all 0.3s ease;
-}
-
-.side-header .close-button::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    transition: border-color 0.3s ease;
-}
-
-.side-header .close-button::after {
-    content: '×';
-    font-size: 22px;
-    font-weight: 300;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4em;
     line-height: 1;
-    color: var(--color-secondary);
-    transition: color 0.3s ease;
+    font-weight: 400;
+  }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .nav-tab-title::after {
+    content: "−";
+  }
+  /* 컨텐츠 영역: 기본 숨김, .is-open 시 펼침 */
+  .navigation .nav-mobile-accordion .nav-tab-content {
+    display: none !important;
+    padding: 0 8px 16px 8px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    white-space: normal !important;
+    width: auto !important;
+    flex: none !important;
+  }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .nav-tab-content {
+    display: flex !important;
+  }
+  /* 컨텐츠 내부 링크 정렬 */
+  .navigation .nav-mobile-accordion .nav-tab-content a.reservation,
+  .navigation .nav-mobile-accordion .nav-tab-content > * {
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
 }
 
-.side-header .close-button:hover {
-    background: var(--color-secondary);
-    border-color: var(--color-secondary);
-}
-
-.side-header .close-button:hover::before {
-    border-color: var(--color-secondary);
-}
-
-.side-header .close-button:hover::after {
-    color: white;
-}
-
-
-/* Hamburger Button - Independent of side header */
-.hamburger-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    z-index: 1001;
-    width: 45px;
-    height: 45px;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.hamburger-button::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0;
-    transition: border-color 0.3s ease;
-}
-
-.hamburger-button:hover {
-    background: var(--color-secondary);
-}
-
-.hamburger-button:hover::before {
-    border-color: var(--color-secondary);
-}
-
-.hamburger-button:hover .toggle-icon span {
-    background: white;
-}
-
-.hamburger-button .toggle-icon {
-    position: relative;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hamburger-button .toggle-icon span {
-    position: absolute;
-    width: 18px;
-    height: 2px;
-    background: var(--color-secondary);
-    transition: all 0.3s ease;
-    left: 0;
-}
-
-.hamburger-button .toggle-icon span:first-child {
-    top: 3px;
-}
-
-.hamburger-button .toggle-icon span:nth-child(2) {
-    top: 8px;
-}
-
-.hamburger-button .toggle-icon span:last-child {
-    top: 13px;
-}
-
-/* Hamburger button scroll state */
-.hamburger-button.scrolled {
-    background: var(--color-secondary);
-}
-
-.hamburger-button.scrolled .toggle-icon span {
-    background: white;
+/* >768 데스크톱/태블릿: nav-mobile-accordion 숨김 (원본 구조만 사용) */
+@media screen and (min-width: 769px) {
+  .navigation .nav-mobile-accordion {
+    display: none !important;
+  }
 }
 
 
-
-/* Accordion Content Animation */
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.accordion-content.active {
-  max-height: none;
-}
-
-.accordion-content.active.multi-column {
-   max-height: none;
-}
-
-/* Scrollable 클래스가 있어도 스크롤 없이 전체 표시 */
-.accordion-content.active.scrollable {
-    max-height: none;
-    overflow-y: visible;
-}
-
-/* Hide hamburger button when side header is expanded - 데스크탑과 모바일 공통 */
-.side-header.expanded + .hamburger-button {
-    display: none;
-}
-
-.hamburger-button.active {
-    display: none;
-}
-
-/* X shape when side header is expanded - Fixed (불필요해진 코드) */
-.side-header.expanded + .hamburger-button .toggle-icon span:first-child,
-.hamburger-button.active .toggle-icon span:first-child {
-    transform: rotate(45deg);
-    top: 8px;
-}
-
-.side-header.expanded + .hamburger-button .toggle-icon span:nth-child(2),
-.hamburger-button.active .toggle-icon span:nth-child(2) {
-    opacity: 0;
-}
-
-.side-header.expanded + .hamburger-button .toggle-icon span:last-child,
-.hamburger-button.active .toggle-icon span:last-child {
-    transform: rotate(-45deg);
-    top: 8px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .side-header {
-        left: -100%;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-    }
-
-    .side-header.expanded {
-        left: 0;
-        width: 100%;
-    }
-
-    .side-nav {
-        padding: 100px 40px 40px 40px;
-        text-align: center;
-    }
-
-    .nav-list {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    .nav-item-header {
-        font-size: 18px;
-        padding: 20px;
-        border-left: none;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-main-item > a {
-        font-size: 18px;
-        padding: 20px;
-        border-left: none;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-sub-list a {
-        font-size: 16px;
-        padding: 15px 20px;
-    }
-
-    /* Top Header Mobile */
-    .top-header {
-        height: 85px;
-    }
-
-    .top-header-content {
-        padding: 0 20px;
-        height: 85px;
-    }
-
-    .logo-text {
-        display: none; /* 모바일에서 숨김 */
-    }
-
-    /* YBS Button - Mobile */
-    .ybs-btn {
-        width: 45px;
-        height: 45px;
-        padding: 0;
-        font-size: 0;
-        display: none; /* 기본적으로 숨김 */
-        align-items: center;
-        justify-content: center;
-        position: relative !important;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-        transform: none !important;
-        transition: none !important;
-    }
-
-    .ybs-btn::before {
-        content: '';
-        position: absolute;
-        top: -4px;
-        left: -4px;
-        right: -4px;
-        bottom: -4px;
-        border: 1px solid var(--color-secondary);
-        border-radius: 0;
-        transition: border-color 0.3s ease;
-    }
-
-    .ybs-btn::after {
-        content: 'Y';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--color-secondary);
-        pointer-events: none;
-    }
-
-    .ybs-btn:hover::before,
-    .ybs-btn:active::before {
-        border-color: var(--color-secondary) !important;
-    }
-
-    .ybs-btn:hover,
-    .ybs-btn:active {
-        background: var(--color-secondary) !important;
-        border-color: var(--color-secondary) !important;
-        transform: none !important;
-    }
-
-    .ybs-btn:hover::after,
-    .ybs-btn:active::after {
-        color: white !important;
-    }
-
-    .ybs-btn.scrolled {
-        background: var(--color-secondary) !important;
-        border-color: var(--color-secondary) !important;
-    }
-
-    .ybs-btn.scrolled::before {
-        border-color: var(--color-secondary) !important;
-    }
-
-    .ybs-btn.scrolled::after {
-        color: white !important;
-    }
-
-    .book-now-btn {
-        width: auto;
-        height: 45px;
-        padding: 0 14px;
-        font-size: 20px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative !important;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-        transform: none !important;
-        transition: none !important;
-    }
-
-    .book-now-btn:hover,
-    .book-now-btn:active {
-        background: var(--color-secondary) !important;
-        border-color: var(--color-secondary) !important;
-        transform: none !important;
-    }
-
-    .book-now-btn:hover::before,
-    .book-now-btn:active::before {
-        border-color: var(--color-secondary) !important;
-    }
-
-    .book-now-btn:hover::after,
-    .book-now-btn:active::after {
-        content: none;
-    }
-
-    .book-now-btn::after {
-        content: none;
-    }
-
-    .book-now-btn.scrolled::after {
-        content: none;
-    }
-
-    /* Mobile menu section - overflow 처리 */
-    .menu-section {
-        overflow: auto;
-    }
-
-    /* Mobile menu section list - one item per line */
-    .menu-section-list li {
-        width: 100%;
-    }
-
-    .menu-section-list.multi-column li {
-        width: 100%;
-    }
-
-    /* Add margin-bottom to side image banner on mobile */
-    .side-image-banner {
-        margin-bottom: 60px;
-    }
-
-    /* Side logo mobile optimization */
-    .side-logo-text {
-        font-size: clamp(20px, 5vw, 28px);
-        padding: 0 10px;
-        max-width: 100%;
-    }
-
-    /* Mobile optimizations for close button */
-    .side-header .close-button {
-        font-size: 24px;
-    }
-
-    /* Hide hamburger button when sidebar is open - 데스크탑과 모바일 공통 */
-}
-
-/* FOUC Prevention */
-.top-header.fouc-hidden,
-.side-header.fouc-hidden {
-    opacity: 0 !important;
-}

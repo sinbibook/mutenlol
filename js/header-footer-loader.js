@@ -1,133 +1,132 @@
 /**
  * Header and Footer Loader
- * Dynamically loads header and footer templates into pages
+ * header.html / footer.html을 페이지에 동적으로 로드하고
+ * header.html에 포함된 스크립트를 추출하여 실행 후
+ * HeaderFooterMapper를 초기화
  */
 
 (function() {
     'use strict';
 
-    // Track if header and footer are both loaded
     let headerLoaded = false;
     let footerLoaded = false;
 
-    // Initialize mapper after both header and footer are loaded
-    async function tryInitializeMapper() {
-        if (headerLoaded && footerLoaded && window.HeaderFooterMapper) {
-            // 프리뷰 환경인지 확인 (iframe 내부)
-            const isPreview = window.parent !== window;
+    // 이미 로드된 스크립트 추적 (중복 로드 방지)
+    const loadedScripts = new Set();
 
-            if (!isPreview) {
-                // 일반 페이지: 기본 데이터로 매핑
-                const mapper = new window.HeaderFooterMapper();
-                await mapper.initialize();
-
-                // 매핑 완료 후 헤더/사이드바 표시
-                if (window.showHeaders) window.showHeaders();
-            }
-            // 프리뷰 환경: PreviewHandler가 처리하므로 여기서는 매핑하지 않음
+    // 스크립트 동적 로드 (Promise)
+    function loadScript(src) {
+        // 이미 로드됐거나 페이지에 존재하면 스킵
+        if (loadedScripts.has(src)) return Promise.resolve();
+        const existing = document.querySelector(`script[src="${src}"]`);
+        if (existing) {
+            loadedScripts.add(src);
+            return Promise.resolve();
         }
+
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => {
+                loadedScripts.add(src);
+                resolve();
+            };
+            script.onerror = () => {
+                console.error('Script load error:', src);
+                resolve(); // 에러여도 계속 진행
+            };
+            document.body.appendChild(script);
+        });
     }
 
-    // Load CSS
-    function loadCSS(href) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.head.appendChild(link);
+    // 헤더/푸터 모두 로드 완료 후 mapper 초기화
+    async function tryInitializeMapper() {
+        if (!headerLoaded || !footerLoaded) return;
+        if (!window.HeaderFooterMapper) return;
+
+        // 프리뷰 환경(iframe)이면 PreviewHandler가 처리하므로 스킵
+        const isPreview = window.parent !== window;
+        if (isPreview) return;
+
+        const mapper = new window.HeaderFooterMapper();
+        await mapper.initialize();
     }
 
-    // Load Header
+    // Header 로드
     async function loadHeader() {
-        try {
-            // Load header CSS first
-            loadCSS('styles/header.css');
+        const headerContainer = document.getElementById('header-container');
+        if (!headerContainer) {
+            headerLoaded = true;
+            await tryInitializeMapper();
+            return;
+        }
 
-            const response = await fetch('common/header.html', { cache: 'no-cache' });
+        try {
+            const response = await fetch('./common/header.html', { cache: 'no-cache' });
             const html = await response.text();
 
-            // Create a temporary container
+            // 임시 DOM에서 script 태그 추출
             const temp = document.createElement('div');
             temp.innerHTML = html;
 
-            // Find side header and top header directly from temp
-            const sideHeader = temp.querySelector('.side-header');
-            const topHeader = temp.querySelector('.top-header');
+            const scriptEls = temp.querySelectorAll('script[src]');
+            const scriptSrcs = Array.from(scriptEls).map(s => s.getAttribute('src'));
+            scriptEls.forEach(s => s.remove());
 
-            // Insert side header first (so it appears before top-header in DOM)
-            if (sideHeader) {
-                document.body.insertBefore(sideHeader, document.body.firstChild);
+            // HTML 주입 (스크립트 제외)
+            headerContainer.innerHTML = temp.innerHTML;
+
+            // 스크립트 순차 로드
+            for (const src of scriptSrcs) {
+                await loadScript(src);
             }
 
-            // Insert top header (hamburger-button is already inside)
-            if (topHeader) {
-                document.body.insertBefore(topHeader, document.body.firstChild);
-            }
-
-            // Load header JavaScript
-            const script = document.createElement('script');
-            script.src = 'js/common/header.js';
-            script.onload = function() {
-                // Re-initialize hamburger button after script loads
-                setTimeout(() => {
-                    const hamburgerButton = document.getElementById('hamburger-button');
-                    if (hamburgerButton && window.toggleSideHeader) {
-                        hamburgerButton.addEventListener('click', window.toggleSideHeader);
-                    }
-                }, 100);
-
-                // Mark header as loaded after script is fully loaded
-                headerLoaded = true;
-                tryInitializeMapper();
-            };
-            document.body.appendChild(script);
-
-            // Immediately check scroll position after header is loaded
-            if (window.scrollY > 50 || window.pageYOffset > 50) {
-                const header = document.querySelector('.header');
-                if (header) {
-                    header.classList.add('scrolled');
-                }
-            }
+            headerLoaded = true;
+            await tryInitializeMapper();
         } catch (error) {
             console.error('Error loading header:', error);
+            headerLoaded = true;
+            await tryInitializeMapper();
         }
     }
 
-    // Load Footer
+    // Footer nav 모바일 아코디언: 타이틀 클릭 시 .footer-nav-tab에 .is-open 토글
+    function setupFooterAccordion(root) {
+        const tabs = root.querySelectorAll('.footer-nav-tab');
+        tabs.forEach(tab => {
+            const item = tab.querySelector('.footer-nav-item');
+            if (!item) return;
+            item.addEventListener('click', () => {
+                tab.classList.toggle('is-open');
+            });
+        });
+    }
+
+    // Footer 로드
     async function loadFooter() {
+        const footerContainer = document.getElementById('footer-container');
+        if (!footerContainer) {
+            footerLoaded = true;
+            await tryInitializeMapper();
+            return;
+        }
+
         try {
-            const response = await fetch('common/footer.html', { cache: 'no-cache' });
-            if (response.ok) {
-                // Load footer CSS
-                loadCSS('styles/footer.css');
+            const response = await fetch('./common/footer.html', { cache: 'no-cache' });
+            const html = await response.text();
+            footerContainer.innerHTML = html;
 
-                const html = await response.text();
+            setupFooterAccordion(footerContainer);
 
-                // Create a temporary container
-                const temp = document.createElement('div');
-                temp.innerHTML = html;
-
-                // Append footer at the end of body
-                const footer = temp.querySelector('.footer');
-                if (footer) {
-                    document.body.appendChild(footer);
-                }
-
-                // Load footer JavaScript if exists
-                const script = document.createElement('script');
-                script.src = 'js/common/footer.js';
-                document.body.appendChild(script);
-
-                // Mark footer as loaded and try to initialize mapper
-                footerLoaded = true;
-                tryInitializeMapper();
-            }
+            footerLoaded = true;
+            await tryInitializeMapper();
         } catch (error) {
             console.error('Error loading footer:', error);
+            footerLoaded = true;
+            await tryInitializeMapper();
         }
     }
 
-    // Initialize
     document.addEventListener('DOMContentLoaded', function() {
         loadHeader();
         loadFooter();

@@ -1,291 +1,815 @@
-/* Reset & Base */
+/* Alex Brush (하드코딩 전용) */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+/* Montserrat (하드코딩 전용) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ==========================================
+   COMMON STYLES - 피그마 디자인 기반
+   ========================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+ul, ol, li {
+    list-style: none;
+}
+
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    font-size: 16px;
 }
 
 body {
     font-family: var(--font-ko-sub);
-    font-weight: 400;
-    line-height: 1.6;
-    color: #333;
+    color: #1c1b1f;
+    background: white;
     overflow-x: hidden;
-    background: var(--color-primary);
-    position: relative;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
 }
 
-/* Mobile viewport fix */
-@supports (-webkit-touch-callout: none) {
-    html {
-        height: -webkit-fill-available;
-    }
-}
-
-/* Ensure no extra space from line-height */
-.hero-section,
-.main-section {
-    line-height: 1;
-}
-
-/* Hero Fade In Effect for all pages */
-.hero-section,
-.main-section.fullscreen-slider,
-.fullscreen-slider-container,
-.hero-slider-section {
-    opacity: 0;
-    animation: heroFadeIn 1.8s ease-out forwards;
-    animation-delay: 0.2s;
-}
-
-@keyframes heroFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-ko-main);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--color-secondary);
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.3s ease;
 }
 
-a:hover {
-    opacity: 0.8;
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+/* ==========================================
+   HEADER (공통 헤더)
+   ========================================== */
 
-/* Common Layout Classes */
-.page-content {
+.site-header {
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
-    overflow: hidden;
-}
-
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Main Content */
-.main-content {
-    margin-left: 0;
-    transition: margin-left 0.3s ease;
-}
-
-/* Main Section */
-.main-section {
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    z-index: 990; /* 헤더(z-index: 999) 아래 - 헤더가 슬라이더 위에 오버레이됨 */
-}
-
-.content-wrap {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Scroll Animation Styles */
-.animate-element {
-    opacity: 0;
-    transition: all 0.8s ease;
-}
-
-.about-title.animate-element {
-    transform: translateY(30px);
-    transition-delay: 0.1s;
-}
-
-.about-title.animate-element.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* About Title */
-.about-title {
-    font-family: var(--font-ko-main);
-    font-size: 2rem;
-    line-height: 1.6;
-    color: var(--color-secondary);
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-/* About Description */
-.about-description-wrap {
-    text-align: center;
-    padding: 120px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* 27인치 모니터급 큰 화면에서만 80% */
-@media (min-width: 1920px) {
-    .content-wrap {
-        width: 80%;
-    }
-}
-
-/* 모바일에서 content-wrap 패딩 제거 및 main-section 조정 */
-@media (max-width: 768px) {
-    .main-section {
-        margin-top: -85px;
-    }
-
-    .content-wrap {
-        padding: 0;
-    }
-
-    .about-description-wrap {
-        padding: 80px 0;
-        margin: 0 -20px;
-    }
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.visible {
-    display: block !important;
-}
-
-/* Scrolling Marquee */
-.marquee-section {
-    padding: 0;
-    overflow: hidden;
-}
-
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.marquee-text {
-    display: inline-block;
-    animation: marquee 60s linear infinite;
-    font-family: var(--font-en-main);
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--color-secondary);
-    letter-spacing: 8px;
-    font-style: italic;
-}
-
-.marquee-text span {
-    padding-right: 80px;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* Full Banner Section */
-.full-banner {
-    height: 70vh;
-    background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+    height: 120px;
+    z-index: 1001;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
+    transition: background 0.3s var(--ease-elegant);
+}
+
+.header-wrapper {
+    width: 100%;
+    max-width: 1600px;
+    flex: 1 1 auto;
+    height: 100%;
+    position: relative;
+    z-index: 1004;
+}
+
+.header-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.header-logo {
+    flex-shrink: 0;
+    width: 210px;
+    height: 88px;
+}
+
+.header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    align-self: flex-end;
+    padding-bottom: 12px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu > li > a {
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    letter-spacing: -0.225px;
+    padding: 0 15px;
+}
+
+.btn-book {
+    background: white;
+    color: black !important;
+    padding: 11px 24px !important;
+    border-radius: 50px;
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.225px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-ybs {
+    background: white;
+    color: black !important;
+    padding: 11px 24px !important;
+    border-radius: 50px;
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.225px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.ybs-short {
+    display: none;
+}
+
+/* 버튼 그룹 - BOOK과 YBS 버튼을 나란히 배치 */
+.button-group {
+    display: flex !important;
+    align-items: center;
+    gap: 20px !important;
+}
+
+/* 데스크톱: 모바일 전용 요소 숨김 */
+.header-menu-btn {
+    display: none;
+}
+
+.book-short {
+    display: none;
+}
+
+/* ==========================================
+   HEADER DROPDOWN
+   ========================================== */
+
+/* 헤더 hover/focus 시 배경 전환 */
+.site-header:hover,
+.site-header:focus-within {
+    background: rgba(40, 40, 40, 0.85);
+}
+
+/* 드롭다운 배경 패널 — 데스크톱: 배경만 표시, 콘텐츠 숨김 */
+.header-dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(40, 40, 40, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s var(--ease-elegant), visibility 0s linear 0.15s;
+    z-index: 1002;
+}
+
+.site-header:hover .header-dropdown,
+.site-header:focus-within .header-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.15s var(--ease-elegant), visibility 0s linear 0s;
+}
+
+/* 데스크톱: 모바일 아코디언 콘텐츠 숨김 */
+.header-dropdown-inner {
+    display: none;
+}
+
+/* 데스크톱: 각 대메뉴 아래 서브메뉴 */
+.has-dropdown {
+    position: relative;
+}
+
+/* hover 브릿지: 메뉴와 서브메뉴 사이 빈 공간을 채워 hover 유지 */
+.has-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    height: 50px;
+    background: transparent;
+}
+
+.dropdown-sub {
+    position: absolute;
+    top: calc(100% + 40px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1003;
+    transition: opacity 0.15s var(--ease-elegant), visibility 0s linear 0.15s;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-bottom: 10px;
+}
+
+.site-header:hover .dropdown-sub,
+.site-header:focus-within .dropdown-sub {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.15s var(--ease-elegant), visibility 0s linear 0s;
+}
+
+.dropdown-sub a {
+    font-family: var(--font-ko-sub);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    padding: 0 15px;
+    transition: color 0.2s var(--ease-elegant);
+    max-width: 200px;
     overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    flex-shrink: 0;
 }
 
-/* Desktop only - parallax effect */
-@media (min-width: 1024px) {
-    .full-banner {
-        background-attachment: fixed;
+.dropdown-sub a:hover,
+.dropdown-sub a:focus {
+    color: white;
+}
+
+/* 모바일 아코디언 기본 스타일 (데스크톱에서는 header-dropdown-inner가 숨김) */
+.dropdown-columns {
+    display: flex;
+    gap: 33px;
+    padding: 28px 0 45px;
+}
+
+.dropdown-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 100px;
+}
+
+.dropdown-col a {
+    font-family: var(--font-ko-sub);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    transition: color 0.2s var(--ease-elegant);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.dropdown-col a:hover,
+.dropdown-col a:focus {
+    color: white;
+}
+
+.dropdown-col-title {
+    display: none;
+}
+
+.col-arrow {
+    display: none;
+}
+
+.dropdown-col-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 드롭다운 스크롤바 커스텀 스타일 */
+.header-dropdown,
+.dropdown-sub,
+.dropdown-col-links {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.85) #2a2d35;
+}
+
+.header-dropdown::-webkit-scrollbar,
+.dropdown-sub::-webkit-scrollbar,
+.dropdown-col-links::-webkit-scrollbar {
+    width: 4px;
+}
+
+.header-dropdown::-webkit-scrollbar-track,
+.dropdown-sub::-webkit-scrollbar-track,
+.dropdown-col-links::-webkit-scrollbar-track {
+    background: #2a2d35;
+    border-radius: 3px;
+}
+
+.header-dropdown::-webkit-scrollbar-thumb,
+.dropdown-sub::-webkit-scrollbar-thumb,
+.dropdown-col-links::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 3px;
+}
+
+.header-dropdown::-webkit-scrollbar-thumb:hover,
+.dropdown-sub::-webkit-scrollbar-thumb:hover,
+.dropdown-col-links::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* ==========================================
+   FOOTER (공통 푸터)
+   ========================================== */
+
+.site-footer {
+    background: var(--color-primary);
+    margin-top: 0;
+    padding: 60px 0 50px;
+}
+
+.footer-wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 40px 0;
+}
+
+.footer-left {
+    flex-shrink: 0;
+}
+
+.footer-copyright {
+    font-family: var(--font-ko-sub);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-contact {
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.icon-phone,
+.icon-map {
+    width: 26px;
+    height: 26px;
+}
+
+.phone-number {
+    font-family: var(--font-ko-sub);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.5;
+    color: black;
+    margin: 0;
+}
+
+.address {
+    font-family: var(--font-ko-sub);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 2;
+    color: black;
+    margin: 0;
+}
+
+.footer-info {
+    margin-top: 12px;
+}
+
+.footer-info p {
+    font-family: var(--font-ko-sub);
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    margin: 0;
+}
+
+.footer-info strong {
+    font-weight: 700;
+}
+
+.footer-divider {
+    max-width: 1600px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0 auto 20px;
+}
+
+.footer-info-wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: right;
+}
+
+/* ==========================================
+   TABLET RESPONSIVE (max-width: 1140px)
+   ========================================== */
+
+@media (max-width: 1140px) {
+    .book-full {
+        display: none;
+    }
+
+    .book-short {
+        display: inline;
     }
 }
 
-/* Responsive Marquee */
+
+/* ==========================================
+   MEDIUM RESPONSIVE (max-width: 1400px)
+   ========================================== */
+
+@media (max-width: 1400px) {
+    .header-nav {
+        gap: 50px;
+    }
+
+    .nav-menu {
+        gap: 50px;
+    }
+
+    .nav-menu > li > a {
+        font-size: 16px;
+    }
+
+    .button-group {
+        gap: 12px !important;
+    }
+
+    .dropdown-sub a {
+        font-size: 14px;
+        padding: 0 8px;
+        max-width: 6em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* ==========================================
+   TABLET RESPONSIVE (max-width: 1100px)
+   ========================================== */
+
+@media (max-width: 1100px) {
+    .header-inner {
+        padding: 0 20px;
+    }
+
+    .header-logo {
+        flex-shrink: 1;
+        min-width: 120px;
+    }
+
+    .header-nav {
+        gap: 40px;
+    }
+
+    .nav-menu {
+        gap: 40px;
+    }
+
+    .nav-menu > li > a {
+        font-size: 15px;
+        padding: 0 8px;
+        white-space: nowrap;
+    }
+
+    .btn-book,
+    .btn-ybs {
+        padding: 9px 14px !important;
+        font-size: 13px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .book-full {
+        display: none;
+    }
+
+    .book-short {
+        display: inline;
+    }
+
+    .button-group {
+        gap: 10px !important;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE (max-width: 768px)
+   ========================================== */
+
 @media (max-width: 768px) {
-    .marquee-text {
-        font-size: 2rem;
-        letter-spacing: 4px;
+
+    /* --- HEADER --- */
+    .site-header {
+        height: 70px;
     }
 
-    .marquee-text span {
-        padding-right: 50px;
+    .header-wrapper {
+        max-width: 100%;
     }
 
-    .full-banner {
-        height: 60vh;
-        background-attachment: scroll;
-    }
-}
-
-@media (max-width: 480px) {
-    .marquee-section {
-        padding: 10px 0;
+    .header-inner {
+        padding: 0 20px;
     }
 
-    .marquee-text {
-        font-size: 2rem;
-        letter-spacing: 2px;
-        font-weight: bold;
-        animation: marquee 40s linear infinite;
+    .header-logo {
+        width: 120px;
+        height: 50px;
     }
 
-    .marquee-text span {
-        padding-right: 30px;
+    .header-nav {
+        gap: 16px;
+        align-self: center;
+        padding-bottom: 0;
     }
 
-    .full-banner {
-        height: 50vh;
+    /* 모바일: Menu 버튼 표시 */
+    .header-menu-btn {
+        display: block;
+        font-family: 'Cormorant', serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: white;
+        letter-spacing: -0.225px;
+        cursor: pointer;
+    }
+
+    /* 모바일: 개별 메뉴 숨김, Book 버튼만 표시 */
+    .nav-menu {
+        gap: 16px;
+    }
+
+    .nav-menu li {
+        display: none;
+    }
+
+    .nav-menu li:last-child {
+        display: flex;
+    }
+
+    /* 모바일: 버튼 그룹을 우측 하단 fixed로 배치 */
+    .button-group {
+        position: fixed !important;
+        right: 20px !important;
+        bottom: 30px !important;
+        gap: 12px !important;
+        flex-direction: column !important;
+        z-index: 999;
+    }
+
+    .button-group .btn-book,
+    .button-group .btn-ybs {
+        width: 90px;
+        text-align: center;
+    }
+
+    .book-full {
+        display: none;
+    }
+
+    .book-short {
+        display: inline;
+    }
+
+    .ybs-full {
+        display: none;
+    }
+
+    .ybs-short {
+        display: inline;
+    }
+
+    .btn-book {
+        padding: 8px 0;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-ybs {
+        padding: 8px 0;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* --- DROPDOWN (모바일) --- */
+
+    /* 데스크톱 서브메뉴 숨김 */
+    .dropdown-sub {
+        display: none !important;
+    }
+
+    /* 모바일: hover 배경 비활성화 */
+    .site-header:hover,
+    .site-header:focus-within {
+        background: none;
+    }
+
+    .site-header.menu-active {
+        background: rgba(40, 40, 40, 0.85);
+    }
+
+    /* 모바일 드롭다운 패널 */
+    .header-dropdown {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none;
+        border-top: none;
+        transition: opacity 0.2s var(--ease-elegant), visibility 0s linear 0.2s;
+    }
+
+    .site-header:hover .header-dropdown,
+    .site-header:focus-within .header-dropdown {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .site-header .header-dropdown.is-open,
+    .site-header:hover .header-dropdown.is-open,
+    .site-header:focus-within .header-dropdown.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 0.2s var(--ease-elegant), visibility 0s linear 0s;
+    }
+
+    /* 모바일: 아코디언 콘텐츠 표시 */
+    .header-dropdown-inner {
+        display: block;
+        padding: 0 20px;
+    }
+
+    .dropdown-columns {
+        gap: 0;
+        padding: 10px 0 30px;
+        flex-direction: column;
+    }
+
+    .dropdown-col {
+        align-items: flex-start;
+        text-align: left;
+        min-width: auto;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .dropdown-col-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: 'Cormorant', serif;
+        font-weight: 500;
+        font-size: 15px;
+        color: white;
+        letter-spacing: -0.225px;
+        padding-bottom: 8px;
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .col-arrow {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-right: 1.5px solid white;
+        border-bottom: 1.5px solid white;
+        transform: rotate(45deg);
+        transition: transform 0.25s var(--ease-elegant);
+    }
+
+    .dropdown-col.is-expanded .col-arrow {
+        transform: rotate(-135deg);
+    }
+
+    .dropdown-col-links {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s var(--ease-elegant), padding 0.3s var(--ease-elegant);
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .dropdown-col.is-expanded .dropdown-col-links {
+        max-height: 1000px;
+        padding: 8px 0 4px;
+    }
+
+    /* --- FOOTER --- */
+    .site-footer {
+        padding: 40px 0 30px;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+
+    .contact-item {
+        justify-content: flex-start;
+    }
+
+    .phone-number {
+        font-size: 22px;
+    }
+
+    .footer-divider {
+        margin: 0 20px 16px;
+    }
+
+    .footer-info-wrapper {
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    .footer-info p {
+        font-size: 13px;
     }
 }

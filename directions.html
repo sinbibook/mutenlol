@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="숙소 설명">
-    <meta name="keywords" content="SEO 키워드">
-    <title>오시는길 - 숙소명</title>
+    <title>오시는길</title>
 
-    <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/slider.css">
-    <link rel="stylesheet" href="styles/directions.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/theme.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/quote-section.css">
+    <link rel="stylesheet" href="./styles/directions.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap">
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="강릉 뮤튼롤 - 오시는길" />
   <meta property="og:description" content="강릉 뮤튼롤
 muten: 음소거 lol: 박장대소 
 온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
-  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-udypibt7lb.jpg" />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
   <meta property="og:url" content="https://mutenlol.kr" />
 
   <!-- Twitter Card Meta Tags -->
@@ -26,91 +33,92 @@ muten: 음소거 lol: 박장대소
   <meta name="twitter:description" content="강릉 뮤튼롤
 muten: 음소거 lol: 박장대소 
 온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
-  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-udypibt7lb.jpg" />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
 </head>
 <body>
+    <div class="direction">
+      <!-- header.html include -->
+      <div id="header-container"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <section class="main-section fullscreen-slider">
-          <div class="fullscreen-slider-container">
-            <div class="fullscreen-slider-inner" data-directions-slider>
-              <!-- 동적으로 슬라이드가 생성됩니다 -->
+      <main class="content">
+        <section class="con-2">
+          <div class="bg2">
+            <!-- CUSTOM FIELD: 오시는길 메인 소개 섹션 이미지 매핑 (동적생성) -->
+            <div class="bg-slides" data-directions-images>
+              <!-- 동적 생성 (directions-mapper.js) -->
             </div>
-            <div class="fullscreen-slider-content">
-              <h2 class="fullscreen-slider-title centered">Location</h2>
-            </div>
-
-            <div class="fullscreen-slider-nav">
-              <span class="nav-arrow nav-prev">‹</span>
-              <span class="nav-current">01</span>
-              <span class="nav-divider">|</span>
-              <span class="nav-total">03</span>
-              <span class="nav-arrow nav-next">›</span>
+            <div class="bg-child">
+              <div class="address-container-parent">
+                <div class="address-container">
+                  <div class="direction-info">
+                    <!-- 하드코딩, 매핑x -->
+                    <h2 class="direction2">Direction</h2>
+                  </div>
+                  <div class="direction-divider"></div>
+                </div>
+                <div class="arrow-container">
+                  <div class="arrow2">
+                    <img class="arrow-child2 arrow-prev" role="button" tabindex="0" aria-label="이전 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                    <h3 class="h36 arrow-num-current">01</h3>
+                    <div class="arrow-child3"></div>
+                    <h3 class="h36 arrow-num-total">00</h3>
+                    <img class="arrow-child4 arrow-next" role="button" tabindex="0" aria-label="다음 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        <div class="content-wrap">
-           <div class="about-description-wrap">
-            <!-- CUSTOM FIELD : 메인 소개 섹션 타이틀 매핑 -->
-            <h2 class="about-title animate-element" data-directions-title></h2>
+      </main>
 
-            <div class="location-details animate-element">
-                <div class="location-address-wrapper animate-element">
-                    <svg class="location-icon" viewBox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <!-- 숙소 주소 매핑 -->
-                    <p class="location-address" data-directions-address></p>
-                </div>
+      <section class="location-info-wrapper">
+        <div class="location-info">
+          <div class="details-container">
+            <!-- 하드코딩, 매핑x -->
+            <h2 class="direction3">Direction</h2>
+            <!-- 숙소 주소 매핑 -->
+            <div class="address-details">
+              <h3 class="h38" data-directions-address></h3>
             </div>
-            <!-- CUSTOM FIELD : 안내사항 섹션 매핑, 없으면 display none -->
-             <div class="location-note animate-element" data-directions-notes></div>
-           </div>
-
-           <!-- 지도 섹션 -->
-           <section class="map-section animate-element">
-
-               <div class="map-container animate-element">
-                   <div id="kakao-map"></div>
-               </div>
-           </section>
+          </div>
+          <div class="map-container">
+            <div class="img1">
+              <!-- kakao map : property.latitude, property.longitude 매핑 -->
+              <div id="kakao-map" style="width:100%;height:100%"></div>
+            </div>
+          </div>
         </div>
-    </main>
+      </section>
+
+      <!-- CUSTOM FIELD : index closing 섹션 데이터 재사용 -->
+      <section class="quote-section" data-closing-section>
+        <img class="quote-bg" loading="lazy" alt="" src="" />
+        <div class="quote-content">
+          <b class="quote-title" data-closing-title></b>
+          <b class="quote-body" data-closing-description></b>
+        </div>
+      </section>
+
+      <!-- footer.html include -->
+      <div id="footer-container"></div>
+    </div>
 
     <!-- Kakao Map SDK -->
-    <script type="text/javascript" src="js/kakao-maps-sdk.js"></script>
+    <script type="text/javascript" src="./js/kakao-maps-sdk.js"></script>
 
-    <!-- Include ImageWithFallback script -->
-    <script src="js/image-with-fallback.js"></script>
+    <!-- Scripts -->
+    <script src="./js/common.js"></script>
+    <script src="./js/common/scroll-reveal.js"></script>
+    <script src="./js/pages/directions.js"></script>
 
-    <!-- Common JavaScript -->
-    <script src="js/common.js"></script>
+    <!-- Data Mapper -->
+    <script src="./js/image-helpers.js"></script>
+    <script src="./js/data-mapper/core/base-mapper.js"></script>
+    <script src="./js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="./js/data-mapper/pages/directions-mapper.js"></script>
+    <script src="./js/preview-handler.js"></script>
 
-    <!-- Image Helpers -->
-    <script src="js/image-helpers.js"></script>
-
-    <!-- Base Data Mapper -->
-    <script src="js/data-mapper/core/base-mapper.js"></script>
-
-    <!-- Directions Page Mapper -->
-    <script src="js/data-mapper/pages/directions-mapper.js"></script>
-
-    <!-- Preview Handler for Admin Integration -->
-    <script src="js/preview-handler.js"></script>
-
-    <!-- Header Footer Mapper -->
-    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
-
-    <!-- Header and Footer Loader -->
-    <script src="js/header-footer-loader.js"></script>
-
-    <!-- Fullscreen Slider Component -->
-    <script src="js/components/fullscreen-slider.js"></script>
-
-    <!-- Page-specific script -->
-    <script src="js/pages/directions.js"></script>
-
+    <!-- Header / Footer Loader -->
+    <script src="./js/header-footer-loader.js"></script>
 </body>
 </html>

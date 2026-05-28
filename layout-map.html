@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙소 배치도</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/theme.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/quote-section.css">
+    <link rel="stylesheet" href="./styles/directions.css">
+    <link rel="stylesheet" href="./styles/layout-map.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap">
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="강릉 뮤튼롤" />
+  <meta property="og:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 
+온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+  <meta property="og:url" content="https://mutenlol.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="강릉 뮤튼롤" />
+  <meta name="twitter:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 
+온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+</head>
+<body>
+    <div class="direction layout-map-page">
+        <!-- header.html include -->
+        <div id="header-container"></div>
+
+        <main class="content">
+            <section class="con-2">
+                <div class="bg2">
+                    <!-- Hero Slider Images -->
+                    <div class="bg-slides" data-layout-map-hero-images></div>
+                    <div class="bg-child">
+                        <div class="address-container-parent">
+                            <div class="address-container">
+                                <div class="direction-info">
+                                    <h2 class="direction2" data-layout-map-hero-title>Layout Map</h2>
+                                </div>
+                                <div class="direction-divider"></div>
+                            </div>
+                            <div class="arrow-container">
+                                <div class="arrow2">
+                                    <img class="arrow-child2 arrow-prev" role="button" tabindex="0" aria-label="이전 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                                    <h3 class="h36 arrow-num-current">01</h3>
+                                    <div class="arrow-child3"></div>
+                                    <h3 class="h36 arrow-num-total">01</h3>
+                                    <img class="arrow-child4 arrow-next" role="button" tabindex="0" aria-label="다음 슬라이드" loading="lazy" alt="" src="./public/Rectangle-37.svg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Content Wrapper with Background Icon -->
+        <div class="layout-map-content-wrapper">
+            <img class="bg-icon" src="./public/Mask-group@2x.png" alt="" />
+
+            <!-- Section Title, Description & Image Grid (from homepage.customFields.pages.layoutMap.sections[0].about) -->
+            <section class="layout-section">
+                <div class="layout-section-inner">
+                    <h2 class="layout-section-title" data-layout-map-title>숙소 배치도</h2>
+                    <p class="layout-section-desc" data-layout-map-description></p>
+                    <div class="layout-images-grid" data-layout-map-images></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== QUOTE ===================== -->
+        <section class="quote-section" data-closing-section>
+            <img class="quote-bg" loading="lazy" alt="" src="" />
+            <div class="quote-content">
+                <b class="quote-title" data-closing-title></b>
+                <b class="quote-body" data-closing-description></b>
+            </div>
+        </section>
+
+        <!-- footer.html include -->
+        <div id="footer-container"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/common.js"></script>
+    <script src="./js/common/scroll-reveal.js"></script>
+    <script src="./js/pages/layout-map.js"></script>
+
+    <!-- Data Mapper -->
+    <script src="./js/image-helpers.js"></script>
+    <script src="./js/data-mapper/core/base-mapper.js"></script>
+    <script src="./js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="./js/data-mapper/pages/layout-map-mapper.js"></script>
+    <script src="./js/preview-handler.js"></script>
+
+    <!-- Header / Footer Loader -->
+    <script src="./js/header-footer-loader.js"></script>
+</body>
+</html>

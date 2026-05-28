@@ -1,14 +1,15 @@
 {
   "metadata": {
-    "version": "1.46.0",
-    "generatedAt": "2026-05-28T01:37:10.231228800Z",
-    "templateType": "gallery_sidebar",
+    "version": "1.47.0",
+    "generatedAt": "2026-05-28T01:56:23.663499641Z",
+    "templateType": "fullpage_mood",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
   },
   "property": {
     "id": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "name": "강릉 뮤튼롤",
+    "nameEn": "Gangneung mutenlol",
     "description": "강릉 뮤튼롤\nmuten: 음소거 lol: 박장대소 \n온전한 쉼, 자연과 하나 되는 공간, 머무르다.",
     "subtitle": "아름다운 바다를 품고있는 뮤튼롤",
     "address": "강원특별자치도 강릉시 연곡면 해안로 1391",
@@ -23,6 +24,9 @@
     "reservationGuide": "미성년자는 보호자 없이 예약 및 입실 불가하며, 위반 시 환불 없이 퇴실됩니다.\n객실 요금은 기준 인원 기준이며, 초과 시 추가 요금이 발생합니다.\n최대 인원 초과 시 입실 불가하며, 이로 인한 환불은 불가입니다. (유아, 어린이 포함)\n현장 추가 요금은 숙소 측에 사전 확인 바랍니다.\n수영장 등 부대시설은 날씨나 상황에 따라 이용이 제한될 수 있으니 사전 확인 바랍니다.\n당일 예약 후 취소 시 환불 불가하며, 늦은 시간 당일 예약 후 즉시 방문 시 입실 불가할 수 있으니 숙소 확인 후 예약해 주세요.\n취소 수수료는 구매처마다 다를 수 있습니다.\n시스템 오류로 인해 정상가와 다른 금액으로 예약이 진행된 경우, 부득이하게 예약이 취소될 수 있습니다.\n전 객실 금연이며, 흡연은 지정된 장소에서만 가능합니다.",
     "province": "강원특별자치도",
     "city": "강릉시",
+    "domain": "mutenlol.kr",
+    "realtimeBookingId": "https://map.naver.com/p/entry/place/1576877066",
+    "ybsId": "78863",
     "amenities": [
       "WiFi",
       "주차장",
@@ -633,11 +637,7 @@
         "surrounding": [ ],
         "commonArea": [ ]
       }
-    ],
-    "nameEn": "Gangneung mutenlol",
-    "domain": "mutenlol.kr",
-    "realtimeBookingId": "https://map.naver.com/p/entry/place/1576877066",
-    "ybsId": "78863"
+    ]
   },
   "rooms": [
     {
@@ -2855,6 +2855,7 @@
     }
   ],
   "homepage": {
+    "id": "c950d417-0cd5-4112-8957-2f9514ac2d59",
     "domain": "mutenlol.kr",
     "templateType": "fullpage_mood",
     "images": [
@@ -2877,8 +2878,8 @@
       "keywords": "강릉펜션, 강원도펜션, 강릉오션뷰펜션, 강릉스파펜션, 강릉자쿠지펜션, 강릉수영장펜션, 강릉감성펜션, 강릉주문진펜션, 강릉주문진, 개별바베큐"
     },
     "socialLinks": {
-      "instagram": "https://www.instagram.com/mutenlol",
       "facebook": null,
+      "instagram": "https://www.instagram.com/mutenlol",
       "blog": null,
       "youtube": null
     },
@@ -3613,9 +3614,6 @@
             }
           ]
         },
-        "layoutMap": {
-          "sections": [ ]
-        },
         "nearbyAttractions": {
           "sections": [
             {
@@ -3683,32 +3681,9 @@
               "enabled": true
             }
           ]
-        }
-      },
-      "theme": {
-        "font": {
-          "koSub": {
-            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
-            "key": "pretendard",
-            "woff2": null,
-            "family": "Pretendard"
-          },
-          "enMain": {
-            "cdn": "https://use.typekit.net/vll4umt.css",
-            "key": "amandine",
-            "woff2": null,
-            "family": "amandine"
-          },
-          "koMain": {
-            "cdn": null,
-            "key": "aritaburi",
-            "woff2": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff",
-            "family": "Aritaburi"
-          }
         },
-        "color": {
-          "primary": "#FAFAFA",
-          "secondary": "#FF9E9E"
+        "layoutMap": {
+          "sections": [ ]
         }
       },
       "popup": {
@@ -3765,7 +3740,34 @@
           }
         ]
       },
+      "theme": {
+        "font": {
+          "koMain": {
+            "cdn": null,
+            "key": "aritaburi",
+            "woff2": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff",
+            "family": "Aritaburi"
+          },
+          "koSub": {
+            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
+            "key": "pretendard",
+            "woff2": null,
+            "family": "Pretendard"
+          },
+          "enMain": {
+            "cdn": "https://use.typekit.net/vll4umt.css",
+            "key": "amandine",
+            "woff2": null,
+            "family": "amandine"
+          }
+        },
+        "color": {
+          "primary": "#FAFAFA",
+          "secondary": "#FF9E9E"
+        }
+      },
       "property": {
+        "name": "강릉 뮤튼롤",
         "images": [
           {
             "id": "0a62fc4e-e8d1-4e90-86eb-b67a73bfd28f",
@@ -3894,7 +3896,6 @@
             "category": "property_exterior"
           }
         ],
-        "name": "강릉 뮤튼롤",
         "nameEn": "Mutenlol"
       },
       "roomtypes": [
@@ -5722,7 +5723,6 @@
           ]
         }
       ]
-    },
-    "id": "c950d417-0cd5-4112-8957-2f9514ac2d59"
+    }
   }
 }
