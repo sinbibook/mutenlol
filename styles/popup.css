@@ -17,7 +17,7 @@
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s var(--ease-elegant), visibility 0.3s var(--ease-elegant);
 }
 
 .popup-overlay.active {
@@ -55,7 +55,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s var(--ease-elegant), transform 0.2s var(--ease-elegant);
 }
 
 .popup-close:hover {
@@ -138,7 +138,7 @@
     color: var(--color-secondary, #78716c);
     cursor: pointer;
     padding: 4px 0;
-    transition: color 0.2s ease;
+    transition: color 0.2s var(--ease-elegant);
     background: none;
     border: none;
 }
@@ -153,7 +153,7 @@
     color: var(--color-secondary, #78716c);
     cursor: pointer;
     padding: 4px 8px;
-    transition: color 0.2s ease;
+    transition: color 0.2s var(--ease-elegant);
     background: none;
     border: none;
 }
@@ -193,7 +193,7 @@
     opacity: 0;
     visibility: hidden;
     transform: scale(1.05);
-    transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.6s var(--ease-elegant), visibility 0.6s var(--ease-elegant), transform 0.6s var(--ease-elegant);
 }
 
 .popup-slide.active {
@@ -225,7 +225,7 @@
     justify-content: center;
     z-index: 10;
     border-radius: 50%;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s var(--ease-elegant), transform 0.2s var(--ease-elegant);
 }
 
 .popup-arrow:hover {
@@ -260,7 +260,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s var(--ease-elegant), transform 0.2s var(--ease-elegant);
 }
 
 .popup-dot.active {

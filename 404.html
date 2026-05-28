@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="페이지를 찾을 수 없습니다">
+    <title>404 - 페이지를 찾을 수 없습니다</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/theme.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap">
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error-page {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #footer-placeholder {
+            margin-top: auto;
+        }
+
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 120px 20px 50px;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: clamp(60px, 10vw, 120px);
+            font-weight: 900;
+            color: var(--color-secondary, #658399);
+            line-height: 1;
+            margin-bottom: 20px;
+            font-family: var(--font-italiana);
+        }
+
+        .error-title {
+            font-size: clamp(24px, 5vw, 40px);
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: var(--font-pretendard);
+        }
+
+        .error-message {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 500px;
+            font-family: var(--font-pretendard);
+        }
+
+        .error-button {
+            display: inline-block;
+            padding: 14px 48px;
+            background: var(--color-secondary, #658399);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-pretendard);
+            font-size: 16px;
+        }
+
+        .error-button:hover {
+            background: #5a7185;
+            transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .error-container {
+                padding: 80px 20px 30px;
+            }
+
+            .error-code {
+                font-size: 70px;
+            }
+        }
+    </style>
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="강릉 뮤튼롤" />
+  <meta property="og:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 
+온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+  <meta property="og:url" content="https://mutenlol.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="강릉 뮤튼롤" />
+  <meta name="twitter:description" content="강릉 뮤튼롤
+muten: 음소거 lol: 박장대소 
+온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
+</head>
+<body>
+    <div class="error-page">
+        <!-- Include Header -->
+        <div id="header-placeholder"></div>
+
+        <!-- Error Content -->
+        <main class="error-container">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">페이지를 찾을 수 없습니다</h2>
+            <p class="error-message">
+                요청하신 페이지가 존재하지 않거나 비활성화되었습니다.<br>
+                홈으로 돌아가기 버튼을 클릭해주세요.
+            </p>
+            <button class="error-button" onclick="window.location.href='./index.html'">
+                홈으로 돌아가기
+            </button>
+        </main>
+
+        <!-- Include Footer -->
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/common.js"></script>
+    <script src="./js/image-helpers.js"></script>
+    <script src="./js/data-mapper/core/base-mapper.js"></script>
+    <script src="./js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="./js/preview-handler.js"></script>
+    <script src="./js/header-footer-loader.js"></script>
+</body>
+</html>

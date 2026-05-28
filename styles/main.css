@@ -1,275 +1,2703 @@
+/* 전역 transition/animation 차단 룰 제거됨 — 우아한 cubic-bezier(--ease-elegant) 모션 활성화
+   (이전: 모든 모션 비활성화 + hover 시 layout shift 차단용 전역 룰이 있었음) */
 
-.about-description.animate-element {
-    transform: translateY(30px);
-    transition-delay: 0.3s;
+/* 본문 영역(.main 내부, 단 site-header 제외)에서 hover로 인한 모든 시각적 변화 차단
+   - pointer-events: none → 자식들은 마우스 hover 매칭 자체가 안 됨
+   - 단 a / button / input 등 인터랙티브 요소는 pointer-events 복구 */
+.main .con-1-wrapper *,
+.main .con-2 *,
+.main .con-3 *,
+.main .img-r-parent *,
+.main .img-r-parent,
+.main .frame-wrapper,
+.main .quote-section *,
+.main .quote-section {
+  pointer-events: none !important;
+}
+/* 인터랙티브 요소(링크/버튼/입력)는 pointer-events 복구 */
+.main a,
+.main a *,
+.main button,
+.main button *,
+.main [role="button"],
+.main [role="button"] *,
+.main input,
+.main select,
+.main textarea,
+.main label {
+  pointer-events: auto !important;
+}
+/* con-3 내부 인터랙티브 요소 pointer-events 복구 (specificity 보완) */
+.main .img-r-parent .con-3 a,
+.main .img-r-parent .con-3 a *,
+.main .img-r-parent .con-3 button,
+.main .img-r-parent .con-3 button * {
+  pointer-events: auto !important;
 }
 
-.about-description.animate-element.animate {
-    opacity: 1;
-    transform: translateY(0);
+.main,
+.main:hover{
+  background-color: var(--color-whitesmoke);
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-0);
+  align-items: stretch;
+  line-height: normal;
+  letter-spacing: normal;
+}.main{
+  position: relative;
+  overflow: hidden;
+}.main:hover{
+  justify-content: flex-start;
+}.con-1-wrapper{
+  align-self: stretch;
+  height: 1082px;
+  padding: var(--padding-0);
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+  transform: rotate(0deg);
+  text-align: left;
+  font-size: 66px;
+  color: var(--color-white);
+  font-family: var(--font-italiana);
+}.con-1,
+.con-1-wrapper,
+.con-1-wrapper:hover{
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-0);
+}.con-1-wrapper:hover{
+  align-self: stretch;
+  width: 100%;
+  height: 1082px;
+  flex-direction: row;
+  justify-content: flex-start;
+  transform: rotate(0deg);
+  padding: var(--padding-0);
+  box-sizing: border-box;
+  max-width: 100%;
+}.con-1{
+  background-color: var(--color-white);
+  overflow: hidden;
+  z-index: 1;
+}.bg,
+.con-1,
+.con-1:hover{
+  align-self: stretch;
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+}.con-1:hover{
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  justify-content: flex-start;
+}.bg{
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--padding-0) var(--padding-0) 53px;
+  gap: var(--gap-0);
+  background-image: url(../public/bg@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
+}.bg,
+.bg:hover,
+.navigation-off,
+.navigation-off:hover{
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}.bg:hover{
+  flex: 1;
+  align-self: stretch;
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-0);
+  justify-content: flex-end;
+  padding: var(--padding-0) var(--padding-0) 53px;
+  max-width: 100%;
+}.navigation-off,
+.navigation-off:hover{
+  width: 100%;
+  height: 170px;
+  gap: var(--gap-0);
+  padding: var(--padding-30) 50px 52px;
+}.navigation-off{
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--fs-15);
+  color: var(--color-white);
+  font-family: var(--font-ko-main);
+}.navigation-off:hover{
+  flex-direction: row;
+  justify-content: flex-start;
+}.sample-logo-icon{
+  position: relative;
+  object-fit: cover;
+}.sample-logo-icon,
+.sample-logo-icon:hover{
+  display: block;
+  width: 210px;
+  height: 88px;
+  gap: var(--gap-0);
+}.btn-r-wrapper,
+.btn-r-wrapper:hover{
+  width: 230px;
+  height: 52px;
+  flex-direction: column;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  transform: rotate(0deg);
+  padding: var(--padding-0) var(--padding-0) var(--padding-12);
+  box-sizing: border-box;
+}.btn-r,
+.btn-r-wrapper,
+.btn-r-wrapper:hover,
+.btn-r:hover{
+  display: flex;
+  justify-content: flex-end;
+}.btn-r,
+.btn-r:hover{
+  align-items: center;
+  gap: var(--gap-20);
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.btn-r:hover{
+  flex-direction: row;
+}.button-reservation,
+.button-reservation:hover{
+  display: flex;
+  width: var(--width-80);
+  height: var(--height-40);
+  gap: var(--gap-0);
+  align-items: flex-start;
+  padding: var(--padding-9) 25px var(--padding-9) var(--padding-26);
+  box-sizing: border-box;
+}.button-reservation{
+  position: relative;
+  isolation: isolate;
+}.button-reservation:hover{
+  flex-direction: row;
+  justify-content: flex-start;
+}.button-reservation-child{
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  flex-shrink: 0;
+}.button-reservation-child,
+.button-reservation-child:hover{
+  background-color: var(--color-darksalmon);
+  display: block;
+  width: var(--width-80);
+  height: var(--height-40);
+  border-radius: 50px;
+}.div{
+  height: var(--height-22);
+  width: 29px;
+  position: relative;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  display: inline-block;
+  z-index: 1;
+  flex-shrink: 0;
+}.button-ybs-child{
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  flex-shrink: 0;
+}.button-ybs-child,
+.button-ybs-child:hover{
+  background-color: var(--color-darkgray);
+  display: block;
+  width: var(--width-80);
+  height: var(--height-40);
+  border-radius: 50px;
+}.menu,
+.menu:hover{
+  width: var(--width-30);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-10);
+  height: auto;
+}.menu:hover{
+  justify-content: flex-start;
+}.menu-child{
+  cursor: pointer;
+  border: var(--border-1);
+  padding: var(--padding-01);
+  background-color: transparent;
+  height: var(--height-2);
+  position: relative;
+  border-top: var(--border-1);
+  display: block;
+}.bg-inner,
+.menu-child,
+.menu-child:hover{
+  align-self: stretch;
+  box-sizing: border-box;
+  width: 100%;
+}.menu-child:hover{
+  display: block;
+  height: var(--height-2);
+  border: var(--border-1);
+}.bg-inner{
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-20);
+  gap: var(--gap-0);
+}.bg-inner,
+.bg-inner:hover,
+.frame-parent,
+.frame-parent:hover{
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+}.bg-inner:hover{
+  align-self: stretch;
+  width: 100%;
+  flex-direction: row;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-20);
+  box-sizing: border-box;
+}.frame-parent,
+.frame-parent:hover{
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--gap-40);
+  width: auto;
+  align-self: unset;
+}.frame-parent:hover{
+  justify-content: flex-start;
+}.frame-group{
+  align-self: stretch;
+  flex-direction: column;
+  padding: var(--padding-0) var(--padding-0) var(--padding-1);
+  gap: 25px;
+  width: 100%;
+}.frame-group,
+.frame-group:hover,
+.prologue-wrapper,
+.prologue-wrapper:hover{
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  height: auto;
+  transform: rotate(0deg);
+}.frame-group:hover{
+  align-self: stretch;
+  width: 100%;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-1);
+}.prologue-wrapper,
+.prologue-wrapper:hover{
+  padding: var(--padding-0) 54px var(--padding-0) 57px;
+  width: auto;
+  align-self: unset;
+  gap: var(--gap-0);
+}.prologue-wrapper:hover{
+  flex-direction: row;
+  justify-content: flex-start;
+}.prologue,
+.prologue:hover{
+  letter-spacing: 0.03em;
+  line-height: 100%;
+  display: block;
+  width: auto;
+  align-self: unset;
+  height: auto;
+  text-shadow: var(--text-shadow-1);
+}.prologue{
+  margin: 0;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}.prologue:hover{
+  font-family: var(--font-italiana);
+  font-size: 66px;
+  text-align: left;
+  color: var(--color-white);
+}.frame-child,
+.prologue{
+  position: relative;
+  z-index: 1;
+}.frame-child,
+.frame-child:hover{
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--color-white);    /* 4면 보더(겹쳐서 2px로 보임) → 상단 1면만 → 정확히 1px 라인 */
+  box-sizing: border-box;
+  background: transparent;
+}.arrow-wrapper{
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-0) var(--padding-18) var(--padding-0) var(--padding-19);
+  box-sizing: border-box;
+  max-width: 100%;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+  font-size: var(--fs-20);
+}.arrow,
+.arrow-wrapper,
+.arrow-wrapper:hover,
+.arrow:hover{
+  display: flex;
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.arrow-wrapper:hover{
+  flex-direction: row;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  justify-content: flex-end;
+  transform: rotate(0deg);
+  padding: var(--padding-0) var(--padding-18) var(--padding-0) var(--padding-19);
+  box-sizing: border-box;
+  max-width: 100%;
+}.arrow,
+.arrow:hover{
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-24);
+}.arrow:hover{
+  flex-direction: row;
+}.arrow-child{
+  cursor: pointer;
+  padding: var(--padding-01);
+  background-color: transparent;
+  position: relative;
+}.arrow-child,
+.arrow-child:hover{
+  display: block;
+  width: var(--width-100);
+  height: var(--height-10);
+  border: var(--border-2);
+  box-sizing: border-box;
+}.h3,
+.h3:hover{
+  letter-spacing: -0.01em;
+  line-height: var(--lh-36);
+  display: block;
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.h3{
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}.h3:hover{
+  font-family: var(--font-italiana);
+  font-size: var(--fs-20);
+  text-align: left;
+  color: var(--color-white);
+}.arrow-inner,
+.arrow-item{
+  cursor: pointer;
+  padding: var(--padding-01);
+  background-color: transparent;
+  position: relative;
+}.arrow-item{
+  border-right: var(--border-2);
+}.arrow-item,
+.arrow-item:hover{
+  display: block;
+  width: var(--width-1);
+  height: var(--height-11);
+  border: var(--border-2);
+  box-sizing: border-box;
+}.arrow-inner{
+  object-fit: contain;
+}.arrow-inner,
+.arrow-inner:hover{
+  display: block;
+  width: var(--width-100);
+  height: var(--height-10);
+  border: var(--border-2);
+  box-sizing: border-box;
+}.img-r-parent,
+.img-r-parent:hover{
+  width: 1770px;
+  flex-direction: column;
+  gap: 98px;
+  align-items: flex-end;
+  transform: rotate(0deg);
+  padding: var(--padding-0) var(--padding-0) var(--padding-32) var(--padding-20);
+  box-sizing: border-box;
+}.img-r-parent{
+  text-align: left;
+  font-size: 170px;
+  color: var(--Black);
+  font-family: var(--font-italiana);
+}.img-r-parent:hover{
+  justify-content: flex-start;
+}.img-r,
+.img-r-parent,
+.img-r-parent:hover,
+.img-r:hover{
+  display: flex;
+  height: auto;
+  max-width: 100%;
+}.img-r,
+.img-r:hover{
+  width: 100%;
+  max-width: 907px;
+  align-items: flex-start;
+  align-self: flex-end;
+}.img-r{
+  z-index: 1;
+}.img-r:hover{
+  flex-direction: row;
+  justify-content: flex-start;
+}.image-overlay,
+.image-overlay:hover{
+  display: block;
+  flex: 1;
+  height: var(--height-900);
+  gap: var(--gap-0);
+  align-items: flex-start;
+  transform: rotate(0deg);
+  max-width: 100%;
+}.image-overlay{
+  position: relative;
+}.image-overlay:hover{
+  justify-content: flex-start;
+}.image-overlay-child{
+  position: absolute;
+  top: 35px;
+  left: 0;
+}.image-overlay-child,
+.image-overlay-child:hover{
+  display: block;
+  width: 340px;
+  height: 326px;
+  border-radius: var(--br-300) var(--br-300) var(--br-0) var(--br-0);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}.image-overlay-item{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.image-overlay-item,
+.image-overlay-item:hover{
+  display: block;
+  width: 700px;
+  height: var(--height-900);
+  border-radius: 200px var(--br-0) var(--br-0) var(--br-0);
+}.image-overlay-inner{
+  position: absolute;
+  top: 46px;
+  left: 9px;
+  object-fit: cover;
+  z-index: 2;
+}.image-overlay-inner,
+.image-overlay-inner:hover{
+  display: block;
+  width: 340px;
+  height: 326px;
+  border-radius: var(--br-300) var(--br-300) var(--br-0) var(--br-0);
+}.frame-wrapper{
+  align-self: stretch;
+  width: 100%;
+}.frame-wrapper,
+.frame-wrapper:hover,
+.gangreong-mutenrol-parent,
+.gangreong-mutenrol-parent:hover{
+  display: flex;
+  height: auto;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  transform: rotate(0deg);
+  max-width: 100%;
+}
+/* gangreong-mutenrol-parent와 con-3 분리 후, 세로로 쌓이도록 frame-wrapper를 column flex로 강제 */
+.frame-wrapper,
+.frame-wrapper:hover {
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+}
+.frame-wrapper > .con-3 {
+  width: 100%;
+  max-width: 100%;
+  align-self: stretch;
+}.gangreong-mutenrol-parent,
+.gangreong-mutenrol-parent:hover{
+  width: 1620px;
+  padding: var(--padding-0) var(--padding-20) var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+}.gangreong-mutenrol-parent{
+  position: relative;
+  isolation: isolate;
+}.gangreong-mutenrol-parent:hover{
+  flex-direction: row;
+  justify-content: flex-start;
+}.gangreong-mutenrol,
+.gangreong-mutenrol:hover{
+  font-weight: 700;
+  font-family: 'Cormorant', serif;
+  line-height: 130%;
+  color: var(--color-seashell);
+  display: block;
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.gangreong-mutenrol{
+  margin: 0 !important;
+  position: absolute;
+  top: -23px;
+  left: calc(50% - 721px);
+  font-size: inherit;
+  z-index: 1;
+  flex-shrink: 0;
+}.gangreong-mutenrol:hover{
+  font-size: 170px;
+  text-align: left;
+}.con-3,
+.con-3:hover{
+  display: flex;
+  flex: 1;
+  height: auto;
+  flex-direction: column;
+  gap: -4px;
+  align-items: flex-start;
+  padding: 164px var(--padding-0) 54px;
+  box-sizing: border-box;
+  max-width: 100%;
+}.con-3{
+  z-index: 2;
+  flex-shrink: 0;
+  font-size: var(--fs-56);
+}.con-3:hover{
+  justify-content: flex-start;
+}.description-components,
+.description-components:hover{
+  display: flex;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+  gap: var(--gap-30);
+  align-items: flex-end;
+  max-width: 100%;
+}.description-components{
+  position: relative;
+  isolation: isolate;
+  z-index: 3;
+}.description-components:hover{
+  flex-direction: row;
+  justify-content: flex-start;
+}.txt-wrapper{
+  height: 231px;
+  width: var(--width-500);
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+}.txt,
+.txt-wrapper,
+.txt-wrapper:hover,
+.txt:hover{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}.txt-wrapper:hover{
+  width: var(--width-500);
+  height: 231px;
+  gap: var(--gap-0);
+  justify-content: flex-start;
+  transform: rotate(0deg);
+}.txt,
+.txt:hover{
+  width: var(--width-450);
+  padding: var(--padding-0) var(--padding-20) var(--padding-0) var(--padding-30);
+  box-sizing: border-box;
+  gap: var(--gap-23);
+  height: auto;
+}.txt:hover{
+  justify-content: flex-start;
+}.room-preview,
+.room-preview:hover{
+  letter-spacing: 0.03em;
+  line-height: 100%;
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+}.room-preview{
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  flex-shrink: 0;
+}.room-preview:hover{
+  font-family: var(--font-italiana);
+  font-size: var(--fs-56);
+  text-align: left;
+  color: var(--Black);
+}.h33,
+.h33:hover{
+  font-family: var(--font-ko-sub);
+  font-size: var(--fs-20);
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  display: block;
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.h33{
+  margin: 0;
+  position: relative;
+  font-weight: 400;
+  flex-shrink: 0;
+}.h33:hover{
+  text-align: left;
+  color: var(--Black);
+}.btn,
+.btn:hover{
+  display: flex;
+  width: var(--width-120);
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-3);
+  align-items: center;
+}.btn{
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--fs-18);
+  font-family: var(--font-ko-main);
+}.btn:hover{
+  justify-content: flex-start;
+}.btn-child,
+.view-more{
+  position: relative;
+  display: block;
+}.view-more,
+.view-more:hover{
+  letter-spacing: -0.01em;
+  line-height: 120%;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+}.view-more{
+  margin: 0;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}.view-more:hover{
+  font-family: var(--font-ko-main);
+  font-size: var(--fs-18);
+  text-align: center;
+  color: var(--Black);
+  display: block;
+}.btn-child{
+  cursor: pointer;
+  border: var(--border-3);
+  padding: var(--padding-01);
+  background-color: transparent;
+  height: var(--height-1);
+  max-height: 100%;
+  box-sizing: border-box;
+}.btn-child,
+.btn-child:hover{
+  width: var(--width-120);
+  border-radius: var(--br-100);
+}.separator-components{
+  position: absolute;
+  margin: 0 !important;
+  top: 34px;
+  right: -1px;
+  left: 0;
+}.btn-child:hover,
+.separator-components,
+.separator-components:hover{
+  display: block;
+  height: var(--height-1);
+  border: var(--border-3);
+  box-sizing: border-box;
+}.separator-components,
+.separator-components:hover{
+  width: 1601px;
+}.description-components-child{
+  position: relative;
+  object-fit: cover;
+  z-index: 1;
+}.description-components-child,
+.description-components-child:hover{
+  display: block;
+  width: var(--width-300);
+  height: var(--height-350);
+}.image-components,
+.image-components:hover{
+  display: flex;
+  width: auto;
+  align-self: unset;
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  justify-content: flex-end;
+  transform: rotate(0deg);
+  padding: var(--padding-0) var(--padding-0) var(--padding-26);
+  box-sizing: border-box;
+  max-width: 100%;
+}.image-components-child{
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}.image-components-child,
+.image-components-child:hover{
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  flex: 1;
+}.description-components2,
+.description-components2:hover{
+  display: flex;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-30);
+  align-items: flex-start;
+  padding: 34px var(--padding-0) var(--padding-26);
+  box-sizing: border-box;
+  max-width: 100%;
+}.description-components2{
+  position: relative;
+  isolation: isolate;
+  z-index: 2;
+  margin-top: -4px;
+}.description-components2:hover{
+  justify-content: flex-start;
+}.description-components-item{
+  position: relative;
+  flex-shrink: 0;
+}.description-components-item,
+.description-components-item:hover{
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  height: var(--height-1);
+  border: var(--border-3);
+  box-sizing: border-box;
+}.frame-container,
+.txt-container{
+  max-width: 100%;
+  transform: rotate(0deg);
+}.frame-container,
+.frame-container:hover{
+  display: flex;
+  width: 1270px;
+  height: auto;
+  gap: var(--gap-20);
+  align-items: flex-end;
+  justify-content: space-between;
+}.frame-container{
+  flex-shrink: 0;
+  text-align: left;
+  font-size: var(--fs-56);
+  color: var(--Black);
+  font-family: var(--font-italiana);
+}.frame-container:hover{
+  flex-direction: row;
+  transform: rotate(0deg);
+  max-width: 100%;
+}.txt-container{
+  height: 205px;
+  width: var(--width-500);
+  gap: var(--gap-0);
+}.txt-container,
+.txt-container:hover,
+.txt2,
+.txt2:hover{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}.txt-container:hover{
+  width: var(--width-500);
+  height: 205px;
+  gap: var(--gap-0);
+  justify-content: flex-start;
+  transform: rotate(0deg);
+  max-width: 100%;
+}.txt2,
+.txt2:hover{
+  align-self: stretch;
+  padding: var(--padding-0) var(--padding-20) var(--padding-0) var(--padding-30);
+  box-sizing: border-box;
+  gap: var(--gap-23);
+  width: 100%;
+  height: auto;
+}.txt2:hover{
+  justify-content: flex-start;
+}.specials-preview,
+.specials-preview:hover{
+  letter-spacing: 0.03em;
+  line-height: 100%;
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+}.specials-preview{
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}.specials-preview:hover{
+  font-family: var(--font-italiana);
+  font-size: var(--fs-56);
+  text-align: left;
+  color: var(--Black);
+}.h34,
+.h34:hover{
+  font-family: var(--font-ko-sub);
+  font-size: var(--fs-20);
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  display: block;
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.h34{
+  margin: 0;
+  position: relative;
+  font-weight: 400;
+}.h34:hover{
+  text-align: left;
+  color: var(--Black);
+}.btn2,
+.btn2:hover{
+  display: flex;
+  width: var(--width-120);
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-3);
+  align-items: center;
+}.btn2{
+  text-align: center;
+  font-size: var(--fs-18);
+  font-family: var(--font-ko-main);
+}.btn2:hover{
+  justify-content: flex-start;
+}.frame-item{
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}.frame-item,
+.frame-item:hover{
+  display: block;
+  width: 600px;
+  height: auto;
+  max-width: 100%;
+}.description-components-inner{
+  position: relative;
+  align-self: flex-end;
+  margin: 0 !important;
+  object-fit: cover;
+  z-index: 1;
+}.description-components-inner,
+.description-components-inner:hover{
+  display: block;
+  width: var(--width-300);
+  height: var(--height-350);
+}.description-components3,
+.description-components3:hover{
+  display: flex;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+  gap: var(--gap-30);
+  align-items: flex-end;
+  max-width: 100%;
+}.description-components3{
+  position: relative;
+  isolation: isolate;
+  margin-top: -4px;
+  text-align: center;
+}.description-components3:hover{
+  flex-direction: row;
+  justify-content: flex-start;
+}.txt3,
+.txt3:hover{
+  display: flex;
+  width: var(--width-450);
+  height: 163px;
+  flex-direction: column;
+  gap: var(--gap-23);
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-0) 27px var(--padding-0) var(--padding-30);
+  box-sizing: border-box;
+  max-width: 100%;
+}.local-sights,
+.local-sights:hover{
+  letter-spacing: 0.03em;
+  line-height: 100%;
+  text-align: left;
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+}.local-sights{
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  flex-shrink: 0;
+}.local-sights:hover{
+  font-family: var(--font-italiana);
+  font-size: var(--fs-56);
+  color: var(--Black);
+}.h35,
+.h35:hover{
+  font-family: var(--font-ko-sub);
+  font-size: var(--fs-20);
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  display: block;
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.h35{
+  margin: 0;
+  position: relative;
+  font-weight: 400;
+  flex-shrink: 0;
+}.h35:hover{
+  text-align: center;
+  color: var(--Black);
+}.btn3,
+.btn3:hover{
+  width: var(--width-120);
+  gap: var(--gap-3);
+  align-items: center;
+}.btn3{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  flex-shrink: 0;
+  font-size: var(--fs-18);
+  font-family: var(--font-ko-main);
+}.btn3:hover{
+  justify-content: flex-start;
+}.bg-icon,
+.con-2{
+  position: absolute;
+  margin: 0 !important;
+  max-width: 100%;
+  flex-shrink: 0;
+}.con-2,
+.con-2:hover,
+.btn3:hover{
+  display: flex;
+  height: auto;
+  flex-direction: column;
+}.con-2,
+.con-2:hover{
+  width: 100vw;
+  max-width: none;
+  gap: 47px;
+  align-items: flex-start;
+  transform: rotate(0deg);
+  padding: 166px 148px 1052px 296px;
+  box-sizing: border-box;
+}.con-2{
+  top: -1196px;
+  left: calc(50% - 50vw);
+  isolation: isolate;
+  font-size: 50px;
+}.con-2:hover{
+  justify-content: flex-start;
+}.bg-icon{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}.bg-icon,
+.bg-icon:hover{
+  display: block;
+  width: 100%;
+  height: 100%;
+}.prologue-title-wrapper,
+.prologue-title-wrapper:hover{
+  display: flex;
+  width: auto;
+  align-self: unset;
+  height: auto;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  transform: rotate(0deg);
+  padding: var(--padding-0) var(--padding-2);
+  box-sizing: border-box;
+  max-width: 100%;
+}.prologue-title-wrapper{
+  flex-shrink: 0;
+}.prologue-title,
+.prologue-title:hover{
+  letter-spacing: 0.05em;
+  line-height: 120%;
+  display: block;
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.prologue-title{
+  margin: 0;
+  position: relative;
+  font-size: 50px;
+  font-weight: 400;
+  font-family: var(--font-italiana);
+  color: var(--Black);
+  text-align: left;
+  z-index: 1;
+}.image-container{
+  width: 100%;
+  max-width: 986px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--gap-20);
+  flex-wrap: wrap;
+}.image-container,
+.image-container:hover,
+.img1-parent,
+.img1-parent:hover{
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+}.image-container:hover{
+  width: 986px;
+  flex-direction: row;
+  gap: var(--gap-20);
+  align-items: flex-end;
+  justify-content: space-between;
+}.img1-parent,
+.img1-parent:hover{
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+  width: auto;
+  align-self: unset;
+}.img1-parent:hover{
+  justify-content: flex-start;
+}.img1-icon{
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}.img1-icon,
+.img1-icon:hover{
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  flex: 1;
+  gap: var(--gap-0);
+}.quote-container{
+  width: 100%;
+  max-width: var(--width-450);
+  flex: 1 1 300px;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) 49px 50px;
+  box-sizing: border-box;
+  gap: var(--gap-0);
+  margin-top: 20px;
+  transform: rotate(0deg);
+  text-align: center;
+  font-size: var(--fs-64);
+  color: var(--color-black);
+  font-family: var(--font-abhaya-libre-extrabold);
+}.frame-parent2,
+.quote-container,
+.quote-container:hover{
+  flex-direction: column;
+  max-width: 100%;
+  height: auto;
+}.quote-container:hover{
+  width: var(--width-450);
+  justify-content: flex-start;
+  padding: var(--padding-0) var(--padding-0) 49px;
+  box-sizing: border-box;
+}.frame-parent2{
+  align-self: stretch;
+  width: 100%;
+}.frame-parent2,
+.frame-parent2:hover,
+.quote-container:hover,
+.wrapper{
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+}.frame-parent2:hover{
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 100%;
+}.wrapper{
+  padding: var(--padding-0) var(--padding-2);
+  box-sizing: border-box;
+}.h1,
+.h1:hover,
+.wrapper,
+.wrapper:hover{
+  width: auto;
+  align-self: unset;
+  height: auto;
+}.wrapper:hover{
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-0);
+  align-items: flex-start;
+  justify-content: flex-start;
+  transform: rotate(0deg);
+  padding: var(--padding-0) var(--padding-2);
+  box-sizing: border-box;
+}.h1,
+.h1:hover{
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  display: block;
+  flex-shrink: 0;
+}.h1{
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 1;
+}.h1:hover{
+  font-family: var(--font-abhaya-libre-extrabold);
+  font-size: var(--fs-64);
+  text-align: center;
+  color: var(--color-black);
+}.muten-lol,
+.muten-lol:hover{
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  display: block;
+  flex: 1;
+  height: auto;
+  flex-shrink: 0;
+  max-width: 100%;
+  font-family: var(--font-ko-sub);
+  font-size: var(--fs-20);
+  font-weight: 400;
+  text-align: left;
+  color: var(--Black);
+}.muten-lol{
+  margin-top: -29px;
+  position: relative;
+  z-index: 3;
+}/* ===========================
+   FLUID BASE (px 고정값 전역 override)
+   이미지/컨테이너가 부모 너비 안에서 자연스럽게 축소
+   =========================== */
+
+.main,
+.main *,
+.main *::before,
+.main *::after{
+  box-sizing: border-box;
+}.main img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}/* flex 축소 허용 (min-width: 0) — con-2 영역 */
+.main .img-r,
+.main .img-r > *,
+.main .image-overlay,
+.main .image-container,
+.main .quote-container,
+.main .frame-parent2,
+.main .img1-parent,
+.main .muten-lol {
+  min-width: 0;
+}
+/* flex-shrink 강제 (con-2 영역만 — con-3 내부 원본 유지) */
+.main .image-overlay,
+.main .image-overlay-item,
+.main .image-overlay-child,
+.main .image-overlay-inner,
+.main .img-r,
+.main .img1-parent,
+.main .img1-icon {
+  flex-shrink: 1;
+}/* con-1 hero 높이 해제 */
+.con-1-wrapper,
+.con-1-wrapper:hover{
+  height: auto;
+  min-height: clamp(600px, 60vw, 1082px);
+  max-width: 100%;
+  width: 100%;
+}
+/* 모바일에서만 hero 높이를 viewport 60vh로 단축 — 부모/자식 모든 컨테이너에 강제 적용
+   (.bg padding-top:520px이 자식 height를 부풀려서 부모 height만 잡으면 효과 없음) */
+@media screen and (max-width: 768px) {
+  .con-1-wrapper,
+  .con-1-wrapper:hover,
+  .con-1,
+  .con-1:hover,
+  .main .con-1-wrapper .con-1,
+  .main .con-1-wrapper .bg,
+  .main .con-1-wrapper .con-1 .bg {
+    height: 60vh !important;
+    min-height: 60vh !important;
+    max-height: 60vh !important;
+    box-sizing: border-box !important;
+  }
+  /* .bg의 거대한 padding-top:520px → 60vh 컨테이너에 맞게 축소 (자식 컨텐츠는 flex 정렬 그대로) */
+  .main .con-1-wrapper .bg,
+  .main .con-1-wrapper .bg:hover {
+    padding-top: 0 !important;
+    padding-bottom: 20px !important;
+    overflow: hidden !important;
+  }
+}/* image-overlay 비율 유지 박스 */
+/* image-overlay: 원본 907x900 비율 유지하며 부모 너비 기준 반응형 축소 */
+.image-overlay,
+.image-overlay:hover {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  max-width: 907px;
+  height: auto;
+  aspect-ratio: 907 / 900;
+}
+/* .image-overlay-item: 700/907 ≈ 77.18% 폭, 100% 높이 (부모 aspect-ratio 기준) */
+.image-overlay-item,
+.image-overlay-item:hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  width: 77.18%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: clamp(80px, 11vw, 200px) 0 0 0;
+}
+/* .image-overlay-child: 340/907 ≈ 37.49% 폭, aspect-ratio 340/326 유지 */
+.image-overlay-child,
+.image-overlay-child:hover {
+  position: absolute;
+  top: 3.89%;         /* 35/900 */
+  left: 0;
+  width: 37.49%;
+  height: auto;
+  aspect-ratio: 340 / 326;
+  border: 1px solid var(--color-black);
+  border-radius: clamp(120px, 18vw, 300px) clamp(120px, 18vw, 300px) 0 0;
+  box-sizing: border-box;
+}
+.image-overlay-inner,
+.image-overlay-inner:hover {
+  position: absolute;
+  top: 5.11%;         /* 46/900 */
+  left: 0.99%;        /* 9/907 */
+  width: 37.49%;
+  height: auto;
+  aspect-ratio: 340 / 326;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: clamp(120px, 18vw, 300px) clamp(120px, 18vw, 300px) 0 0;
 }
 
-.img-wrap.animate-element {
-    transform: translateX(-50px);
-    transition-delay: 0.2s;
+/* con-3 내부 텍스트 박스: 원본 사이즈 유지 */
+.txt-wrapper,
+.txt-wrapper:hover {
+  width: 500px;
+  max-width: 100%;
+  height: 231px;
+}
+.txt-container,
+.txt-container:hover {
+  width: 500px;
+  max-width: 100%;
+  height: 205px;
+}
+.txt,
+.txt:hover {
+  width: 450px;
+  max-width: 100%;
+}
+.txt2,
+.txt2:hover {
+  width: 100%;
+  max-width: 100%;
+}
+.txt3,
+.txt3:hover {
+  width: 450px;
+  max-width: 100%;
+  height: 163px;
+}
+/* txt3 내부 .h35 본문/.local-sights 타이틀만 좌측 정렬
+   .btn3(View More 버튼)는 영향 없도록 .txt3 자체에는 text-align 미적용 */
+.txt3 .h35,
+.txt3 .h35:hover,
+.txt3 .local-sights,
+.txt3 .local-sights:hover {
+  text-align: left;
 }
 
-.img-wrap.animate-element.animate {
-    opacity: 1;
-    transform: translateX(0);
+/* con-3 타이틀 (Room preview / Specials preview / Local sights):
+   가로폭에 따라 폰트 사이즈 유동 — 항상 한 줄 유지 (줄바꿈 방지)
+   txt-container가 flex shrink로 좁아져도 인접 이미지(frame-item)와 안 겹치도록 max를 40px로 제한
+   - max 40px → 뷰포트 좁아질수록 비례 축소 → min 16px */
+.room-preview,
+.specials-preview,
+.local-sights,
+.room-preview:hover,
+.specials-preview:hover,
+.local-sights:hover {
+  font-size: clamp(32px, 3vw, 40px) !important;     /* 모바일 16px → 32px (2배) */
+  line-height: 1.05 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  max-width: 100% !important;
 }
 
-.intro-title.animate-element {
-    transform: scale(0.8);
-    transition-delay: 0.4s;
+/* txt-container/txt-wrapper에 overflow: hidden — 만약 텍스트가 넘쳐도 인접 이미지와 안 겹치게 클리핑 */
+.main .con-3 .description-components .txt-wrapper,
+.main .con-3 .description-components2 .frame-container .txt-container,
+.main .con-3 .description-components3 .txt-wrapper {
+  overflow: hidden !important;
 }
 
-.intro-title.animate-element.animate {
-    opacity: 1;
-    transform: scale(1);
+/* con-3 내부 이미지: 부모 비율 기준 반응형 (원본 300x350 → aspect 6/7) */
+.description-components-child,
+.description-components-child:hover {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 6 / 7;
+  object-fit: cover;
+  object-position: left top;
+}
+.description-components-inner,
+.description-components-inner:hover {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 6 / 7;
+  object-fit: cover;
+  object-position: left top;
+}
+.image-components,
+.image-components:hover {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+.image-components-child,
+.image-components-child:hover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 580;
+  object-fit: cover;
+  object-position: left top;
 }
 
-.intro-description.animate-element {
-    transform: translateY(30px);
-    transition-delay: 0.6s;
+/* frame-container - txt-container + frame-item + description-components-inner 3개 자식
+   description-components와 동일한 행 레이아웃 (좌측 정렬 + gap 30px)
+   - justify-content: flex-start → desc1의 txt-wrapper와 동일한 좌측 기준 정렬
+   - margin-top: -15px로 상단 15px 위로 이동
+   - ≤1400 미디어쿼리에서는 center로 재정렬 (모바일/태블릿 가운데 정렬 유지) */
+.frame-container,
+.frame-container:hover {
+  width: 100%;
+  max-width: 100%;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: -15px;
 }
 
-.intro-description.animate-element.animate {
-    opacity: 1;
-    transform: translateY(0);
+/* con-3 내부 3개 섹션 좌우 여백 (부모 컨테이너 padding) */
+.main .con-3 .description-components,
+.main .con-3 .description-components2,
+.main .con-3 .description-components3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 
-.view-img.animate-element {
-    transform: translateX(50px);
-    transition-delay: 0.8s;
+/* ≥1400px: description-components-inner가 하단으로 내려가지 않도록 nowrap 고정
+   txt-container가 축소되어 3개 아이템이 한 행에 유지됨 */
+@media screen and (min-width: 1400px) {
+  .frame-container,
+  .frame-container:hover {
+    flex-wrap: nowrap;
+  }
+  .main .con-3 .frame-container .txt-container {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+}
+.frame-item,
+.frame-item:hover {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 1200 / 580;
+  object-fit: cover;
+  object-position: left top;
 }
 
-.view-img.animate-element.animate {
-    opacity: 1;
-    transform: translateX(0);
+/* con-2 내부 이미지 블록: 부모 너비 비례로 축소 */
+.img1-parent,
+.img1-parent:hover {
+  width: 100%;
+  max-width: 450px;
+  flex: 1 1 300px;
+  align-items: stretch;
+}
+.img1-icon {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+.image-container,
+.image-container:hover {
+  width: 986px;
+  max-width: 100%;
 }
 
-.about-description {
-    font-family: var(--font-ko-sub);
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-    font-weight: bold;
-    margin-top: 20px;
-}
+/* ===========================
+   RESPONSIVE BREAKPOINTS
+   1920 기준 → 1400 / 1200 / 960 / 640
+   =========================== */
 
-
-/* Introduction Section */
-.introduction-section {
-    padding: 80px 0 200px 0;
-}
-
-.introduction-section .gallery-wrap {
-    max-width: 1200px;
+/* ≤ 1400px */
+@media screen and (max-width: 1400px) {.frame-container,
+  .frame-container:hover{
     width: 100%;
-    margin: 0 auto;
-    padding: 50px 40px;
-    display: flex;
-    height: 600px;
-    position: relative;
-    margin-top: 70px;
-}
-
-.introduction-section .gallery-wrap .img-wrap {
-    width: 45%;
+    max-width: 1270px;
+    flex-wrap: wrap;
+    gap: 30px;
+  }.frame-item,
+  .frame-item:hover{
+    width: 100%;
+    max-width: 600px;
     height: auto;
-    position: relative;
-}
-
-.introduction-section .gallery-wrap .img-wrap::before {
-    content: '';
-    position: absolute;
-    top: -25px;
-    left: -25px;
+  }.txt-wrapper,
+  .txt-wrapper:hover,
+  .txt-container,
+  .txt-container:hover{
     width: 100%;
-    aspect-ratio: 4/3;
-    border: 2px solid var(--color-secondary);
-    background: transparent;
-    z-index: -1;
-}
-
-.introduction-section .gallery-wrap .img-wrap img {
+    max-width: var(--width-500);
+    height: auto;
+  }.txt,
+  .txt:hover,
+  .txt2,
+  .txt2:hover,
+  .txt3,
+  .txt3:hover{
     width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
+    max-width: var(--width-500);
+  }.description-components-child,
+  .description-components-child:hover{
+    width: 100%;
+    max-width: var(--width-300);
+    height: auto;
+    max-height: var(--height-350);
+  }.con-1-wrapper,
+  .con-1-wrapper:hover{
+    height: auto;
+    padding-bottom: 0;
+  }.bg,
+  .bg:hover{
+    padding-top: 520px;
+    padding-bottom: 40px;
+  }.gangreong-mutenrol{
+    position: static;
+    top: auto;
+    left: auto;
+    font-size: 130px;
+    line-height: 120%;
+    margin-bottom: 40px !important;
+  }.img-r,
+  .img-r:hover{
+    width: 100%;
+    max-width: 907px;
+  }.con-3,
+  .con-3:hover{
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }.description-components,
+  .description-components3,
+  .image-container{
+    flex-wrap: wrap;
+  }.img-r-parent,
+  .img-r-parent:hover{
+    padding: var(--padding-0) 60px var(--padding-32) 60px;
+  }
 }
 
-.introduction-section .gallery-wrap .txt-wrap {
-    padding-left: 50px;
-    display: flex;
+/* ≤ 1200px */
+@media screen and (max-width: 1200px) {.description-components-inner,
+  .description-components-inner:hover{
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: var(--width-300);
+    height: auto;
+    max-height: var(--height-350);
+    align-self: center;
+    margin-top: 24px !important;
+  }.description-components,
+  .description-components:hover,
+  .description-components3,
+  .description-components3:hover{
     flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }.description-components2,
+  .description-components2:hover{
+    align-items: center;
+  }.frame-container,
+  .frame-container:hover{
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    height: 300px;
-}
-
-.introduction-section .gallery-wrap .txt-wrap .intro-title {
-    color: var(--color-secondary);
-    font-family: var(--font-ko-main);
-    font-weight: bold;
-    font-size: 1.8rem;
-    margin: 0;
-    margin-bottom: 15px;
-}
-
-.introduction-section .gallery-wrap .txt-wrap .intro-description {
-    color: #333;
-    font-family: var(--font-ko-sub);
-    font-weight: 300;
-    line-height: 1.8;
-    margin: 0;
-    font-size: 1.1rem;
-}
-
-.introduction-section .gallery-wrap .view-img {
-    position: absolute;
-    bottom: -120px;
-    right: 50px;
-    width: 350px;
-    aspect-ratio: 1/1;
-}
-
-.introduction-section .gallery-wrap .view-img::before {
-    content: '';
-    position: absolute;
-    top: -25px;
-    left: -25px;
+  }.image-components,
+  .image-components:hover{
     width: 100%;
-    height: 100%;
-    border: 3px solid var(--color-secondary);
-    background: transparent;
-    z-index: -1;
-}
-
-.introduction-section .gallery-wrap .view-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 300px;
+    align-self: center;
+  }.con-1-wrapper,
+  .con-1-wrapper:hover{
+    padding-bottom: 0;
+  }.bg,
+  .bg:hover{
+    padding-top: 380px;
+    padding-bottom: 34px;
+  }.gangreong-mutenrol{
+    font-size: 100px;
+  }.img-r,
+  .img-r:hover{
+    align-self: center;
+  }.frame-item,
+  .txt-container{
+    flex: 1;
+  }.con-2,
+  .con-2:hover{
     position: relative;
-    z-index: 1;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 80px 40px;
+  }.image-container,
+  .image-container:hover{
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }.img-r-parent,
+  .img-r-parent:hover{
+    padding: var(--padding-0) 40px var(--padding-32) 40px;
+  }
 }
 
-/* Responsive Introduction Section */
-@media (max-width: 1024px) {
-    .introduction-section .gallery-wrap {
-        height: 700px;
-    }
+/* ≤ 960px */
+@media screen and (max-width: 960px) {
+  /* image-container 레이아웃 (≤960):
+     row 1: img1-parent (90vw, 내부 2개 img1-icon이 가로 1행 정렬)
+     row 2: frame-parent2 (텍스트) — 단독 행
+     row 3: img-r (이미지) — 단독 행, 하단 배치
+     quote-container는 display:contents로 해제해 모든 자식을 image-container의 직접 flex item으로 처리 */
+  .main .image-container,
+  .main .image-container:hover {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    column-gap: 20px !important;
+    row-gap: 60px !important;
+  }
+  .main .quote-container,
+  .main .quote-container:hover {
+    display: contents !important;
+  }
+  /* row 1: img1-parent 전체 행 차지 - 내부 두 이미지는 가로 정렬
+     specificity 강화: .main .image-container .img1-parent (0-3-0)으로 line 2044 .main .img1-parent (0-2-0) 덮어쓰기 */
+  .main .image-container .img1-parent,
+  .main .image-container .img1-parent:hover {
+    order: 1 !important;
+    flex: 0 0 100% !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .main .image-container .img1-parent .img1-icon,
+  .main .image-container .img1-parent .img1-icon:hover {
+    flex: 0 0 auto !important;
+    width: calc((90vw - 10px) / 2) !important;
+    max-width: calc((90vw - 10px) / 2) !important;
+    min-width: 0 !important;
+    height: auto !important;
+    aspect-ratio: 3 / 2 !important;
+    object-fit: cover;
+    display: block !important;
+  }
+  /* row 2: frame-parent2 (텍스트) - 단독 행, 90vw */
+  .main .image-container .frame-parent2,
+  .main .image-container .frame-parent2:hover {
+    order: 2 !important;
+    flex: 0 0 100% !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+  }
+  /* row 3: img-r (image-overlay 컨테이너) - 단독 행, 하단 배치 */
+  .main .image-container .img-r,
+  .main .image-container .img-r:hover {
+    order: 3 !important;
+    flex: 0 0 100% !important;
+    width: 60vw !important;
+    max-width: 60vw !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    align-self: auto !important;
+  }
+  .main .image-container .img-r .image-overlay,
+  .main .image-container .img-r .image-overlay:hover {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
-    .introduction-section .gallery-wrap .img-wrap img {
-        height: 400px;
-    }
-
-    .introduction-section .gallery-wrap .txt-wrap h2.txt1 {
-        padding-top: 6rem;
-        font-size: 1.6rem;
-    }
+  .con-3,
+  .con-3:hover{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 70px;
+    padding-bottom: 23px;
+  }.gangreong-mutenrol-parent,
+  .gangreong-mutenrol-parent:hover{
+    padding: var(--padding-0);
+  }.txt,
+  .txt:hover,
+  .txt3,
+  .txt3:hover{
+    padding: var(--padding-0);
+  }.con-1-wrapper,
+  .con-1-wrapper:hover{
+    padding-bottom: 0;
+  }.bg,
+  .bg:hover{
+    padding-top: 280px;
+  }.gangreong-mutenrol{
+    font-size: 72px;
+    margin-bottom: 28px !important;
+  }.img-r,
+  .img-r:hover{
+    width: 100%;
+    align-self: center;
+  }.image-overlay,
+  .image-overlay:hover{
+    aspect-ratio: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }.image-overlay-item,
+  .image-overlay-item:hover{
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 150px var(--br-0) var(--br-0) var(--br-0);
+  }.image-overlay-child,
+  .image-overlay-child:hover,
+  .image-overlay-inner,
+  .image-overlay-inner:hover{
+    display: none;
+  }.img-r-parent,
+  .img-r-parent:hover{
+    gap: 49px;
+    padding: var(--padding-0) 24px var(--padding-32) 24px;
+  }.con-2,
+  .con-2:hover{
+    padding: 60px 20px;
+    gap: 30px;
+  }.image-container{
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+  }.img1-parent{
+    align-items: flex-start;
+  }.prologue{
+    font-size: 53px;
+    line-height: 53px;
+  }.room-preview,
+  .specials-preview,
+  .local-sights{
+    font-size: 45px;
+    line-height: 45px;
+  }.txt-container{
+    min-width: 100%;
+  }.prologue-title{
+    font-size: var(--fs-40);
+    line-height: 48px;
+  }.h1{
+    font-size: 51px;
+    line-height: 92px;
+  }
 }
 
-@media (max-width: 768px) {
-
-    .introduction-section {
-        padding: 50px 0;
-    }
-
-    .introduction-section .gallery-wrap {
-        flex-direction: column;
-        gap: 40px;
-        padding: 0;
-    }
-
-    .introduction-section .gallery-wrap .img-wrap {
-        width: 100%;
-        height: auto;
-        order: 1;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .introduction-section .gallery-wrap .img-wrap::before {
-        display: block;
-        top: 5px;
-        left: 5px;
-        width: 90%;
-        height: 200px;
-        aspect-ratio: unset;
-        border: 1px solid var(--color-secondary);
-    }
-
-    .introduction-section .gallery-wrap .img-wrap img {
-        height: 200px;
-        width: 90%;
-    }
-
-    .introduction-section .gallery-wrap .txt-wrap {
-        padding: 0 20px;
-        height: auto;
-        text-align: center;
-        order: 2;
-    }
-
-    .introduction-section .gallery-wrap .txt-wrap .intro-title {
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-    }
-
-    .introduction-section .gallery-wrap .txt-wrap .intro-description {
-        font-size: 1rem;
-    }
-
-    .introduction-section .gallery-wrap .view-img {
-        position: static;
-        width: 100%;
-        height: auto;
-        order: 3;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .introduction-section .gallery-wrap .view-img img {
-        width: 90%;
-        height: 200px;
-    }
-
-    .introduction-section .gallery-wrap .view-img::before {
-        display: block;
-        top: 5px;
-        right: 5px;
-        left: unset;
-        width: 90%;
-        height: 200px;
-        border: 1px solid var(--color-secondary);
-    }
-
-
+/* ≤ 640px 모바일 */
+@media screen and (max-width: 640px) {.bg,
+  .bg:hover{
+    padding-top: 200px;
+    padding-bottom: 22px;
+  }.frame-parent{
+    gap: var(--gap-20);
+  }.prologue-wrapper{
+    padding-left: var(--padding-20);
+    padding-right: var(--padding-20);
+    box-sizing: border-box;
+  }.prologue{
+    font-size: var(--fs-40);
+    line-height: 40px;
+  }.gangreong-mutenrol{
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 20px !important;
+  }.img-r-parent,
+  .img-r-parent:hover{
+    gap: var(--gap-24);
+    padding: var(--padding-0) 16px 20px 16px;
+  }.image-overlay-item,
+  .image-overlay-item:hover{
+    border-radius: 80px var(--br-0) var(--br-0) var(--br-0);
+  }.room-preview,
+  .specials-preview,
+  .local-sights{
+    font-size: 34px;
+    line-height: 34px;
+  }.h33,
+  .h34,
+  .h35{
+    font-size: var(--fs-16);
+    line-height: 29px;
+  }.description-components2{
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }.prologue-title{
+    font-size: 28px;
+    line-height: var(--lh-36);
+  }.h1{
+    font-size: 38px;
+    line-height: 69px;
+  }.muten-lol{
+    font-size: var(--fs-16);
+    line-height: 29px;
+  }.con-2,
+  .con-2:hover{
+    padding: 40px 16px;
+  }
 }
 
-@media (max-width: 480px) {
-    .introduction-section {
-        padding: 40px 0;
-    }
+/* ===========================
+   STRUCTURAL OVERRIDE — 좁은 화면에서 absolute 레이아웃을 flow 기반으로 전환
+   겹침 근본 원인 제거
+   =========================== */
 
-    .introduction-section .gallery-wrap {
-        height: 550px;
-    }
+/* ≤ 1200px: image-overlay 3중 절대위치 해제, 데코 요소 숨김 */
+@media screen and (max-width: 1200px) {
+  .image-overlay,
+  .image-overlay:hover {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 907px;
+    height: auto;
+    aspect-ratio: auto;
+    flex: none;
+  }
+  .image-overlay-item,
+  .image-overlay-item:hover {
+    position: static !important;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 700 / 900;
+    border-radius: clamp(60px, 15vw, 200px) 0 0 0;
+  }
+  /* 데코 요소는 좁은 화면에서 숨김 (겹침 원인) */
+  .image-overlay-child,
+  .image-overlay-child:hover,
+  .image-overlay-inner,
+  .image-overlay-inner:hover {
+    display: none !important;
+  }
 
-    .introduction-section .gallery-wrap .txt-wrap h2.txt1 {
-        font-size: 1.2rem;
-        padding: 15px 20px;
-    }
+  /* con-3 내부 absolute 요소 전부 flow 전환 */
+  .separator-components,
+  .separator-components:hover {
+    position: static !important;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: 100% !important;
+    max-width: 100%;
+    margin: 16px 0 !important;
+  }
+  .description-components-inner,
+  .description-components-inner:hover {
+    position: static !important;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    align-self: center;
+  }
+  .description-components,
+  .description-components:hover,
+  .description-components2,
+  .description-components2:hover,
+  .description-components3,
+  .description-components3:hover {
+    position: relative;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px;
+    width: 100%;
+  }
+  .frame-container,
+  .frame-container:hover {
+    position: relative;
+    flex-direction: column !important;
+    align-items: center;
+    width: 100%;
+  }
 
-    .introduction-section .gallery-wrap .txt-wrap p.txt2 {
-        font-size: 0.9rem;
-        padding: 15px 20px;
-    }
-
-    .introduction-section .gallery-wrap .view-img {
-        height: 150px;
-    }
+  /* con-2 이미지+quote 세로 스택 */
+  .image-container,
+  .image-container:hover {
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+    gap: 40px;
+  }
+  .img1-parent,
+  .img1-parent:hover {
+    position: relative;
+    width: 100% !important;
+    max-width: 100%;
+    flex: none;
+  }
+  .quote-container,
+  .quote-container:hover {
+    position: relative;
+    width: 100% !important;
+    max-width: 100%;
+    padding-left: 0;
+    flex: none;
+  }
 }
 
+/* ≤ 768px: 텍스트 박스 고정폭 해제 */
+@media screen and (max-width: 768px) {
+  .txt-wrapper,
+  .txt-wrapper:hover,
+  .txt-container,
+  .txt-container:hover,
+  .txt,
+  .txt:hover,
+  .txt2,
+  .txt2:hover,
+  .txt3,
+  .txt3:hover {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .con-2,
+  .con-2:hover {
+    padding: 60px 20px !important;
+  }
+}
+
+/* ===========================
+   FINAL OVERRIDE — 이미지 반응형 강제 규칙 (v2: 원본 비율 유지 축소)
+   image-overlay는 원본 overlap 구조 유지, 단 부모 크기 비례
+   좁은 화면에선 별도 media query에서 데코 숨김 + flow 전환
+   =========================== */
+
+.main img { max-width: 100% !important; height: auto; }
+
+/* image-overlay: 원본 overlap 디자인 복원 (907×900 박스에 3개 이미지 overlap)
+   반응형 shrink-only: clamp로 viewport 축소 시만 줄어들고 907 절대 초과 금지 */
+.image-overlay {
+  position: relative !important;
+  display: block !important;
+  width: clamp(280px, 45vw, 907px) !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 907 / 900 !important;
+  flex: 0 1 auto !important;
+}
+/* 메인 이미지: 우측 상단, 부모의 77.18% (700/907), 100% 높이 */
+.image-overlay-item {
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 77.18% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: clamp(40px, 10vw, 200px) 0 0 0;
+  aspect-ratio: auto !important;
+}
+/* 좌측 상단 데코 보더: 340/907 = 37.49% 폭, 340/326 비율 */
+.image-overlay-child {
+  display: block !important;
+  position: absolute !important;
+  top: 3.89% !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 37.49% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 340 / 326 !important;
+  border: 1px solid var(--color-black) !important;
+  border-radius: clamp(80px, 15vw, 300px) clamp(80px, 15vw, 300px) 0 0 !important;
+  box-sizing: border-box !important;
+}
+/* 좌측 상단 작은 이미지 (데코 보더 위에 겹침) */
+.image-overlay-inner {
+  display: block !important;
+  position: absolute !important;
+  top: 5.11% !important;
+  left: 0.99% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 37.49% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 340 / 326 !important;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: clamp(80px, 15vw, 300px) clamp(80px, 15vw, 300px) 0 0 !important;
+}
+
+/* img-r: 상단 row에서 img1-parent 우측, 더 크게 + 위로 200px 이동 */
+.main .img-r {
+  display: flex !important;
+  order: 2 !important;
+  flex: 2.5 1 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex-shrink: 1 !important;
+  align-self: stretch !important;
+  margin-left: 20px !important;
+  margin-top: -50px !important;
+}
+
+/* img-r-parent: clamp 패딩/갭, 화면 중앙 정렬 */
+.main .img-r-parent {
+  width: 100% !important;
+  max-width: 1770px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;                /* 화면 중앙 정렬 */
+  align-items: center !important;           /* 자식 중앙 정렬 (flex-end override) */
+  padding: 0 clamp(16px, 2vw, 40px) clamp(16px, 1.7vw, 32px) clamp(16px, 2vw, 40px) !important;
+  gap: clamp(24px, 5vw, 98px) !important;
+}
+
+/* gangreong-mutenrol-parent: 1620px 고정 → 반응형 + 중앙 정렬
+   flex-direction: column — h2(gangreong-mutenrol)와 con-3가 세로 스택되도록
+   (원본 Figma는 h2가 absolute out-of-flow였지만, 내 FINAL OVERRIDE에서 static+100%로 바뀌면서 row flex에서 con-3를 밀어냄)
+   padding: 0 — base의 비대칭 padding(0 20px 0 0) 제거로 모든 뷰포트에서 중앙 정렬 유지 */
+.main .gangreong-mutenrol-parent {
+  width: 100% !important;
+  max-width: 1620px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+/* image-container: quote-container + img-r 가로 2단 */
+.main .image-container {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  gap: 20px !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+/* img1-parent: 원본 column 스택, 유연한 flex */
+/* img1-parent: quote-container 내부 좌측, 부모 기준 축소 허용 */
+.main .img1-parent {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 0 1 auto !important;
+  width: auto !important;
+  max-width: 450px !important;
+  min-width: 0 !important;
+  gap: 20px !important;
+}
+/* 1400+ viewport: 450x300 고정. 1400 이하: 부모 비율 기준 축소 */
+.main .img1-icon {
+  display: block !important;
+  width: 450px !important;           /* 1400+ 기본 450x300 */
+  height: 300px !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  object-fit: cover;
+  object-position: left top;
+}
+@media screen and (max-width: 1400px) {
+  .main .img1-icon {
+    width: 100% !important;
+    max-width: 450px !important;
+    height: auto !important;
+    aspect-ratio: 3 / 2 !important;
+  }
+}
+/* quote-container: row flex — img1-parent(좌) + frame-parent2(텍스트 우)
+   가로 비중 증가 (img-r와 비슷한 폭) + 좌측 100px 여백
+   margin-top: 20px — 상단 간격 축소 */
+.main .quote-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  flex: 2.5 1 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  gap: 20px !important;
+  padding: 0 0 49px 0 !important;
+  margin-left: 100px !important;
+  margin-top: 20px !important;
+}
+
+/* prologue-title-wrapper: img1-parent(quote-container 첫 자식)와 좌측 정렬
+   con-2의 align-items: center를 align-self: flex-start로 덮어 좌측 기준 배치 후
+   margin-left: 100px로 quote-container와 동일한 x 좌표 확보
+   margin-top: 100px — 데스크톱 풀화면에서 con-1과 간격 확보 (≤960 미디어쿼리에서 0으로 리셋) */
+.main .prologue-title-wrapper {
+  align-self: flex-start !important;
+  margin-left: 100px !important;
+  margin-top: 100px !important;
+}
+
+.main .muten-lol {
+  margin-right: 0 !important;
+  min-width: 0 !important;
+}
+
+/* frame-parent2: 최소 150px, 그 이하로 줄어들 수 없을 땐 wrap되어 하단 배치 */
+.main .frame-parent2 {
+  flex: 1 1 150px !important;
+  min-width: 150px !important;
+  margin-left: 20px !important;
+}
+
+/* con-3 내부(.description-components*, .frame-container, .separator-components,
+   .image-components*, .txt-*)는 원본 Figma 레이아웃 유지 — override 제거 */
+
+/* ≤ 1200px: con-3 내부는 원본 Figma 레이아웃 유지, con-2 관련만 조정 */
+@media screen and (max-width: 1200px) {
+  /* image-container: 가로 한 줄 유지 (img1-parent + quote-container 나란히) */
+  .main .image-container {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-end !important;
+    gap: 20px !important;
+  }
+  .main .quote-container {
+    flex: 2.5 1 0 !important;
+    flex-direction: row !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    padding: 0 !important;
+    gap: 20px !important;
+  }
+  .main .img-r {
+    flex: 2.5 1 0 !important;
+    max-width: none !important;
+  }
+  .main .img1-parent {
+    flex: 0 0 auto !important;
+    max-width: 450px !important;
+  }
+
+  /* .con-2: 좁은 화면에서만 absolute → relative 전환 (con-1 overlap 방지)
+     데스크톱에선 원본 absolute 디자인 유지 */
+  .main .con-2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 80px 40px !important;
+  }
+
+  /* img-r-parent gap도 축소 */
+  .main .img-r-parent {
+    gap: clamp(20px, 4vw, 60px) !important;
+    padding: 0 clamp(16px, 3vw, 40px) clamp(16px, 1.5vw, 32px) clamp(16px, 2vw, 40px) !important;
+  }
+
+  /* con-2 타이틀 텍스트 크기 축소 */
+  .main .prologue-title {
+    font-size: clamp(28px, 4vw, 50px) !important;
+    line-height: 120% !important;
+  }
+}
+
+/* ≤ 960px FINAL OVERRIDE: image-container 3행 레이아웃
+   row 1: img1-parent (90vw, 가로 2장)
+   row 2: frame-parent2 (텍스트, 90vw 단독 행)
+   row 3: img-r (이미지, 90vw 단독 행 — 하단 배치)
+   line 2034 / 2114의 .main .image-container { flex-wrap: nowrap } 캐스케이드 덮어쓰기 */
+@media screen and (max-width: 960px) {
+  .main .image-container,
+  .main .image-container:hover {
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    column-gap: 20px !important;
+    row-gap: 60px !important;
+    margin-top: 0 !important;
+  }
+  .main .quote-container,
+  .main .quote-container:hover {
+    display: contents !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+  }
+  .main .image-container .img1-parent,
+  .main .image-container .img1-parent:hover {
+    order: 1 !important;
+    flex: 0 0 100% !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+  }
+  .main .image-container .frame-parent2,
+  .main .image-container .frame-parent2:hover {
+    order: 2 !important;
+    flex: 0 0 100% !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+  }
+  .main .image-container .img-r,
+  .main .image-container .img-r:hover {
+    order: 3 !important;
+    flex: 0 0 100% !important;
+    width: 60vw !important;
+    max-width: 60vw !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    align-self: auto !important;
+  }
+
+  /* frame-group(con-1 Prologue 영역): 부모 frame-parent의 align-items: flex-end +
+     frame-group 자체 align-items: flex-start 둘 다 가운데 정렬로 덮어쓰기 */
+  .main .frame-parent,
+  .main .frame-parent:hover {
+    align-items: center !important;
+  }
+  .main .frame-group,
+  .main .frame-group:hover {
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .main .frame-group .prologue-wrapper,
+  .main .frame-group .prologue-wrapper:hover {
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* prologue-title-wrapper: 좌측 100px margin/align-self:flex-start 해제 → 가운데 정렬
+     margin-top: 데스크톱 100px도 모바일에서는 0으로 리셋 */
+  .main .prologue-title-wrapper,
+  .main .prologue-title-wrapper:hover {
+    align-self: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .main .prologue-title-wrapper .prologue-title,
+  .main .prologue-title-wrapper .prologue-title:hover {
+    text-align: center !important;
+  }
+
+  /* frame-parent2 내부 텍스트(muten-lol, h1 따옴표) 가운데 정렬 */
+  .main .image-container .frame-parent2,
+  .main .image-container .frame-parent2:hover {
+    align-items: center !important;
+    text-align: center !important;
+    margin-left: auto !important;
+  }
+  .main .image-container .frame-parent2 .wrapper,
+  .main .image-container .frame-parent2 .quote-content,
+  .main .image-container .frame-parent2 .muten-lol,
+  .main .image-container .frame-parent2 .h1 {
+    text-align: center !important;
+    align-self: center !important;
+  }
+}
+
+/* ≤ 768px (모바일): con-2만 padding 축소 */
+@media screen and (max-width: 768px) {
+  .main .con-2 {
+    padding: 60px 20px !important;
+  }
+}
+
+/* ===========================
+   con-2 overlap 방지 (all viewports):
+   DOM 재구조화 후 con-2가 외부 wrapper 역할이므로 absolute 포지셔닝 완전 해제
+   원본 Figma의 top:-1196px는 nested decoration용이었는데 지금은 맞지 않음
+   padding: 기본값 166 148 1052 296 (좌측 296px 비대칭!) → 대칭으로 재정의
+   → 모든 뷰포트에서 .img-r-parent가 viewport 기준 중앙 정렬되도록 함
+   =========================== */
+.main .con-2,
+.main .con-2:hover {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  isolation: isolate;
+  overflow: hidden !important;   /* bg-icon이 con-2 바깥으로 튀어나오지 않도록 마스킹 */
+  padding: 80px clamp(20px, 3vw, 40px) !important;  /* 대칭 padding: 좌·우 동일 */
+  width: 100% !important;
+  max-width: 100% !important;
+  align-items: center !important; /* flex 자식(img-r-parent 등) 가로 중앙 정렬 */
+}
+
+/* bg-icon을 최하단 (z-index 0), Figma 디자인 사이즈(1309×2080) 유지 */
+.main .con-2 > .bg-icon {
+  z-index: 0 !important;
+  pointer-events: none;
+  position: absolute !important;
+  top: -20px !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 1309px !important;
+  height: 2080px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: left top !important;
+}
+.main .con-2 > .img-r-parent,
+.main .con-2 > .img-r,
+.main .con-2 > .prologue-title-wrapper,
+.main .con-2 > .image-container {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ===========================
+   gangreong-mutenrol: 1줄 유지 + 화면 100% + viewport 비례 폰트 크기
+   =========================== */
+.main .gangreong-mutenrol,
+.main .gangreong-mutenrol:hover {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: min(10vw, 170px) !important;
+  line-height: 130% !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-align: left !important;
+  font-family: 'Cormorant', serif !important;
+  font-weight: 700 !important;
+  color: var(--color-seashell) !important;
+}
+
+/* ===========================
+   con-3 내부 이미지: Figma 디자인 2가지 사이즈
+   세로형 300×350 (Rect-192, 191, 19)
+   가로형 600×290 (Rect-181, 182, 18)
+   =========================== */
+
+/* 세로형 300×350: description-components-child, description-components-inner */
+.main .con-3 .description-components-child,
+.main .con-3 .description-components-inner {
+  width: 300px !important;
+  max-width: 100% !important;
+  height: 350px !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: left top;
+}
+
+/* 가로형 600×290: image-components (container), frame-item, image-components-child */
+.main .con-3 .image-components {
+  width: 600px !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+.main .con-3 .image-components-child,
+.main .con-3 .frame-item,
+.main .con-3 .description-components2 .frame-item {
+  display: block !important;
+  width: 600px !important;
+  max-width: 100% !important;
+  height: 290px !important;
+  max-height: 100% !important;
+  aspect-ratio: 1200 / 580 !important;
+  flex: 0 0 auto !important;
+  align-self: auto !important;
+  object-fit: cover !important;
+  object-position: left top;
+}
+
+/* con-3: 상단/하단 padding 제거 (base 164px/54px, responsive의 다른 값 포함 모두 무효화) */
+.main .con-3,
+.main .con-3:hover {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* description-components2: 자식 div 간 30px gap (모든 뷰포트 통일) */
+.main .con-3 .description-components2,
+.main .con-3 .description-components2:hover {
+  gap: 30px !important;
+}
+
+/* description-components-inner: frame-container 내부의 flex 아이템으로 배치됨
+   (txt-container · frame-item · description-components-inner 3개가 30px gap으로 정렬)
+   별도 absolute 포지션 · margin-top 중복 제거, 부모의 align-items 자연 적용 */
+.main .con-3 .frame-container .description-components-inner {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+  align-self: auto !important;
+  flex: 0 0 auto !important;
+}
+
+/* 데스크톱(>1400) 풀화면에서 frame-item · description-components-inner 위로 이동
+   - frame-item: -75px
+   - description-components-inner: -55px (frame-item 대비 20px 아래)
+   transform: translateY 사용 — margin-top 음수는 flex row 높이를 줄여 txt-container까지 같이 올라가는 문제 회피
+   ≤1400 미디어쿼리에서는 wrap된 다른 레이아웃이라 적용하지 않음 */
+@media screen and (min-width: 1401px) {
+  .main .con-3 .description-components2 .frame-container .frame-item,
+  .main .con-3 .description-components2 .frame-container .frame-item:hover {
+    transform: translateY(-75px) !important;
+  }
+  .main .con-3 .description-components2 .frame-container .description-components-inner,
+  .main .con-3 .description-components2 .frame-container .description-components-inner:hover {
+    transform: translateY(-55px) !important;
+  }
+  /* description-components3: desc2에서 발생한 레이아웃 시프트 보정 — 75px 위로 끌어올려 원위치로 복귀 */
+  .main .con-3 .description-components3,
+  .main .con-3 .description-components3:hover {
+    margin-top: -75px !important;
+  }
+}
+
+/* txt-container: 우측 이미지들(frame-item · description-components-inner) 높이 기준으로
+   세로 가운데 정렬 (frame-container의 align-items: flex-end 덮어쓰기) */
+.main .con-3 .frame-container .txt-container,
+.main .con-3 .frame-container .txt-container:hover {
+  align-self: center !important;
+}
+
+/* description-components(1, 3)의 row flex 내부 콘텐츠 좌측 정렬
+   desc2의 frame-container와 동일한 정렬 기준으로 통일
+   (≤1400 미디어쿼리에서는 별도로 center !important로 재지정되어 있음) */
+.main .con-3 .description-components,
+.main .con-3 .description-components:hover,
+.main .con-3 .description-components3,
+.main .con-3 .description-components3:hover {
+  justify-content: flex-start !important;
+}
+
+/* ≤1400px: description-components(1, 2, 3) 레이아웃 재구성
+   공통 패턴:
+   - 1행: 문구 영역 단독 중앙 정렬
+   - 2행: 이미지 영역 그룹 중앙 정렬
+   문구 요소(txt-wrapper / txt-container)에 flex-basis: 100%를 강제해 행 break 유도 */
+@media screen and (max-width: 1400px) {
+  /* description-components(1, 3): txt-wrapper / [dc-child + image-components] */
+  .main .con-3 .description-components,
+  .main .con-3 .description-components:hover,
+  .main .con-3 .description-components3,
+  .main .con-3 .description-components3:hover {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    gap: 30px !important;
+    /* padding-top 50px: 라인은 top:0으로 이동 → 라인 아래 50px 여백 확보 */
+    padding-top: 50px !important;
+  }
+  /* desc1/3의 separator-components: 컨테이너 최상단 배치
+     - absolute일 때(>1200): top:0
+     - static일 때(≤1200): flex order:-1로 첫 번째 위치로 이동
+     → 모든 뷰포트에서 visual 순서: 라인 → 문구 → 이미지 */
+  .main .con-3 .description-components .separator-components,
+  .main .con-3 .description-components .separator-components:hover,
+  .main .con-3 .description-components3 .separator-components,
+  .main .con-3 .description-components3 .separator-components:hover {
+    top: 0 !important;
+    order: -1 !important;
+  }
+  .main .con-3 .description-components .txt-wrapper,
+  .main .con-3 .description-components .txt-wrapper:hover,
+  .main .con-3 .description-components3 .txt-wrapper,
+  .main .con-3 .description-components3 .txt-wrapper:hover {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  /* txt-wrapper 내부 모든 요소 강제 가운데 정렬 */
+  .main .con-3 .description-components .txt-wrapper *,
+  .main .con-3 .description-components .txt-wrapper .txt,
+  .main .con-3 .description-components .txt-wrapper .room-preview,
+  .main .con-3 .description-components .txt-wrapper .h33,
+  .main .con-3 .description-components .txt-wrapper .btn,
+  .main .con-3 .description-components3 .txt-wrapper *,
+  .main .con-3 .description-components3 .txt-wrapper .txt3,
+  .main .con-3 .description-components3 .txt-wrapper .local-sights,
+  .main .con-3 .description-components3 .txt-wrapper .h35,
+  .main .con-3 .description-components3 .txt-wrapper .btn3 {
+    text-align: center !important;
+    align-self: center !important;
+  }
+  /* btn은 width 고정이므로 margin auto로 블록 중앙 정렬 */
+  .main .con-3 .description-components .txt-wrapper .btn,
+  .main .con-3 .description-components3 .txt-wrapper .btn3 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* description-components2: in-flow line(.description-components-item) 위 50px + 라인 아래 50px
+     하단 패딩 50px */
+  .main .con-3 .description-components2,
+  .main .con-3 .description-components2:hover {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    gap: 50px !important;
+  }
+
+  /* description-components2 > frame-container: txt-container / [frame-item + dc-inner]
+     margin-top: -15px(기본) 해제하여 desc1/3과 동일한 50px 여백 유지 */
+  .main .con-3 .description-components2 .frame-container,
+  .main .con-3 .description-components2 .frame-container:hover {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    gap: 30px !important;
+    margin-top: 0 !important;
+  }
+  .main .con-3 .description-components2 .frame-container .txt-container,
+  .main .con-3 .description-components2 .frame-container .txt-container:hover {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+    align-self: auto !important;  /* 이전 규칙의 center 오버라이드 해제 */
+    text-align: center !important;
+  }
+  /* txt-container 내부 모든 요소 강제 가운데 정렬 (inheritance가 막히는 경우 대비) */
+  .main .con-3 .description-components2 .frame-container .txt-container *,
+  .main .con-3 .description-components2 .frame-container .txt-container .txt2,
+  .main .con-3 .description-components2 .frame-container .txt-container .specials-preview,
+  .main .con-3 .description-components2 .frame-container .txt-container .h34,
+  .main .con-3 .description-components2 .frame-container .txt-container .btn2 {
+    text-align: center !important;
+    align-self: center !important;
+  }
+  /* btn2는 flex 자식들 중앙 정렬 필요 (width 120 고정) */
+  .main .con-3 .description-components2 .frame-container .txt-container .btn2 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* 상단 검정색 구분선 3개(desc1·desc3의 .separator-components, desc2의 .description-components-item)
+   - 가로폭 100% 통일
+   - 정확히 1px 두께: border(1px solid 사방) 제거하고 background-color로 단일 라인 렌더링
+     (기존 height:1px + border:1px solid 조합은 box-sizing:border-box여도 시각적으로 약 2px로 굵어 보임) */
+.main .con-3 .separator-components,
+.main .con-3 .separator-components:hover {
+  width: 100% !important;
+  max-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 1px !important;
+  border: none !important;
+  background-color: var(--Black, #000) !important;
+}
+.main .con-3 .description-components-item,
+.main .con-3 .description-components-item:hover {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 1px !important;
+  border: none !important;
+  background-color: var(--Black, #000) !important;
+}
+
+/* btn / btn2 / btn3 내부 검정 라인(.btn-child)도 동일하게 정확한 1px로 통일
+   기존 height:1px + border:1px solid 조합이 약 2px로 굵게 보이는 문제 해결 */
+.main .con-3 .btn .btn-child,
+.main .con-3 .btn .btn-child:hover,
+.main .con-3 .btn2 .btn-child,
+.main .con-3 .btn2 .btn-child:hover,
+.main .con-3 .btn3 .btn-child,
+.main .con-3 .btn3 .btn-child:hover {
+  height: 1px !important;
+  border: none !important;
+  padding: 0 !important;
+  background-color: var(--Black, #000) !important;
+}
+
+/* ===========================
+   con-1 HERO 자동 롤링 슬라이더
+   - .bg를 컨테이너로 사용, 기존 단일 background-image 무효화
+   - .bg-slides(absolute layer) 안에 .bg-slide 3개 크로스페이드
+   - .bg-inner는 텍스트/화살표 영역, 슬라이드 위에 표시되도록 z-index:1
+   - 전역 transition: none !important 룰을 덮어쓰기 위해 opacity 트랜지션에 !important
+   =========================== */
+.main .con-1 .bg,
+.main .con-1 .bg:hover {
+  position: relative;
+  background-image: none !important;
+}
+.main .con-1 .bg-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.main .con-1 .bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-elegant) !important;
+}
+.main .con-1 .bg-slide.is-active {
+  opacity: 1;
+}
+.main .con-1 .bg-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* 슬라이더 화살표 클릭 활성화 (전역 .con-1-wrapper * pointer-events:none 덮어쓰기)
+   role="button"이 이미 main.css 상단에서 pointer-events:auto 처리되지만
+   :hover 등 인터랙션을 위해 cursor도 함께 명시 */
+.main .con-1 .slider-arrows .arrow-line[role="button"] {
+  cursor: pointer;
+  pointer-events: auto !important;
+}

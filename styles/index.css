@@ -1,976 +1,1410 @@
-/* Main Content - 헤더 높이만큼 마진 추가 */
-.main-content {
-    margin-top: 80px;
+/* ===========================
+   BASE / RESET
+   =========================== */
+* {
+  box-sizing: border-box;
 }
 
-/* Overlay mode - no push for all screen sizes */
-
-/* Hero Section */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 10px 0 40px 0;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Large screens - reduce hero section height */
-@media (min-width: 1920px) {
-    .hero-section {
-        min-height: 80vh;
-    }
+.page {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
-
-.hero-content {
-    display: flex;
-    width: 100%;
-    gap: 50px;
-    align-items: center;
-    border-top: 2px solid var(--color-secondary);
-    border-bottom: 2px solid var(--color-secondary);
-    padding: 20px 0;
-    justify-content: space-between;
+/* ===========================
+   공통: 이미지/풀 배너 영역 — 100% 꽉 참
+   =========================== */
+.gallery-section,
+.room-slider {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
 }
 
-.hero-left {
-    flex: 1;
-    max-width: 500px;
-}
-
-/* Hero Right - 이미지 영역 확대 */
-.hero-right {
-    flex: 2;
-    max-width: none;
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    z-index: 2;
-}
-
-/* 큰 데스크탑에서는 기존 비율 유지 */
-@media (min-width: 1920px) {
-    .hero-right {
-        flex: 1.3;
-        max-width: 900px;
-    }
-}
-
-/* Hero Left - 텍스트 영역 조정 */
-.hero-left {
-    flex: 1;
-    max-width: 500px;
-    position: relative;
-    z-index: 3;
-    padding: 40px 30px;
-    border-radius: 0;
-    backdrop-filter: blur(5px);
-    margin: 20px 0;
-}
-
-.hero-subtitle {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-
-.subtitle-text {
-    font-family: var(--font-ko-main);
-    font-size: 14px;
-    color: var(--color-secondary);
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-}
-
-.subtitle-line {
-    flex: 1;
-    height: 1px;
-    background: var(--color-secondary);
-    opacity: 0.3;
-}
-
-.hero-title-property-name {
-    font-family: var(--font-ko-main);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: bold;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    color: var(--color-secondary);
-    display: flex;
-    flex-direction: column;
-}
-
-.hero-title-line {
-    display: block;
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: slideInFromLeft 0.8s ease forwards;
-}
-
-.hero-title-line[data-delay="0"] {
-    animation-delay: 0s;
-}
-
-.hero-title-line[data-delay="0.3"] {
-    animation-delay: 0.3s;
-}
-
-.hero-title-line[data-delay="0.6"] {
-    animation-delay: 0.6s;
-}
-
-.hero-title-line[data-delay="0.9"] {
-    animation-delay: 0.9s;
-}
-
-.hero-title-line[data-delay="1.2"] {
-    animation-delay: 1.2s;
-}
-
-@keyframes slideInFromLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.hero-description {
-    font-family: var(--font-ko-sub);
-    font-size: 17px;
-    line-height: 1.6;
-    color: #666;
-    max-width: 400px;
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.8s ease;
-    transition-delay: 2s;
-}
-
-.hero-description.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Hero Slider Container */
-.hero-slider-container {
-    width: 100%;
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    border-radius: 0;
-    /* 기본 페이드 효과에 의존 */
-}
-
-.hero-slider-container.animate {
-    opacity: 1;
-}
-
-/* Hero Slider */
-.hero-slider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.hero-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.hero-slide.active {
-    opacity: 1;
-}
-
-.hero-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Hero Slider Navigation */
-.hero-slider-nav {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    gap: 5px;
-    z-index: 10;
-}
-
-.slider-btn {
-    width: 40px;
-    height: 40px;
-    background: var(--color-secondary);
-    opacity: 0.8;
-    color: white;
-    border: 2px solid var(--color-secondary);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    transition: all 0.3s ease;
-    margin: 5px;
-    backdrop-filter: blur(5px);
-}
-
-.slider-btn:hover {
-    background: rgba(122, 132, 113, 0.9);
-    border-color: rgba(122, 132, 113, 0.8);
-    transform: scale(1.1);
+/* ===========================
+   1. HERO
+   =========================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 29px;
 }
 
 .hero-title {
-    font-family: var(--font-ko-main);
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-    font-weight:bold;
-    max-width: 400px;
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.8s ease;
-    transition-delay: 1.5s;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 50px;
+  /* margin-top: -50px; */
 }
 
-.hero-title.animate {
-    opacity: 1;
-    transform: translateX(0);
+.hero-title-text {
+  margin: 70px 0 -30px 0;       /* top 100→70 (-30px 위로) / bottom -30 (gallery와 간격 -30) */
+  font-size: 200px;
+  font-family: var(--font-italiana);
+  font-weight: 400;
+  color: var(--color-darksalmon);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  text-align: right;
 }
 
-/* Essence Section */
-.essence-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
-.essence-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--color-secondary);
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.essence-title.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.essence-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-    font-family: var(--font-ko-sub);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-    transition-delay: 0.2s;
-}
-
-.essence-description.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Gallery Section */
+/* ===========================
+   2. GALLERY (Infinite Rolling — 풀와이드)
+   =========================== */
 .gallery-section {
-    padding: 0;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+  padding: 8px 0;
+  overflow: hidden;
 }
 
-.gallery-header {
-    padding: 25px 0 50px 0;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
+.gallery-track {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  animation: gallery-scroll 35s linear infinite;
 }
 
-.gallery-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--color-secondary);
-    margin-bottom: 10px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.gallery-title.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.gallery-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-    font-family: var(--font-ko-sub);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-    transition-delay: 0.2s;
-}
-
-.gallery-description.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.gallery-container {
-    width: 100%;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-slider {
-    position: relative;
-    width: max-content;
-    min-height: 80vh;
-    padding: 60px 40px 20px 40px;
-    box-sizing: border-box;
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    /* transition은 JavaScript에서 제어 */
-    cursor: grab;
-    user-select: none;
-}
-
-.gallery-slider:active {
-    cursor: grabbing;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: visible;
-    background: #f5f5f5;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    padding: 32px 32px 25px 32px; /* 폴라로이드 스타일 - 아래쪽 더 넓게 */
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    width: auto; /* 각 카드마다 다른 너비 허용 */
-    flex-shrink: 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 2가지 사이즈 - odd/even */
-.gallery-item:nth-child(odd) {
-    width: 350px; /* 세로형 */
-}
-
-.gallery-item:nth-child(even) {
-    width: 450px; /* 가로형 */
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-/* 중앙 세로 테이프 - 카드 위로 튀어나옴 */
-.gallery-item::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%) rotate(8deg);
-    width: 25px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 15;
-}
-
-/* 짝수 카드들은 반대로 틀어지게 */
-.gallery-item:nth-child(even)::before {
-    transform: translateX(-50%) rotate(-8deg);
-}
-
-.gallery-item-image {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
-}
-
-/* 2가지 이미지 높이 - odd/even */
-.gallery-item:nth-child(odd) .gallery-item-image {
-    height: 370px; /* 세로형 - 더 길게 */
-}
-
-.gallery-item:nth-child(even) .gallery-item-image {
-    height: 250px; /* 가로형 */
-}
-
-.gallery-item-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery-item-content {
-    padding: 0;
-    text-align: center;
-    background: transparent;
-    position: relative;
-    flex: 1;
-}
-
-.gallery-item-title {
-    font-family: var(--font-ko-main);
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--color-secondary);
-    margin: 10px 0 15px 0;
-    position: relative;
-    text-align: center;
-}
-
-.gallery-item-title::before,
-.gallery-item-title::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    height: 1px;
-    background-color: var(--color-secondary);
-    width: calc(50% - 70px);
-}
-
-.gallery-item-title::before {
-    left: 0;
-}
-
-.gallery-item-title::after {
-    right: 0;
-}
-
-/* Signature Section */
-.signature-section {
-    padding: 25px 0 100px 0;
-}
-
-.signature-container {
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #f5f5f5;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: -8px 8px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Signature container paper fold effect */
-.signature-container::before {
-    content: "";
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    border-style: solid;
-    border-width: 0 0 0 0;
-    border-color: #e5e5e5 var(--color-primary);
-    z-index: 200;
-    transition: border-width 0.6s ease;
-}
-
-.signature-container.fold-animate::before {
-    border-width: 0 60px 60px 0;
-}
-
-/* Signature container paper fold shadow layer */
-.signature-container::after {
-    content: "";
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    border-style: solid;
-    border-width: 0 0 0 0;
-    border-color: transparent;
-    border-right-color: rgba(0, 0, 0, 0.1);
-    border-bottom-color: rgba(0, 0, 0, 0.05);
-    z-index: 199;
-    transition: border-width 0.6s ease;
-}
-
-.signature-container.fold-animate::after {
-    border-width: 0 58px 58px 0;
-}
-
-.signature-container.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.signature-content {
-    display: flex;
-    gap: 60px;
-    align-items: flex-end;
-}
-
-.signature-left {
-    flex: 1;
-    max-width: 600px;
-}
-
-.signature-main-image {
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.8s ease;
-    transition-delay: 0.3s;
-}
-
-.signature-main-image.animate {
-    opacity: 1;
+/* 10개 카드(원본 5 + 복제 5) 사이에 9개 gap이 들어가 -50%만으로는 0.5*gap만큼 어긋남
+   → -50%에서 4px(=8px gap의 절반) 추가 이동해 완벽 seamless 루프 */
+@keyframes gallery-scroll {
+  0% {
     transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 4px));
+  }
 }
 
-.signature-main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.5s ease;
+.gallery-img {
+  width: 353px;
+  height: 275px;
+  flex-shrink: 0;
+  object-fit: cover;
 }
 
-.signature-right {
-    flex: 1;
-    max-width: 500px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+/* ===========================
+   3. CON-2: SLIDER (배경 풀와이드, 텍스트 90%)
+   =========================== */
+.slider-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  min-height: 960px;
+  padding: 158px 200px 42px;
+  gap: 80px;
+  margin-top: -30px;        /* 이 섹션부터 하단 전체 30px 위로 이동 */
 }
 
-.signature-text-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.slider-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-.signature-title {
-    font-family: var(--font-ko-main);
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--color-secondary);
-    margin-bottom: 15px;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 1s ease;
+.slider-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s var(--ease-elegant);
+  z-index: 0;
 }
 
-.signature-title.animate {
-    opacity: 1;
-    transform: scale(1);
+.slider-bg.active {
+  opacity: 1;
 }
 
-.signature-description {
-    font-family: var(--font-ko-sub);
-    font-size: 17px;
-    line-height: 1.8;
-    color: #666;
-    max-width: 430px;
-    margin: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.8s ease;
-    transition-delay: 0.3s;
+.slider-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  z-index: 2;
 }
 
-.signature-description.animate {
-    opacity: 1;
+.slider-heading {
+  font-size: 46px;
+  font-family: var(--font-italiana);
+  color: var(--color-white);
+  letter-spacing: 0.05em;
+  line-height: 140%;
+  text-shadow: var(--text-shadow-1);
+}
+
+.slider-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.slider-subtitle {
+  margin: 0;
+  font-size: var(--fs-24);
+  font-family: var(--font-ko-sub);
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+  line-height: 150%;
+  font-weight: 700;
+  text-shadow: var(--text-shadow-2);
+  text-align: right;
+}
+
+/* ===========================
+   4. CON-3: PROLOGUE (배경 풀와이드, 텍스트 90%)
+   =========================== */
+.prologue-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  align-items: end;
+  padding: 112px 50px 198px 148px;
+  gap: 30px 58px;
+  overflow: hidden;
+}
+
+.prologue-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  /* 하단 그라데이션 페이드 아웃 — 짤리는 느낌 없이 자연스럽게 사라짐 */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+}
+
+.prologue-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+  width: 100%;
+  max-width: 744px;
+  margin: 0 auto;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.prologue-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.prologue-heading {
+  font-size: 50px;
+  font-family: var(--font-italiana);
+  color: var(--Black);
+  letter-spacing: 0.05em;
+  line-height: 140%;
+  text-align: center;
+  white-space: normal;
+}
+
+.prologue-desc {
+  font-size: 20px;
+  font-family: var(--font-ko-sub);
+  color: var(--Black);
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  text-align: center;
+  white-space: normal;
+}
+
+.prologue-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-black);
+}
+
+.br-desktop::after {
+  content: "\A";
+  white-space: pre;
+}
+
+.prologue-thumbs {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 1;
+}
+
+.thumb-img {
+  flex: 1;
+  min-width: 0;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* --- Prologue Main Image Slider --- */
+.prologue-main-wrap {
+  position: relative;
+  width: 100%;
+  height: 605px;
+  border-radius: 200px 0 0 0;
+  overflow: hidden;
+  grid-column: 2;
+  grid-row: 1 / 3;
+  z-index: 1;
+}
+
+.prologue-main-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s var(--ease-elegant);
+}
+
+.prologue-main-img.active {
+  opacity: 1;
+}
+
+/* --- Thumbnail Active State --- */
+.thumb-img {
+  cursor: pointer;
+  transition: opacity 0.3s var(--ease-elegant), border-color 0.3s var(--ease-elegant);
+  border: 1px solid transparent;
+}
+
+.thumb-img.active {
+  opacity: 1;
+  border-color: var(--color-black);
+}
+
+.thumb-img:not(.active) {
+  opacity: 0.5;
+  border-color: transparent;
+}
+
+/* ===========================
+   5. ROOMVIEW (타이틀 90%, 슬라이더 풀와이드)
+   =========================== */
+.roomview-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 22px 0;
+  margin-top: -100px;
+  gap: 20px;
+}
+
+/* View More 버튼 (room.html과 동일): 우측 하단 작은 버튼 */
+.roomview-view-more {
+  align-self: flex-end;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+.roomview-title {
+  display: block;
+  align-self: stretch;       /* 부모 align-items: flex-start 영향 받지 않고 풀 width */
+  width: 100%;
+  font-size: 200px;
+  font-family: 'Cormorant', serif;
+  color: var(--color-gainsboro-100, #dcdcd0);
+  opacity: 1;
+  letter-spacing: -0.01em;
+  line-height: 100%;
+  text-align: right;          /* 화면 우측 정렬 */
+  margin: 0;
+}
+
+/* --- Infinite Rolling Slider (풀와이드) --- */
+.room-slider {
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+.room-slider-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: room-scroll 25s linear infinite;     /* 40s → 25s (조금 더 빠르게) */
+}
+
+.room-slider:hover .room-slider-track {
+  animation-play-state: paused;
+}
+
+/* 8개 카드(원본 4 + 복제 4) 사이에 gap이 7번 들어가 -50%만으로는 0.5*gap만큼 어긋남
+   → -50%에서 11px(=22px gap의 절반) 추가 이동해 완벽 seamless 루프 */
+@keyframes room-scroll {
+  0% {
     transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 11px));
+  }
 }
 
-.signature-thumbnails {
-    display: flex;
+.room-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 27px 10px;
+  gap: 37px;
+  min-width: 420px;
+  flex-shrink: 0;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  /* <a> 태그로 사용 시 기본 link 스타일 제거 */
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.room-card:hover {
+  text-decoration: none;
+}
+
+.room-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.room-card-img {
+  width: 380px;
+  max-width: 100%;
+  height: 285px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.room-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.room-card-label {
+  margin: 0;
+  font-size: var(--fs-18);
+  font-family: var(--font-ko-main);
+  font-weight: 700;
+  color: var(--Black);
+  letter-spacing: -0.01em;
+  line-height: var(--lh-36);
+}
+
+.room-card-name {
+  margin: 0;
+  font-size: var(--fs-80);
+  font-family: var(--font-the-nautigal);
+  font-weight: 400;
+  color: var(--color-gainsboro);
+}
+
+/* ===========================
+   6. SPECIAL OFFERS (배경 풀와이드, 텍스트 90%)
+   =========================== */
+.special-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.special-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.special-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 4vw 0 5vw;
+}
+
+/* 배경 문구 — 컨텐츠 뒤에 깔림 */
+.special-offers-label {
+  display: block;
+  font-size: 10.5vw;
+  font-family: 'Cormorant', serif;
+  color: var(--color-white);
+  opacity: 0.5;
+  letter-spacing: -0.01em;
+  line-height: 100%;
+  margin-bottom: -6vw;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 컨텐츠 오버레이 — 문구 뒤에 배치 */
+.special-overlay {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 2fr;
+  grid-template-rows: auto auto;
+  gap: 2vw;
+  z-index: 1;
+  width: 100%;
+}
+
+.special-overlay .special-left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.special-overlay .special-here-label {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.special-overlay .specials-card-title {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  justify-self: center;
+}
+
+.special-overlay .specials-card-body {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.special-overlay .special-image {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+/* 데스크탑: .special-text-group / .special-right 는 레이아웃에서 빠져
+   자식들이 그대로 .special-overlay 그리드 셀에 배치됨 */
+.special-overlay .special-text-group,
+.special-overlay .special-right {
+  display: contents;
+}
+
+/* 좌측: BBQ 카드 */
+.special-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5vw;
+  flex: 1 1 15%;
+  max-width: 350px;
+}
+
+.special-here-label {
+  display: block;
+  font-size: 6.7vw;
+  font-family: 'Cormorant', serif;
+  color: var(--Black);
+  line-height: 90%;
+  flex: 0 0 auto;
+  align-self: center;
+  text-align: right;
+  margin-left: auto;
+  margin-top: -3.5vw;
+}
+
+/* 우측: 큰 이미지 */
+/* === Special Image + Slide Control (단일 컴포넌트) ===
+   구조: 이미지 = background-image (박스 자체가 이미지)
+         slide = 박스의 유일한 자식 (flex-end로 하단 고정)
+   원칙: slide는 이 박스의 자식이므로 밖으로 나갈 수 없음
+         모든 크기는 이 박스 폭 기준 % */
+.special-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 900 / 550;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.special-image-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s var(--ease-elegant);
+  z-index: 0;
+}
+
+.special-image-slide.active {
+  opacity: 1;
+}
+
+/* Special 섹션 — title/body 슬라이드 전환 시 텍스트 페이드 효과
+   JS가 textContent를 직접 바꿈, .is-fading 클래스로 잠시 페이드 아웃 후 복귀 */
+.specials-card-title,
+.specials-card-body {
+  transition: opacity 0.5s var(--ease-elegant);
+}
+.specials-card-title.is-fading,
+.specials-card-body.is-fading {
+  opacity: 0;
+}
+
+.special-image .slide {
+  position: relative;
+  z-index: 1;
+}
+
+/* 슬라이드 컨트롤 wrapper — 부모(.special-image) 폭 100% 기준 */
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3% 4%;
+  gap: 5%;
+}
+
+/* 화살표 묶음 — 축소 금지, 항상 보임 */
+.slide-dots {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+/* 화살표 아이콘 */
+.dot-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.2s var(--ease-elegant), transform 0.2s var(--ease-elegant);
+}
+
+.dot-icon:hover {
+  opacity: 0.7;
+}
+
+.dot-icon:not(.dot-icon-flip):hover {
+  transform: translateX(-2px);
+}
+
+.dot-icon-flip {
+  transform: scaleX(-1);
+}
+
+.dot-icon-flip:hover {
+  transform: scaleX(-1) translateX(2px);
+}
+
+/* 타이머 바 — 4초 동안 좌→우로 채워지면서 다음 슬라이드 트리거 */
+.bar-icon {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--color-white, #ffffff);
+  animation: bar-fill 4s linear forwards;
+  will-change: width;
+}
+
+@keyframes bar-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ===========================
+   7. SPECIALS DETAIL (텍스트 — 90%)
+   =========================== */
+.specials-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.specials-detail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.specials-dots {
+  display: flex;
+  gap: 26px;
+}
+
+.specials-view-more {
+  padding-top: 11px;
+}
+
+.view-more-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.view-more-text {
+  margin: 0;
+  font-size: var(--fs-18);
+  font-family: var(--font-ko-main);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 120%;
+  color: var(--Black);
+}
+
+.view-more-line {
+  width: 120px;
+  height: 1px;
+}
+
+.specials-card {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.specials-card-img-wrap {
+  width: 100%;
+  height: 0;
+  padding-bottom: 116%;
+  position: relative;
+}
+
+.specials-card-img-border {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: 300px 300px 0 0;
+  border: 1px solid var(--Black);
+}
+
+.specials-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 400px 400px 0 0;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s var(--ease-elegant);
+}
+
+.specials-card-img.active {
+  opacity: 1;
+}
+
+.specials-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+  flex: 1;
+  min-width: 200px;
+  font-family: var(--font-ko-main);
+}
+
+.specials-card-title {
+  margin: 0;
+  font-size: clamp(20px, 1.8vw, 30px);
+  font-family: var(--font-ko-main);
+  font-weight: 700;
+  color: var(--Black);
+  letter-spacing: -0.01em;
+  line-height: 120%;
+}
+
+.specials-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.specials-card-desc {
+  font-size: clamp(15px, 1.15vw, 19px);
+  font-family: var(--font-ko-sub);
+  line-height: 150%;
+  color: var(--Black);
+}
+
+.specials-card-desc p {
+  margin: 0 0 9px;
+}
+
+.specials-card-desc p:last-child {
+  margin-bottom: 0;
+}
+
+.view-more-link-sm {
+  width: 120px;
+}
+
+.view-more-link-sm .view-more-text {
+  font-size: var(--fs-18);
+}
+
+/* ===========================
+   8. QUOTE (배경 풀와이드, 텍스트 90%)
+   =========================== */
+/* ===========================
+   9. FOOTER (텍스트 — 90%)
+   =========================== */
+
+/* ===========================
+   BREAKPOINT: 1400px 이상 (slide-dots 2배 확대)
+   =========================== */
+@media screen and (min-width: 1400px) {
+  .slide-dots {
     gap: 15px;
+  }
+
+  .dot-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
 
-.signature-thumb {
-    width: 100px;
+/* ===========================
+   BREAKPOINT: 1200px (데스크탑/노트북)
+   =========================== */
+@media screen and (max-width: 1199px) {
+  .slide-dots {
+    gap: 10px;
+  }
+
+  .dot-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hero-title-text {
+    font-size: 140px;
+  }
+
+  .gallery-img {
+    width: 300px;
+    height: 240px;
+  }
+
+  .slider-section {
+    width: 100%;
+    min-height: 760px;
+    padding: 100px 100px 42px;
+    gap: 60px;
+  }
+
+  .slider-heading {
+    font-size: 36px;
+  }
+
+  .prologue-section {
+    flex-wrap: nowrap;
+    padding: 80px 30px 120px 50px;
+    gap: 30px;
+  }
+
+  .br-desktop::after {
+    content: none;
+  }
+
+  .prologue-inner {
+    flex: 1 1 0;
+    gap: 24px;
+    overflow: visible;
+  }
+
+  .prologue-heading {
+    font-size: 36px;
+  }
+
+  .prologue-desc {
+    font-size: 15px;
+  }
+
+  .prologue-thumbs {
+    gap: 6px;
+  }
+
+  .thumb-img {
     height: 100px;
+  }
+
+  .prologue-main-wrap {
+    flex: 1 1 0;
+    height: 420px;
+    min-width: 250px;
+  }
+
+  .roomview-title {
+    font-size: 120px;
+  }
+
+  .special-content {
+    padding: 60px 30px 80px;
+  }
+
+  .special-offers-label {
+  }
+
+  .special-here-label {
+    font-size: 80px;
+  }
+
+  .special-left {
+    max-width: 280px;
+  }
+
+  .specials-detail-section {
+    padding-top: 60px;
+  }
+
+}
+
+/* ===========================
+   BREAKPOINT: 1060~1200px (텍스트 잘림 방지 전용)
+   =========================== */
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  .prologue-text {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .prologue-heading,
+  .prologue-desc {
+    /* 문구가 길어지면 한 줄로 늘어나 이미지 영역과 겹치므로,
+       1200px 이하 구간처럼 영역을 넘어가면 줄바꿈 처리 */
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .prologue-heading {
+    font-size: 40px;
+  }
+
+  .prologue-desc {
+    font-size: 16px;
+  }
+
+  .prologue-section {
+    flex-wrap: nowrap;
+    padding: 112px 50px 198px 80px;
+  }
+
+  .prologue-inner {
+    flex: 1 1 0;
+    gap: 30px;
+  }
+
+  .prologue-thumbs {
+    gap: 8px;
+  }
+
+  .thumb-img {
+    height: 120px;
+  }
+
+  .prologue-main-wrap {
+    flex: 1 1 0;
+    height: 500px;
+    min-width: 300px;
+  }
+}
+
+/* ===========================
+   BREAKPOINT: 960px (태블릿)
+   =========================== */
+@media screen and (max-width: 960px) {
+  .hero-title-text {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  .hero-title {
+    justify-content: center;
+  }
+
+  .gallery-img {
+    width: 260px;
+    height: 200px;
+  }
+
+  .gallery-track {
+    animation-duration: 28s;
+  }
+
+  .slider-section {
+    min-height: 600px;
+    padding: 80px 50px 42px;
+    gap: 50px;
+  }
+
+  .slider-heading {
+    font-size: 30px;
+  }
+
+  .slider-subtitle {
+    font-size: var(--fs-20);
+    text-align: right;
+  }
+
+  .prologue-section {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    padding: 60px 20px 80px;
+    gap: 24px;
+  }
+
+  .prologue-heading,
+  .prologue-desc {
+    white-space: normal;
+  }
+
+  .prologue-heading {
+    font-size: 30px;
+  }
+
+  .prologue-desc {
+    font-size: 14px;
+  }
+
+  .prologue-inner {
+    width: 100% !important;
+    max-width: 100%;
+    gap: 20px;
+    grid-column: unset !important;
+    grid-row: unset !important;
+    order: 1;
+  }
+
+  .prologue-main-wrap {
+    flex: 0 0 auto;
+    width: 100% !important;
+    height: 380px;
+    min-width: auto;
+    border-radius: 100px 0 0 0;
+    grid-column: unset !important;
+    grid-row: unset !important;
+    order: 2;
     overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0.7;
-}
+  }
 
-.signature-thumb:hover {
-    opacity: 1;
-}
+  .prologue-thumbs {
+    width: 100% !important;
+    gap: 8px;
+    grid-column: unset !important;
+    grid-row: unset !important;
+    order: 3;
+  }
 
-.signature-thumb.active {
-    opacity: 1;
-    border: 2px solid var(--color-secondary);
-    padding: 3px;
-}
+  .thumb-img {
+    height: 120px;
+  }
 
-.signature-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+  .roomview-section {
+    padding: 40px 20px 60px;
+    gap: 30px;
+  }
 
-/* Closing Section */
-.closing-section {
-    position: relative;
-    width: 100vw;
-    height: 80vh;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    margin-top: 80px;
-    left: 50%;
-    right: 50%;
-    overflow: hidden;
-}
+  .roomview-title {
+    font-size: 80px;
+  }
 
-.closing-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
+  .room-card {
+    min-width: 320px;
+  }
 
-.closing-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+  .room-card-name {
+    font-size: var(--fs-50);
+  }
 
-.closing-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
+  .room-slider-track {
+    animation-duration: 30s;
+  }
+
+  .special-content {
+    padding: 50px 25px 60px;
+  }
+
+  .special-offers-label {
+    font-size: 13vw;
+    white-space: nowrap;
+  }
+
+  /* 960px 이하 (모바일): .special-overlay 를 1열 column 으로 강제 전환.
+     .special-left → .special-text-group 세로 스택 + 모든 요소 중앙 정렬 */
+  .special-overlay {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    align-items: center !important;
+    gap: 24px !important;
+    text-align: center;
+  }
+
+  .special-overlay .special-left {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    order: 1 !important;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
-    z-index: 2;
-}
+    align-items: center;
+    text-align: center;
+  }
 
-.closing-border-top,
-.closing-border-bottom {
+  /* .special-text-group: column 스택의 두 번째 블록, 가운데 정렬 */
+  .special-overlay .special-text-group {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    order: 2 !important;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .special-overlay .special-text-group .special-here-label {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    font-size: clamp(40px, 7.5vw, 72px);
+    text-align: center;
+    margin: 0 auto;
+    align-self: center;
+    white-space: nowrap;
+  }
+
+  /* 960px 이하: "Special here" 한 줄로 표시 — HTML의 <br> 무력화 */
+  .special-overlay .special-text-group .special-here-label br {
+    display: none;
+  }
+
+  /* .special-right: 우측 컬럼 내부의 이미지/타이틀/설명 세로 스택, 가운데 정렬 */
+  .special-overlay .special-text-group .special-right {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 2px;
-    background: white;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .special-overlay .special-text-group .special-right .special-image {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    width: 100%;
+    aspect-ratio: 900 / 550;
+    max-height: 400px;
+    margin: 0;
+  }
+
+  .special-overlay .special-text-group .special-right .specials-card-title,
+  .special-overlay .special-text-group .special-right .specials-card-body {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    margin: 0;
+  }
+
+  /* 상단 이미지와 타이틀 사이 여백 추가 + 가운데 정렬 */
+  .special-overlay .special-text-group .special-right .specials-card-title {
+    margin-top: 16px;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+  }
+
+  /* 세로 스택 상태에서 이미지가 풀폭으로 너무 커지지 않도록 제한 + 가운데 정렬 */
+  .special-overlay .special-left .specials-card-img-wrap {
+    width: 55%;
+    max-width: 320px;
+    padding-bottom: 65%;
+    margin: 0 auto;
+  }
+
+  /* .specials-card-body (설명문구 + View More) 가운데 정렬 */
+  .special-overlay .special-text-group .special-right .specials-card-body {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* View More 링크도 가운데 기준 */
+  .special-overlay .special-text-group .special-right .view-more-link {
+    margin: 0 auto;
+  }
+
+  .specials-detail-section {
+    gap: 50px;
+    padding-top: 50px;
+  }
+
+  .specials-card {
+    gap: 30px;
+  }
+
 }
 
-.closing-text-content {
-    display: flex;
-    justify-content: space-between;
+/* ===========================
+   BREAKPOINT: 420px (모바일)
+   =========================== */
+@media screen and (max-width: 420px) {
+  .hero {
+    padding-bottom: 0;          /* 20 → 0: prologue-bg가 hero 롤링 이미지 하단에 딱 붙도록 */
+    gap: 15px;
+  }
+
+  .hero-title-text {
+    font-size: 60px;
+    line-height: 1.1;
+  }
+
+  .gallery-img {
+    width: 220px;
+    height: 170px;
+  }
+
+  .gallery-track {
+    animation-duration: 22s;
+  }
+
+  .header {
+    padding: 10px 16px;
+  }
+
+  .hero-title {
+    padding: 0 16px;
+  }
+
+  .slider-section {
+    min-height: 480px;
+    padding: 60px 20px 30px;
+    gap: 40px;
+  }
+
+  .slider-heading {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  .slider-subtitle {
+    font-size: var(--fs-18);
+    white-space: normal;
+  }
+
+  .slider-bottom {
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .prologue-section {
+    flex-direction: column;
+    padding: 40px 16px 60px;
+    gap: 24px;
+  }
+
+  .prologue-inner {
+    gap: 24px;
+  }
+
+  .prologue-heading,
+  .prologue-desc {
+    white-space: normal;
+  }
+
+  .prologue-heading {
+    font-size: 28px;
+    line-height: 140%;
+  }
+
+  .prologue-desc {
+    font-size: 16px;
+    line-height: 170%;
+  }
+
+  .prologue-thumbs {
+    gap: 8px;
+  }
+
+  .thumb-img {
+    height: 100px;
+  }
+
+  .prologue-main-wrap {
+    height: 300px;
+    border-radius: 60px 0 0 0;
+  }
+
+  .roomview-section {
+    padding: 30px 16px 50px;
+    gap: 20px;
+  }
+
+  .roomview-title {
+    font-size: 50px;
+    line-height: 120%;
+  }
+
+  .room-card {
+    /* iPhone 14 Pro Max(430px)에서 320px = 뷰포트의 74% 비율 적용
+       iPhone 12 Pro(390px) → 약 290px, iPhone SE(320px) → 약 237px */
+    width: clamp(220px, 74vw, 290px);
+    min-width: 0;
+    max-width: 290px;
+    gap: 18px;
+    padding: 22px 10px;
+  }
+
+  .room-card-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .room-card-name {
+    font-size: var(--fs-40);
+  }
+
+  .room-card-label {
+    font-size: 14px;
+  }
+
+  .room-slider-track {
+    gap: 16px;                 /* 22 → 16 (좁은 화면에서 카드 사이 여백 축소) */
+    animation-duration: 24s;
+  }
+
+  /* gap이 22 → 16으로 줄었으므로 seamless loop 보정값도 11 → 8로 조정 */
+  @keyframes room-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 8px));
+    }
+  }
+
+  .special-content {
+    padding: 40px 16px 60px;
+  }
+
+  .special-offers-label {
+  }
+
+  /* 420px 이하: 960px 의 column 구조를 그대로 이어받고 sizing 만 축소 */
+  .special-overlay {
+    gap: 20px !important;
+  }
+
+  .special-overlay .special-left .specials-card-img-wrap {
+    width: 65%;
+    max-width: 240px;
+    padding-bottom: 75%;
+  }
+
+  .special-overlay .special-text-group {
+    gap: 14px;
+  }
+
+  .special-overlay .special-text-group .special-here-label {
+    font-size: 40px;
+    line-height: 100%;
+    align-self: center;
+  }
+
+  .special-overlay .special-text-group .special-right {
+    gap: 14px;
+  }
+
+  .specials-detail-section {
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  .specials-detail-top {
+    flex-direction: column;
     align-items: flex-start;
-    height: 100%;
-    padding: 20px 0 0 0;
-}
+    gap: 15px;
+  }
 
-.closing-description {
-    font-family: var(--font-ko-sub);
-    font-size: 18px;
-    line-height: 1.6;
-    color: white;
-    align-self: flex-start;
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 1s ease;
-}
+  .specials-card {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-.closing-description.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
+  .specials-card-img-wrap {
+    width: 100%;
+    padding-bottom: 80%;
+  }
 
-.closing-title {
-    font-family: var(--font-en-main);
-    font-size: 4rem;
-    font-weight: bold;
-    color: white;
-    font-style: italic;
-    align-self: flex-end;
-    letter-spacing: 5px;
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 1s ease;
-    transition-delay: 0.3s;
-}
+  .specials-card-title {
+    font-size: 20px;
+  }
 
-.closing-title.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
+  .specials-card-desc {
+    font-size: 15px;
+    line-height: 150%;
+  }
 
-/* Large screens - adjust gallery header width and signature-right */
-@media (min-width: 1920px) {
-    .gallery-header {
-        width: 80%;
-    }
-
-    .signature-right {
-        max-width: 700px;
-    }
-
-    .hero-right {
-        flex: 2.5;
-        max-width: 1200px;
-    }
-
-    .signature-left {
-        max-width: 800px;
-    }
-
-    .signature-main-image {
-        height: 700px;
-    }
-}
-
-/* Extra large screens - further expand image area */
-@media (min-width: 2560px) {
-    .hero-right {
-        flex: 3;
-        max-width: 1600px;
-    }
-
-    .signature-left {
-        max-width: 1000px;
-    }
-
-    .signature-main-image {
-        height: 800px;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content-wrap {
-        width: 100%;
-        padding: 0 20px;
-    }
-    .main-content {
-        margin-left: 0;
-    }
-
-    .side-header.expanded ~ .main-content {
-        margin-left: 0;
-    }
-
-    .hero-section {
-        /* padding: 0 20px 20px 20px; */
-        min-height: 50vh;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        gap: 25px;
-        padding: 20px 0 40px 0;
-    }
-
-    .hero-left {
-        order: 2;
-        padding: 0;
-        width: 95%;
-        max-width: 95%;
-    }
-
-    .hero-right {
-        order: 1;
-        display: block;
-        width: 100%;
-    }
-
-    /* 모바일에서 hero-slider 높이 */
-    .hero-slider-container {
-        height: 50vh;
-    }
-
-    /* 모바일에서 closing-section 높이 */
-    .closing-section {
-        height: 60vh;
-    }
-
-    .hero-subtitle {
-        gap: 15px;
-        margin-bottom: 30px;
-    }
-
-    .subtitle-text {
-        font-size: 12px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .essence-description {
-        font-size: 14px;
-    }
-
-    .gallery-description {
-        font-size: 14px;
-    }
-
-    .signature-description {
-        font-size: 14px;
-    }
-
-    .hero-image {
-        height: 60vh;
-    }
-
-    .gallery-section {
-        padding: 40px 20px;
-    }
-
-    .gallery-slider {
-        gap: 18px;
-        min-height: auto;
-        padding: 20px;
-    }
-
-    .gallery-item {
-        padding: 16px 16px 20px 16px;
-    }
-
-    .gallery-item:nth-child(odd),
-    .gallery-item:nth-child(even) {
-        width: 300px; /* 모바일에서 더 큰 크기로 */
-    }
-
-    .gallery-item:nth-child(odd) .gallery-item-image,
-    .gallery-item:nth-child(even) .gallery-item-image {
-        height: 200px; /* 모바일에서 이미지 높이 줄임 */
-    }
-
-    .gallery-item-image {
-        height: 300px;
-    }
-
-    .gallery-item-content {
-        padding: 20px;
-    }
-
-    .gallery-item-title {
-        font-size: 18px;
-    }
-
-    /* Signature Section Mobile */
-    .signature-section {
-        padding: 40px 0;
-    }
-
-    .signature-container {
-        padding: 20px;
-    }
-
-    /* Mobile signature container fold effect */
-    .signature-container::before {
-        border-width: 0 0 0 0;
-    }
-
-    .signature-container.fold-animate::before {
-        border-width: 0 30px 30px 0;
-    }
-
-    .signature-container::after {
-        border-width: 0 0 0 0;
-    }
-
-    .signature-container.fold-animate::after {
-        border-width: 0 28px 28px 0;
-    }
-
-    .signature-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .signature-left {
-        max-width: 100%;
-    }
-
-    .signature-right {
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .signature-main-image {
-        height: 300px;
-    }
-
-    .signature-title {
-        font-size: 27px;
-        text-align: center;
-    }
-
-    .signature-description {
-        text-align: center;
-        margin: 0 auto 30px auto;
-    }
-
-    .signature-thumbnails {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .signature-thumb {
-        width: 60px;
-        height: 60px;
-    }
-
-    /* Closing Section Mobile */
-    .closing-content {
-        padding: 20px;
-    }
-
-    .closing-text-content {
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 0;
-    }
-
-    .closing-description {
-        margin-top: 15px;
-        font-size: 16px;
-    }
-
-    .closing-title {
-        font-size: 32px;
-        align-self: flex-end;
-    }
 }

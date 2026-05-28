@@ -7,7 +7,7 @@ const ImageHelpers = {
     EMPTY_IMAGE_SVG: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%23d1d5db" width="800" height="600"/%3E%3C/svg%3E',
 
     // 아이콘 포함된 버전 (필요시 사용)
-    EMPTY_IMAGE_WITH_ICON: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Crect fill="%23d1d5db" width="800" height="600"/%3E%3Cg transform="translate(400, 300)"%3E%3Crect x="-48" y="-48" width="96" height="96" rx="8" ry="8" fill="none" stroke="%23374151" stroke-width="3"/%3E%3Ccircle cx="-20" cy="-20" r="6" fill="%23374151"/%3E%3Cpolyline points="48,-12 20,-40 -48,28" fill="none" stroke="%23374151" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/g%3E%3C/svg%3E',
+    EMPTY_IMAGE_WITH_ICON: 'data:image/svg+xml,%3Csvg xmlns%3D%22http://www.w3.org/2000/svg%22 viewBox%3D%220 0 800 600%22%3E%3Crect fill%3D%22%23d1d5db%22 width%3D%22800%22 height%3D%22600%22/%3E%3Cg transform%3D%22translate(400%2C 300)%22%3E%3Crect x%3D%22-48%22 y%3D%22-48%22 width%3D%2296%22 height%3D%2296%22 rx%3D%228%22 ry%3D%228%22 fill%3D%22none%22 stroke%3D%22%23374151%22 stroke-width%3D%223%22/%3E%3Ccircle cx%3D%22-20%22 cy%3D%22-20%22 r%3D%226%22 fill%3D%22%23374151%22/%3E%3Cpolyline points%3D%2248%2C-12 20%2C-40 -48%2C28%22 fill%3D%22none%22 stroke%3D%22%23374151%22 stroke-width%3D%223%22 stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3C/svg%3E',
 
     /**
      * 공통 이미지 처리 헬퍼 함수 (에러 처리 포함)
@@ -18,6 +18,10 @@ const ImageHelpers = {
         }
 
         if (!imagesData || imagesData.length === 0) {
+            // demo-filled.json 사용 시에는 폴백 없이 그대로 둠
+            if (window.useImageHelpersFallback === false) {
+                return;
+            }
             this.applyPlaceholder(imageElement, overlayElement);
             return;
         }
@@ -32,7 +36,10 @@ const ImageHelpers = {
 
                 // 이미지 로드 에러 처리
                 imageElement.onerror = () => {
-                    this.applyPlaceholder(imageElement, overlayElement);
+                    // demo-filled.json 사용 시에는 에러 시에도 폴백 없음
+                    if (window.useImageHelpersFallback !== false) {
+                        this.applyPlaceholder(imageElement, overlayElement);
+                    }
                 };
 
                 imageElement.src = firstImage.url;
@@ -41,10 +48,17 @@ const ImageHelpers = {
                 imageElement.style.opacity = '1';
                 if (overlayElement) overlayElement.style.display = '';
             } else {
+                // demo-filled.json 사용 시에는 폴백 없이 그대로 둠
+                if (window.useImageHelpersFallback === false) {
+                    return;
+                }
                 this.applyPlaceholder(imageElement, overlayElement);
             }
         } catch (error) {
-            this.applyPlaceholder(imageElement, overlayElement);
+            // demo-filled.json 사용 시에는 에러 시에도 폴백 없음
+            if (window.useImageHelpersFallback !== false) {
+                this.applyPlaceholder(imageElement, overlayElement);
+            }
         }
     },
 

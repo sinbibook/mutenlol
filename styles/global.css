@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* Common Style Variables */
+
+  /* 모션 이징 — 우아하고 절제된 느낌 (ease-out-quart) */
+  --ease-elegant: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Color */
+  --Black: #222;
+  --color-black: #000;
+  --color-darkgray: #a0a0a0;
+  --color-darksalmon: var(--color-secondary);
+  --color-gainsboro: #dcdcd0;
+  --color-gray-100: #9a9383;
+  --color-tan: #c0b59d;
+  --color-white: #fff;
+  --color-whitesmoke: var(--color-primary);
+
+  /* Gap */
+  --gap-10: 10px;
+  --gap-18: 18px;
+  --gap-20: 20px;
+  --gap-24: 24px;
+  --gap-28: 28px;
+  --gap-30: 30px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-1: 1px;
+  --padding-2: 2px;
+  --padding-3: 3px;
+  --padding-8: 8px;
+  --padding-12: 12px;
+  --padding-20: 20px;
+  --padding-25: 25px;
+  --padding-26: 26px;
+  --padding-27: 27px;
+  --padding-50: 50px;
+
+  /* BorderRadius */
+  --br-0: 0px;
+  --br-100: 100px;
+
+  /* Font */
+  --font-cormorant: Cormorant;
+  --font-italiana: var(--font-en-main);
+  --font-noto-serif: Noto Serif;
+  --font-noto-serif-kr: Noto Serif KR;
+  --font-pretendard: Pretendard;
+  --font-roboto-serif: Roboto Serif;
+  --font-the-nautigal: The Nautigal;
+
+  /* FontSize */
+  --fs-13: 13px;
+  --fs-15: 15px;
+  --fs-18: 18px;
+  --fs-19: 19px;
+  --fs-20: 20px;
+  --fs-22: 22px;
+  --fs-24: 24px;
+  --fs-40: 40px;
+  --fs-50: 50px;
+  --fs-80: 80px;
+
+  /* Shadows */
+  --text-shadow-1: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  --text-shadow-2: 0px 0px 4px rgba(0, 0, 0, 0.2);
+
+  /* WidthHeights */
+  --height-1: 1px;
+  --height-2: 2px;
+  --height-10: 10px;
+  --height-22: 22px;
+  --height-40: 40px;
+  --height-275: 275px;
+  --height-56_3: 56.3px;
+  --max-w-353: 353px;
+  --min-w-346: 346px;
+  --width-80: 80px;
+  --width-100: 100px;
+
+  /* LineHeights */
+  --lh-14: 14px;
+  --lh-22: 22px;
+  --lh-36: 36px;
+
+  /* LetterSpacings */
+  --ls--0_01: -0.01;
+
+  --left-0: 0px;
+  --top-0: 0px;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+/* ===========================
+   스크롤 Reveal 모션 — 강한 fade + slide-up + scale
+   IntersectionObserver로 .is-in-view 클래스가 추가될 때 트리거
+   =========================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(120px) scale(0.94);
+  transition:
+    opacity 1.4s var(--ease-elegant),
+    transform 1.4s var(--ease-elegant);
+  will-change: opacity, transform;
+}
+[data-reveal].is-in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* 스태거(순차) 효과를 위한 delay */
+[data-reveal][data-reveal-delay="1"] { transition-delay: 0.12s; }
+[data-reveal][data-reveal-delay="2"] { transition-delay: 0.24s; }
+[data-reveal][data-reveal-delay="3"] { transition-delay: 0.36s; }
+[data-reveal][data-reveal-delay="4"] { transition-delay: 0.48s; }
+
+/* 모션 감소 선호 사용자에 대한 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:root {
+  /* Common Style Variables */
+
+  /* 모션 이징 — 우아하고 절제된 느낌 (ease-out-quart) */
+  --ease-elegant: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Color */
+  --Black: #222;
+  --color-black: #000;
+  --color-darkgray: #a0a0a0;
+  --color-darksalmon: var(--color-secondary);
+  --color-gray-100: #9a9383;
+  --color-gray-200: rgba(255, 255, 255, 0.3);
+  --color-seashell: #f5f3ed;
+  --color-white: #fff;
+  --color-whitesmoke: var(--color-primary);
+
+  /* Gap */
+  --gap-0: 0px;
+  --gap-3: 3px;
+  --gap-10: 10px;
+  --gap-18: 18px;
+  --gap-20: 20px;
+  --gap-23: 23px;
+  --gap-24: 24px;
+  --gap-30: 30px;
+  --gap-40: 40px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-01: 0;
+  --padding-1: 1px;
+  --padding-2: 2px;
+  --padding-8: 8px;
+  --padding-9: 9px;
+  --padding-12: 12px;
+  --padding-18: 18px;
+  --padding-19: 19px;
+  --padding-20: 20px;
+  --padding-26: 26px;
+  --padding-30: 30px;
+  --padding-32: 32px;
+
+  /* BorderRadius */
+  --br-0: 0px;
+  --br-100: 100px;
+  --br-300: 300px;
+
+  /* Font */
+  --font-abhaya-libre-extrabold: Abhaya Libre ExtraBold;
+  --font-cormorant: Cormorant;
+  --font-italiana: var(--font-en-main);
+  --font-noto-serif: Noto Serif;
+  --font-noto-serif-kr: Noto Serif KR;
+  --font-pretendard: Pretendard;
+  --font-the-nautigal: The Nautigal;
+
+  /* FontSize */
+  --fs-13: 13px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-19: 19px;
+  --fs-20: 20px;
+  --fs-40: 40px;
+  --fs-56: 56px;
+  --fs-64: 64px;
+
+  /* Borders */
+  --border-1: 2px solid var(--color-darksalmon);
+  --border-2: 1px solid var(--color-white);
+  --border-3: 1px solid var(--Black);
+
+  /* Shadows */
+  --shadow-drop: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  --text-shadow-1: 0px 0px 4px rgba(0, 0, 0, 0.15);
+
+  /* WidthHeights */
+  --height-1: 1px;
+  --height-2: 2px;
+  --height-10: 10px;
+  --height-11: 11px;
+  --height-22: 22px;
+  --height-40: 40px;
+  --height-279: 279px;
+  --height-350: 350px;
+  --height-900: 900px;
+  --width-1: 1px;
+  --width-30: 30px;
+  --width-64: 64px;
+  --width-80: 80px;
+  --width-100: 100px;
+  --width-120: 120px;
+  --width-300: 300px;
+  --width-450: 450px;
+  --width-500: 500px;
+  --width-1900: 1900px;
+
+  /* LineHeights */
+  --lh-36: 36px;
+
+  /* LetterSpacings */
+  --ls--0_01: -0.01;
+  --ls-0_03: 0.03;
+
+  --left-0: 0px;
+  --top-0: 0px;
+}

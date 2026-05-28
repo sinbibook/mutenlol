@@ -3,28 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="숙소 설명">
-    <meta name="keywords" content="SEO 키워드">
-    <title>숙소명 - 템플릿</title>
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/theme.css" as="style">
-    <link rel="preload" href="styles/common.css" as="style">
-    <link rel="preload" href="styles/index.css" as="style">
+    <title></title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/slider-arrows.css">
+    <link rel="stylesheet" href="styles/quote-section.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/popup.css">
-
+    <link rel="stylesheet" href="styles/global.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Italiana:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&display=swap"
+    />
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="강릉 뮤튼롤 - 홈" />
   <meta property="og:description" content="강릉 뮤튼롤
 muten: 음소거 lol: 박장대소 
 온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
-  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-udypibt7lb.jpg" />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
   <meta property="og:url" content="https://mutenlol.kr" />
 
   <!-- Twitter Card Meta Tags -->
@@ -33,148 +58,165 @@ muten: 음소거 lol: 박장대소
   <meta name="twitter:description" content="강릉 뮤튼롤
 muten: 음소거 lol: 박장대소 
 온전한 쉼, 자연과 하나 되는 공간, 머무르다." />
-  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-udypibt7lb.jpg" />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/9c484735-5b66-4365-8390-6f9b4b7718f0/thumbnail/1763431914603-3ecuuhwpxlo.jpg" />
 </head>
 <body>
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="content-wrap">
-            <!-- CUSTOM FIELD : 메인 소개 섹션 -->
-            <section class="hero-section">
-                <div class="hero-content">
-                <div class="hero-left">
-                    <div class="hero-subtitle">
-                        <span class="subtitle-text" data-hero-subtitle></span>
-                        <div class="subtitle-line"></div>
-                    </div>
-                    <!-- 숙소 영문명 매핑 -->
-                    <h1 class="hero-title-property-name">
-                        <span class="hero-title-line" data-delay="0" data-hero-property-name-en></span>
-                    </h1>
-                    <!-- 메인 소개 타이틀 -->
-                    <p class="hero-title" data-hero-title></p>
-                    <!-- 메인 소개 설명 -->
-                    <p class="hero-description" data-hero-description></p>
-                </div>
-                <div class="hero-right">
-                    <div class="hero-slider-container">
-                        <div class="hero-slider" data-hero-slider>
-                            <!-- 동적으로 슬라이드가 생성됩니다 -->
-                        </div>
-                        <div class="hero-slider-nav">
-                            <button class="slider-btn prev">‹</button>
-                            <button class="slider-btn next">›</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </section>
-
-            <!-- CUSTOM FIELD : 핵심 메시지 섹션 / 이미지 x -->
-            <section class="essence-section">
-                <div class="essence-content">
-                    <h4 class="essence-title" data-essence-title></h4>
-                    <p class="essence-description" data-essence-description></p>
-                </div>
-            </section>
-
-            <!-- CUSTOM FIELD : 특색 섹션 / 이미지 4장 fix -->
-            <section class="signature-section">
-            <div class="signature-container">
-                <div class="signature-content">
-                    <div class="signature-left">
-                        <div class="signature-main-image">
-                            <img id="signature-main-img" data-signature-main-img src="" alt="">
-                        </div>
-                    </div>
-                    <div class="signature-right">
-                        <div class="signature-text-content">
-                            <!-- 특색 섹션 타이틀 / 특색 섹션 설명 사용 x -->
-                            <h2 class="signature-title" id="signature-title" data-signature-title></h2>
-
-                            <!-- 특색 섹션 업로드 이미지 설명 -->
-                            <p class="signature-description" id="signature-description" data-signature-description></p>
-                        </div>
-                        <!-- 특색 섹션 업로드 이미지들 -->
-                        <div class="signature-thumbnails">
-                            <div class="signature-thumb" data-index="0">
-                                <img src="" alt="">
-                            </div>
-                            <div class="signature-thumb" data-index="1">
-                                <img src="" alt="">
-                            </div>
-                            <div class="signature-thumb" data-index="2">
-                                <img src="" alt="">
-                            </div>
-                            <div class="signature-thumb" data-index="3">
-                                <img src="" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </section>
-
-            <!-- CUSTOM FIELD : 갤러리 섹션 -->
-            <section class="gallery-section">
-            <div class="gallery-container">
-                <div class="gallery-header">
-                    <h2 class="gallery-title" data-gallery-title></h2>
-                    <p class="gallery-description" data-gallery-description></p>
-                </div>
-                <div class="gallery-slider" data-gallery-slider>
-                    <!-- 동적으로 갤러리 아이템이 생성됩니다 -->
-                </div>
-            </div>
-        </section>
-
-            <!-- CUSTOM FIELD : 마무리 섹션 -->
-            <section class="closing-section">
-                <!-- 마무리 섹션 이미지 -->
-                <div class="closing-background">
-                    <img data-closing-bg-img src="" alt="Closing Background">
-                </div>
-                <div class="closing-content">
-                    <div class="closing-border-top"></div>
-                    <div class="closing-text-content">
-                        <!-- 마무리 섹션 설명 -->
-                        <div class="closing-description" data-closing-description></div>
-                        <!-- 숙소 영문명 매핑 -->
-                        <div class="closing-title" data-closing-title></div>
-                    </div>
-                    <div class="closing-border-bottom"></div>
-                </div>
-            </section>
+    <div class="page">
+      <!-- header.html include -->
+      <div id="header-container"></div>
+      <!-- ===================== 1. HERO ===================== -->
+      <section class="hero">
+        <!-- HOMEPAGE Property : 숙소명 매핑 -->
+        <div class="hero-title" data-hero-property-name>
+          <h1 class="hero-title-text"></h1>
         </div>
-    </main>
+        <!-- ===================== 2. GALLERY ===================== -->
+        <div class="gallery-section" data-gallery>
+        <!-- CUSTOM FIELD : 홈 갤러리 섹션 이미지 매핑 -->
+          <div class="gallery-track" data-gallery-image>
+            <!-- 동적 생성 (index-mapper.js) -->
+          </div>
+        </div>
 
-    <!-- Popup System -->
+        <!-- ===================== 3. CON-2: SLIDER ===================== -->
+        <div class="slider-section" data-hero-section>
+          <!-- CUSTOM FIELD : 홈 메인 소개 섹션 이미지 매핑 -->
+          <div class="slider-bg-wrap" data-hero-images>
+            <!-- 동적 생성 (index-mapper.js) -->
+          </div>
+          <div class="slider-content">
+            <!-- CUSTOM FIELD : 홈 메인 소개 섹션 설명 매핑 -->
+            <div class="slider-heading" data-hero-description></div>
+            <div class="slider-bottom">
+              <!-- CUSTOM FIELD : 홈 메인 소개 섹션 타이틀 매핑 -->
+              <h3 class="slider-subtitle" data-hero-title></h3>
+              <div class="slider-arrows">
+                <img class="arrow-line" loading="lazy" alt="" src="./images/Rectangle-37.svg" />
+                <h3 class="arrow-num">01</h3>
+                <div class="arrow-divider"></div>
+                <h3 class="arrow-num">00</h3>
+                <img class="arrow-line arrow-line-flip" loading="lazy" alt="" src="./images/Rectangle-37.svg" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===================== 4. CON-3: PROLOGUE ===================== -->
+      <section class="prologue-section" data-essence-section>
+        <img class="prologue-bg" alt="" src="./images/bg6@2x.png" />
+        <div class="prologue-inner">
+          <div class="prologue-text">
+            <!-- CUSTOM FIELD : 홈 메인 핵심 메시지 섹션 설명 매핑  -->
+            <div class="prologue-heading" data-essence-description></div>
+            <!-- CUSTOM FIELD : 홈 메인 핵심 메시지 타이틀 매핑 -->
+            <div class="prologue-desc" data-essence-title></div>
+          </div>
+          <div class="prologue-divider"></div>
+        </div>
+        <!-- CUSTOM FIELD : 홈 메인 핵심 메시지 이미지 매핑, 이미지는 총 3개 고정 롤링 -->
+        <div class="prologue-main-wrap" data-essence-images>
+          <!-- 동적 생성 (index-mapper.js) -->
+        </div>
+        <div class="prologue-thumbs">
+          <!-- 동적 생성 (index-mapper.js) -->
+        </div>
+      </section>
+
+      <!-- ===================== 5. ROOMVIEW ===================== -->
+       <!-- room preview section : 커스텀 영역 x / 룸 정보 매핑 -->
+      <section class="roomview-section" data-room-section>
+        <!-- 하드코딩, 매핑 x -->
+        <b class="roomview-title">Roomview</b>
+        <div class="room-slider">
+          <div class="room-slider-track">
+            <!-- 동적 생성 (index-mapper.js) -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 6. SPECIAL OFFERS ===================== -->
+       <!-- facility section : 커스텀 영역 x / 부대시설 정보 매핑 -->
+      <section class="special-section" data-facility-section>
+        <img class="special-bg-img" alt="" src="./images/bg5@2x.png" />
+        <div class="special-content">
+          <!-- 하드코딩, 매핑x -->
+          <b class="special-offers-label">Special offers</b>
+          <!-- 컨텐츠 레이어 (문구 위에 겹침) -->
+          <div class="special-overlay">
+            <div class="special-left">
+              <div class="specials-card-img-wrap">
+                <div class="specials-card-img-border"></div>
+                <!-- 동적 생성 (index-mapper.js) -->
+              </div>
+            </div>
+            <div class="special-text-group">
+              <!-- 하드코딩, 매핑x -->
+              <b class="special-here-label">Special<br /> here</b>
+              <div class="special-right">
+                <div class="special-image">
+                  <!-- 동적 생성 (index-mapper.js) -->
+                  <div class="slide">
+                    <div class="slide-dots">
+                      <img class="dot-icon" loading="lazy" alt="" src="./images/Empty-Set1.svg" />
+                      <img class="dot-icon dot-icon-flip" loading="lazy" alt="" src="./images/Empty-Set1.svg" />
+                    </div>
+                    <div class="bar-icon" aria-hidden="true"><div class="bar-fill"></div></div>
+                  </div>
+                </div>
+                <!-- 슬라이드 인덱스에 맞춰 JS가 textContent와 href를 교체 -->
+                <h3 class="specials-card-title" data-titles=""></h3>
+                <div class="specials-card-body">
+                  <div class="specials-card-desc" data-descs=""></div>
+                  <a href="#" class="view-more-link view-more-link-sm" data-links="">
+                    <h3 class="view-more-text">View More</h3>
+                    <img class="view-more-line" loading="lazy" alt="" src="./images/Rectangle-8.svg" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 8. QUOTE (CON-5) ===================== -->
+      <section class="quote-section" data-closing-section>
+        <!-- CUSTOM FIELD : 홈 메인 마무리 섹션 이미지 매핑 -->
+        <img class="quote-bg" loading="lazy" alt="" src="" />
+        <div class="quote-content">
+          <!-- CUSTOM FIELD : 홈 메인 마무리 섹션 타이틀 매핑 -->
+          <b class="quote-title" data-closing-title></b>
+          <!-- CUSTOM FIELD : 홈 메인 마무리 섹션 설명 매핑 -->
+          <b class="quote-body" data-closing-description></b>
+        </div>
+      </section>
+
+      <!-- ===================== 9. FOOTER ===================== -->
+      <!-- footer.html include -->
+      <div id="footer-container"></div>
+
+    </div>
+
+
+    <!-- Popup -->
     <div id="popup-container"></div>
 
-    <!-- Include ImageWithFallback script -->
-    <script src="js/image-with-fallback.js"></script>
+    <!-- Scripts -->
+    <script src="js/common.js"></script>
+    <script src="js/common/scroll-reveal.js"></script>
+    <script src="js/pages/index.js"></script>
 
-    <!-- Image Helpers -->
+    <!-- Data Mapper -->
     <script src="js/image-helpers.js"></script>
-
-    <!-- Base Data Mapper (must load before preview-handler) -->
     <script src="js/data-mapper/core/base-mapper.js"></script>
-
-    <!-- Preview Handler for Admin Integration -->
+    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+    <script src="js/data-mapper/pages/index-mapper.js"></script>
     <script src="js/preview-handler.js"></script>
 
-    <!-- Index Page Mapper -->
-    <script src="js/data-mapper/pages/index-mapper.js"></script>
-
-    <!-- Header Footer Mapper -->
-    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
-
-    <!-- Header and Footer Loader -->
+    <!-- Header / Footer Loader (header.html 로드 → 내부 스크립트 추출 실행 → HeaderFooterMapper 초기화) -->
     <script src="js/header-footer-loader.js"></script>
 
-    <!-- Page-specific script -->
-    <script src="js/pages/index.js"></script>
+    <!-- Popup -->
     <script src="js/popup.js"></script>
-
 </body>
 </html>
