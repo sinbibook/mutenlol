@@ -56,7 +56,7 @@ class PreviewHandler {
     getDefaultColors() {
         return {
             primary: '#ecebe8',
-            secondary: '#683c3c'
+            secondary: '#F1927B'
         };
     }
 
