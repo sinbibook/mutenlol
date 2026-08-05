@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.52.0",
-    "generatedAt": "2026-08-05T05:05:54.922769337Z",
+    "version": "1.53.0",
+    "generatedAt": "2026-08-05T05:08:48.243362123Z",
     "templateType": "fullpage_mood",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -3403,8 +3403,8 @@
       "title": "강릉 뮤튼롤",
       "description": "온전한 쉼, 자연과 하나 되는 공간, 머무르다. 강릉 뮤튼롤 입니다. ",
       "keywords": "강릉펜션, 강원도펜션, 강릉오션뷰펜션, 강릉스파펜션, 강릉자쿠지펜션, 강릉수영장펜션, 강릉감성펜션, 강릉주문진펜션, 강릉주문진, 개별바베큐",
-      "naverSiteVerification": null,
-      "googleSiteVerification": null
+      "naverSiteVerification": "",
+      "googleSiteVerification": ""
     },
     "socialLinks": {
       "facebook": null,
@@ -3565,91 +3565,123 @@
                 "title": "mutenlol gallery",
                 "images": [
                   {
-                    "id": "9fedd696-7ffd-4395-816a-4d5fffc9a48c",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-udvhmjxiy8o.jpg",
+                    "id": "448477e2-ace5-4365-85db-a6927bd9f6a4",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524577-5jo656w5cv.jpg",
                     "sortOrder": 0,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "12b6e476-e863-4f4a-a36b-bf98e0080a17",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-488tc8ljagp.jpg",
+                    "id": "d5e6c684-a80c-4e29-a352-21ecd98731c2",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524759-l3edvam1bd.jpg",
                     "sortOrder": 1,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "501b9bf2-14c1-4439-abf6-d7be04babc92",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-ho6sr36k9hc.jpg",
+                    "id": "9da89cca-4363-47d8-8c10-0694f1496415",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524514-nribyoz07i.jpg",
                     "sortOrder": 2,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "3d7adbf5-03f7-4897-b53a-11c89c8d8ea2",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763616789078-imr809qiy9.jpg",
+                    "id": "7def65b3-28a8-4495-a26d-7f81ecfef560",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524617-bwagaet104.jpg",
                     "sortOrder": 3,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "fae5d4d2-a624-49eb-8b27-f47f6138f2e7",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-vpp8e83rckr.jpg",
+                    "id": "540b7f4e-b496-4cd7-8ca1-c673afe77087",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524616-laqhit2z3d.jpg",
                     "sortOrder": 4,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "b34468bc-b49c-4b9c-94aa-3f55a4855913",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836531511-7gn67n2y7yy.jpg",
+                    "id": "f7ffd8ef-d231-49e0-be4d-d0656d644acb",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524514-85d8411m0v.jpg",
                     "sortOrder": 5,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "16ef27e0-18f9-46fe-81a9-2ed38f6686c4",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-h96gxaovi5u.jpg",
+                    "id": "72946b85-0304-46b9-9227-25628e1e7d98",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524768-fm1jmoem0c.jpg",
                     "sortOrder": 6,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "39381def-1044-4a1d-a85d-9f1b5cf41d03",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1764836472336-mwgxlc4fto.jpg",
+                    "id": "ab4134f3-f4bb-4313-ba04-da5e37ebad70",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524618-rzm76yr20y.jpg",
                     "sortOrder": 7,
-                    "description": "Mutenlol",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "20d9723d-111a-4535-8c71-c98d991f67e8",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763617355174-48h55ijufnc.jpg",
+                    "id": "874cf53c-e06c-4dd4-94bd-5e70241c8cac",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524775-vzwnt1uhwc.jpg",
                     "sortOrder": 8,
-                    "description": "boodle fighter",
+                    "description": "",
                     "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "c40d1135-cba6-44db-9850-1d90b047d2d3",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-jq5b19n6gw.jpg",
+                    "id": "64bcc6e5-9694-4369-8580-4f39e231404a",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524857-ia8kfyw559.jpg",
                     "sortOrder": 9,
-                    "description": "Mutenlol",
-                    "isSelected": false,
+                    "description": "",
+                    "isSelected": true,
                     "blockId": null
                   },
                   {
-                    "id": "1c0dc48f-ad4c-4818-9869-bed44ced3f89",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1763433544767-nad6vp7ret.jpg",
+                    "id": "af091687-ba56-4f47-a295-cdf1a9f478d5",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524759-6gkedix9jp.jpg",
                     "sortOrder": 10,
-                    "description": "Mutenlol",
-                    "isSelected": false,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  },
+                  {
+                    "id": "7e739806-bb92-40d5-9885-05c699182694",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524622-6497h8w6s0.jpg",
+                    "sortOrder": 11,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  },
+                  {
+                    "id": "9588c828-f7d4-47b0-a330-c54c5d39dbd7",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524577-sfncz46hfi.jpg",
+                    "sortOrder": 12,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  },
+                  {
+                    "id": "7823c4c0-bae9-489a-a8ec-02d1ed60cee8",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524772-x6qm47kifg.jpg",
+                    "sortOrder": 13,
+                    "description": "",
+                    "isSelected": true,
+                    "blockId": null
+                  },
+                  {
+                    "id": "a15984a4-48b2-4705-aab8-34fd3b3250a8",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/index_gallery/1785906524755-ozu8zu4z3j.jpg",
+                    "sortOrder": 14,
+                    "description": "",
+                    "isSelected": true,
                     "blockId": null
                   }
                 ],
@@ -6250,6 +6282,22 @@
               "category": "roomtype_exterior"
             }
           ]
+        },
+        {
+          "id": "70e2505c-0e6f-4072-90cb-4e4e3c406e99",
+          "images": [ ]
+        },
+        {
+          "id": "61124b1b-6fe6-4ea8-a917-096ab8f96743",
+          "images": [ ]
+        },
+        {
+          "id": "87fd84dd-1664-4cf5-a2d5-83c70a289320",
+          "images": [ ]
+        },
+        {
+          "id": "ce25d635-d1d5-484f-82d2-d2d5127f4176",
+          "images": [ ]
         }
       ]
     }
