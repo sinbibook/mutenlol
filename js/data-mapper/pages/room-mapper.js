@@ -205,11 +205,18 @@ class RoomMapper extends BaseDataMapper {
             capacityEl.textContent = `기준 ${base}인 / 최대 ${max}인`;
         }
 
-        // 이용 안내
+        // 이용 안내 — 내용 없으면 제목 포함 섹션(info-right) 미노출
         const guideEl = this.safeSelect('[data-room-guide]');
         if (guideEl) {
-            const guide = room.roomInfo || room.usageGuide || '';
-            guideEl.innerHTML = this._formatTextWithLineBreaks(guide, '이용 안내');
+            const guide = (room.roomInfo || room.usageGuide || '').trim();
+            const guideSection = guideEl.closest('.info-right');
+            if (guide) {
+                guideEl.innerHTML = this._formatTextWithLineBreaks(guide, '이용 안내');
+                if (guideSection) guideSection.style.display = '';
+            } else {
+                guideEl.innerHTML = '';
+                if (guideSection) guideSection.style.display = 'none';
+            }
         }
     }
 

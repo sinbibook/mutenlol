@@ -53,7 +53,7 @@ img {
 
 .hero-title-text {
   margin: 70px 0 -30px 0;       /* top 100→70 (-30px 위로) / bottom -30 (gallery와 간격 -30) */
-  font-size: 200px;
+  font-size: 180px;
   font-family: var(--font-italiana);
   font-weight: 400;
   color: var(--color-darksalmon);
@@ -833,7 +833,7 @@ a.room-card:hover {
   }
 
   .hero-title-text {
-    font-size: 140px;
+    font-size: 125px;
   }
 
   .gallery-img {
