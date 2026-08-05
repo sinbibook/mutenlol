@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.70.0",
-    "generatedAt": "2026-08-05T05:53:23.630035865Z",
+    "version": "1.71.0",
+    "generatedAt": "2026-08-05T05:56:52.818721907Z",
     "templateType": "fullpage_mood",
     "propertyId": "9c484735-5b66-4365-8390-6f9b4b7718f0",
     "homepageId": "c950d417-0cd5-4112-8957-2f9514ac2d59"
@@ -6165,9 +6165,9 @@
           "id": "70e2505c-0e6f-4072-90cb-4e4e3c406e99",
           "images": [
             {
-              "id": "5a139233-8c3d-415e-897e-69d9d133be8b",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/roomtype_thumbnail/1785908833582-boie5sel24.jpg",
-              "sortOrder": 10,
+              "id": "a3a7da0b-e521-4005-b095-dd3adb40bdd5",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/roomtype_thumbnail/1785909347512-kj0fbjafhg.jpg",
+              "sortOrder": 13,
               "description": "",
               "isSelected": true,
               "blockId": "70e2505c-0e6f-4072-90cb-4e4e3c406e99",
@@ -6334,7 +6334,7 @@
             {
               "id": "de75acee-f751-4905-8c4f-6a5d2f159201",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/roomtype_thumbnail/1785908927910-j6ujii8ls9.jpg",
-              "sortOrder": 11,
+              "sortOrder": 10,
               "description": "",
               "isSelected": true,
               "blockId": "61124b1b-6fe6-4ea8-a917-096ab8f96743",
@@ -6492,7 +6492,7 @@
             {
               "id": "dae61d60-1b30-4b84-a8f9-177c2087a3b0",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/roomtype_thumbnail/1785909081202-uxlzzqwxok.jpg",
-              "sortOrder": 12,
+              "sortOrder": 11,
               "description": "",
               "isSelected": true,
               "blockId": "87fd84dd-1664-4cf5-a2d5-83c70a289320",
@@ -6668,7 +6668,7 @@
             {
               "id": "12d66b80-a69c-4058-98dc-6c2a6ca7613a",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/c950d417-0cd5-4112-8957-2f9514ac2d59/roomtype_thumbnail/1785909173445-zi84nar6o5.jpg",
-              "sortOrder": 13,
+              "sortOrder": 12,
               "description": "",
               "isSelected": true,
               "blockId": "ce25d635-d1d5-484f-82d2-d2d5127f4176",
