@@ -18,7 +18,7 @@
 }
 
 .logo {
-  height: 88px !important;
+  height: 83px !important;
   width: 210px !important;
   object-fit: cover;
 }
@@ -136,7 +136,7 @@
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  width: 100vw !important;
+  width: 100% !important;
   height: 100vh !important;
   margin: 0 !important;
   display: flex;
@@ -149,6 +149,7 @@
   pointer-events: none;
   transition: opacity 0.25s var(--ease-elegant) !important;
   overflow: hidden;
+  overflow-x: clip;
 }
 .navigation.is-open {
   opacity: 1;
@@ -167,7 +168,7 @@
   flex: 1 !important;
   position: relative !important;
   background-color: var(--color-white) !important;
-  overflow: auto !important;
+  overflow: hidden !important;
   max-width: 100% !important;
   min-height: 0 !important;
   padding: 0 !important;
@@ -207,19 +208,38 @@
   top: 0;
   left: 784px;
   width: 1066px;
+  height: 100%;
+  background-color: var(--color-white);
+  overflow: hidden;
   flex-direction: column;
   text-align: center;
   font-size: var(--fs-17);
   color: var(--Black);
   font-family: var(--font-ko-main);
 }
+
+.navigation .navigation-off-inner::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 784px;
+  background-color: var(--color-white);
+  z-index: -1;
+  pointer-events: none;
+}
 .navigation .mask-group-parent {
   width: 942px;
-  padding: 290px 152px 327px;     /* padding-top 310 → 290: room-parent 20px 위로 이동 */
+  min-height: 100%;
+  height: auto;
+  padding: 290px 152px 60px;
+  background-color: var(--color-white);
   box-sizing: border-box;
   position: relative;
   isolation: isolate;
   gap: 82px;
+  overflow: visible;
 }
 .navigation .btn-r,
 .navigation .mask-group-icon {
@@ -228,16 +248,18 @@
   flex-shrink: 0;
 }
 .navigation .mask-group-icon {
-  height: 100vh !important;
+  height: 100% !important;
+  min-height: 100vh !important;
   width: 100% !important;
   top: 0 !important;
   right: 0 !important;
   bottom: auto !important;
   left: 0 !important;
   max-width: 100% !important;
-  max-height: 100vh !important;
+  max-height: none !important;
   overflow: hidden;
   object-fit: cover;
+  z-index: 0 !important;
 }
 /* btn-r (예약 / YBS / 닫기): 기존 헤더(.header)와 동일한 컨테이너 구조로 정렬
    - .header: padding: 10px 50px (≤960: 10px 30px, ≤420: 동일), 로고 높이별로 컨테이너 높이 변경
@@ -464,6 +486,11 @@
   color: var(--Black);
   font-family: var(--font-ko-main);
   white-space: nowrap;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible;
+  position: relative !important;
+  z-index: 2 !important;
 }
 /* 각 컬럼: room 리스트(가장 긴 객실 라벨) 너비 기준으로 4개 컬럼 가로폭 통일 + 가운데 정렬
    hover 상태도 모두 포함 — hover 시 align-items가 다른 룰의 flex-start로 떨어져
@@ -573,14 +600,52 @@
   gap: var(--gap-18);
   z-index: 2;
 }
+
+.navigation .room-parent .room[data-rooms-sub] {
+  pointer-events: auto !important;
+  max-height: calc(100dvh - 370px);
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.navigation .room-parent .room[data-rooms-sub]::-webkit-scrollbar {
+  width: 4px;
+}
+
+.navigation .room-parent .room[data-rooms-sub]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.navigation .room-parent .room[data-rooms-sub]::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 999px;
+}
+
+.navigation .room-parent .room[data-rooms-sub].is-scrolling {
+  scrollbar-color: var(--color-white) transparent;
+}
+
+.navigation .room-parent .room[data-rooms-sub].is-scrolling::-webkit-scrollbar {
+  width: 3px;
+}
+
+.navigation .room-parent .room[data-rooms-sub].is-scrolling::-webkit-scrollbar-thumb {
+  background-color: var(--color-white);
+}
+
 /* 객실명이 길어질 때: room 줄 영역은 최대 200px, 초과 시 말줄임(...) 처리
    → 텍스트가 길어도 가로폭이 늘어나거나 잘려보이지 않음 */
 .navigation .room-parent .room a.reservation {
   display: block;
-  max-width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 220px;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
   text-align: center;
 }
 .navigation .room,
@@ -722,6 +787,9 @@ body.navigation-open {
     left: 45vw !important;
     width: 55vw !important;
   }
+  .navigation .navigation-off-inner::before {
+    left: 45vw !important;
+  }
   .navigation .navigation-off-item {
     left: calc(45vw + 106px) !important;
     width: calc(55vw - 169px) !important;
@@ -783,6 +851,9 @@ body.navigation-open {
     left: 38vw !important;
     width: 62vw !important;
   }
+  .navigation .navigation-off-inner::before {
+    left: 38vw !important;
+  }
   .navigation .navigation-off-item {
     left: calc(38vw + 106px) !important;
     width: calc(62vw - 169px) !important;
@@ -839,6 +910,9 @@ body.navigation-open {
     left: 30vw !important;
     width: 70vw !important;
   }
+  .navigation .navigation-off-inner::before {
+    left: 30vw !important;
+  }
   .navigation .navigation-off-item {
     left: calc(30vw + 106px) !important;
     width: calc(70vw - 169px) !important;
@@ -886,28 +960,40 @@ body.navigation-open {
   }
 }
 
-/* ≤1400: 좌측 이미지를 상단으로 이동 (수직 스택) — 컨텐츠 풀폭 확보
+/* ≤960: 모바일형 아코디언 상태 — 좌측 이미지를 상단으로 이동
    navigation-off를 column flex로 전환 + 자식들 absolute 해제
-   1100~1400 영역에서도 가로 분할이 너무 타이트해서 동일하게 vertical 레이아웃 적용 */
-@media screen and (max-width: 1400px) {
+   961px 이상은 PC형 좌측 이미지 + 우측 메뉴 상태 유지 */
+@media screen and (max-width: 960px) {
   .navigation .navigation-off,
   .navigation .navigation-off:hover {
+    /* 기본 display 가 block 이라 flex 를 켜야 navigation-off-inner(flex: 1)가
+       남은 높이를 채운다. 안 켜면 메뉴 내용 높이에서 끝나 아래가 흰 공백으로 남는다 */
+    display: flex !important;
     flex-direction: column !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    overflow: auto !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
   }
   .navigation .navigation-off-child {
     position: relative !important;
     width: 100% !important;
-    height: 400px !important;
+    height: clamp(150px, 28dvh, 260px) !important;
     object-fit: cover;
+    flex: 0 0 auto !important;
   }
   .navigation .navigation-off-inner {
     position: relative !important;
     top: auto !important;
     left: 0 !important;
     width: 100% !important;
+    height: auto !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  .navigation .navigation-off-inner::before {
+    left: 0 !important;
   }
   .navigation .navigation-off-item {
     display: none;
@@ -916,7 +1002,9 @@ body.navigation-open {
      (default row flex일 때 title이 room-parent 옆으로 밀려 viewport 밖으로 나감) */
   .navigation .mask-group-parent {
     width: 100% !important;
-    padding: 80px 40px 60px !important;
+    min-height: 100% !important;
+    height: auto !important;
+    padding: 32px 40px 40px !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 5px !important;         /* 10 → 5: room-parent 추가 5px 위로 이동 */
@@ -959,6 +1047,8 @@ body.navigation-open {
   .navigation .room-parent {
     margin: 0 !important;
     padding: 0 !important;
+    height: auto !important;
+    max-height: none !important;
   }
   .navigation .room-parent .prologue,
   .navigation .room-parent .prologue:hover,
@@ -973,13 +1063,13 @@ body.navigation-open {
   }
 }
 
-/* ≤768 모바일: 패딩/이미지 높이 축소 + 원본 title/room-parent 숨기고 nav-mobile-accordion 사용 */
-@media screen and (max-width: 768px) {
+/* ≤960 모바일형: 패딩/이미지 높이 축소 + 원본 title/room-parent 숨기고 nav-mobile-accordion 사용 */
+@media screen and (max-width: 960px) {
   .navigation .navigation-off-child {
-    height: 340px !important;       /* 140 → 340 (+200px) */
+    height: clamp(150px, 28dvh, 260px) !important;
   }
   .navigation .mask-group-parent {
-    padding: 60px 20px 40px !important;
+    padding: 32px 20px 40px !important;
     gap: 40px !important;
   }
   /* 원본 데스크톱용 .title / .room-parent 숨김 (JS가 동적 생성한 .nav-mobile-accordion으로 대체) */
@@ -989,12 +1079,18 @@ body.navigation-open {
   }
   /* 모바일 아코디언 컨테이너 */
   .navigation .nav-mobile-accordion {
+    position: relative !important;
+    z-index: 5 !important;
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     max-width: 600px !important;
     margin: 0 auto !important;
     gap: 0 !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    overscroll-behavior: contain !important;
   }
   .navigation .nav-mobile-accordion .nav-tab {
     display: flex;
@@ -1046,6 +1142,31 @@ body.navigation-open {
   .navigation .nav-mobile-accordion .nav-tab.is-open .nav-tab-content {
     display: flex !important;
   }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .room.nav-tab-content {
+    max-height: 260px !important;
+    min-height: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: transparent transparent !important;
+  }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .room.nav-tab-content::-webkit-scrollbar {
+    width: 3px;
+  }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .room.nav-tab-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .room.nav-tab-content::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 999px;
+  }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .room.nav-tab-content.is-scrolling {
+    scrollbar-color: var(--color-white) transparent !important;
+  }
+  .navigation .nav-mobile-accordion .nav-tab.is-open .room.nav-tab-content.is-scrolling::-webkit-scrollbar-thumb {
+    background-color: var(--color-white);
+  }
   /* 컨텐츠 내부 링크 정렬 */
   .navigation .nav-mobile-accordion .nav-tab-content a.reservation,
   .navigation .nav-mobile-accordion .nav-tab-content > * {
@@ -1054,11 +1175,9 @@ body.navigation-open {
   }
 }
 
-/* >768 데스크톱/태블릿: nav-mobile-accordion 숨김 (원본 구조만 사용) */
-@media screen and (min-width: 769px) {
+/* >960 PC형: nav-mobile-accordion 숨김 (원본 구조만 사용) */
+@media screen and (min-width: 961px) {
   .navigation .nav-mobile-accordion {
     display: none !important;
   }
 }
-
-

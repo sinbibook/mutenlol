@@ -28,7 +28,7 @@
           <!-- 하드코딩, 매핑x -->
           <h3 class="footer-nav-item">Reservation</h3>
           <div class="footer-col">
-            <a class="footer-col-item" href="./reservation.html">Reservation</a>
+            <a class="footer-col-item" href="./reservation.html">예약안내</a>
           </div>
         </div>
       </div>
@@ -36,6 +36,11 @@
         <a href="./index.html" class="footer-logo-link" aria-label="홈으로">
           <img class="footer-logo" data-footer-logo loading="lazy" alt="" src="" />
         </a>
+        <!-- data-* 속성 : data-footer-rural-stay-mark-wrap (customFields.footer.ruralStayMark 가 있을 때만 노출, 기본 숨김)
+             data-footer-rural-stay-mark : 농어촌민박사업자 이미지 (표시마크 + 신고번호, alt = description) -->
+        <div class="footer-rural-stay-mark-wrap" data-footer-rural-stay-mark-wrap style="display: none;">
+          <img class="footer-rural-stay-mark" src="" alt="농어촌민박사업자" data-footer-rural-stay-mark />
+        </div>
         <div class="footer-contact">
           <div class="footer-contact-detail">
             <b class="footer-phone" data-footer-phone></b>
@@ -46,7 +51,8 @@
               <span data-footer-ecommerce></span>
             </b>
           </div>
-          <b class="footer-copyright" data-footer-copyright></b>
+          <!-- 저작권 문구는 블라인드 처리, 영역은 하단 여백 용도로 유지 -->
+          <b class="footer-copyright" data-footer-copyright style="display: none;"></b>
         </div>
       </div>
     </div>

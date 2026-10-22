@@ -50,6 +50,7 @@
 
         const mapper = new window.HeaderFooterMapper();
         await mapper.initialize();
+        setupTransientScrollbar(document);
     }
 
     // Header 로드
@@ -102,6 +103,23 @@
         });
     }
 
+    function setupTransientScrollbar(root) {
+        const scrollables = root.querySelectorAll('[data-rooms-list]');
+        scrollables.forEach(el => {
+            if (el.dataset.scrollbarBound === 'true') return;
+            el.dataset.scrollbarBound = 'true';
+
+            let timer = null;
+            el.addEventListener('scroll', () => {
+                el.classList.add('is-scrolling');
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    el.classList.remove('is-scrolling');
+                }, 700);
+            }, { passive: true });
+        });
+    }
+
     // Footer 로드
     async function loadFooter() {
         const footerContainer = document.getElementById('footer-container');
@@ -117,6 +135,7 @@
             footerContainer.innerHTML = html;
 
             setupFooterAccordion(footerContainer);
+            setupTransientScrollbar(footerContainer);
 
             footerLoaded = true;
             await tryInitializeMapper();

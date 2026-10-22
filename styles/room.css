@@ -25,6 +25,56 @@
 }
 
 /* ===========================
+   ROOM GROUP TABS (같은 groupName으로 묶인 객실 간 전환)
+   - 현재 객실이 속한 그룹의 멤버가 2개 이상일 때만 노출 (mapper가 그 외엔 display:none)
+   =========================== */
+.room-page .room-group-tabs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3vw, 48px);
+  padding: 28px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.room-page .room-group-tab {
+  position: relative;
+  font-family: var(--font-ko-main);
+  font-size: clamp(14px, 1.1vw, 17px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 180%;
+  color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  padding-bottom: 8px;
+  transition: color 0.25s var(--ease-elegant);
+  white-space: nowrap;
+}
+.room-page .room-group-tab:hover {
+  color: var(--Black);
+}
+.room-page .room-group-tab.is-active {
+  color: var(--Black);
+}
+.room-page .room-group-tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--Black);
+}
+@media screen and (max-width: 600px) {
+  .room-page .room-group-tabs {
+    gap: 20px;
+    padding: 20px 20px;
+  }
+}
+
+/* ===========================
    ROOM INFO 섹션 (Figma .img2-parent 재구성)
    - 상단: "Room info" + 402(...) 서브타이틀
    - 중앙: 대표 이미지 1장
@@ -158,13 +208,16 @@
   align-self: center;
 }
 
-/* ≤900: 4개 썸네일을 2x2 grid로 */
+/* ≤900: 4개 썸네일을 2x2 grid로
+   ⚠️ max-width는 박스(.room-info-thumb-wrap)에 줘야 한다. 안쪽 img(.room-info-thumb)는
+   항상 width:100%로 부모를 꽉 채우므로, img에 주면 부모(여전히 4컬럼 폭)의 절반만 채워지고
+   나머지 절반이 흰 여백으로 남는다. */
 @media screen and (max-width: 900px) {
   .room-page .room-info-section {
     padding: 60px 20px;
     gap: 24px;
   }
-  .room-page .room-info-thumb {
+  .room-page .room-info-thumb-wrap {
     max-width: calc((100% - 11px) / 2);
   }
 }
@@ -202,9 +255,9 @@
     padding-right: 30px !important;
   }
 }
-/* ≤450: 썸네일 1열 */
+/* ≤450: 썸네일 1열 (같은 이유로 wrap에 적용) */
 @media screen and (max-width: 450px) {
-  .room-page .room-info-thumb {
+  .room-page .room-info-thumb-wrap {
     max-width: 100%;
   }
 }
@@ -387,6 +440,56 @@
   text-align: left;
   max-width: 100%;
   letter-spacing: -0.01em;
+}
+
+/* ===========================
+   ROOM FLOORPLAN 섹션 (객실 평면도)
+   - 제목("Floor Plan") + 이미지 한 장
+   - 크롤링 이미지가 없으면 mapper가 섹션 전체를 display:none 처리 (기본값도 none)
+   =========================== */
+.room-page .room-floorplan-section {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px clamp(20px, 5vw, 100px);
+  box-sizing: border-box;
+  gap: 40px;
+  background-color: var(--color-whitesmoke);
+}
+.room-page .room-floorplan-header {
+  align-self: flex-start;
+  padding-left: clamp(0px, 4vw, 80px);
+}
+.room-page .room-floorplan-title {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 56px);
+  font-family: var(--font-italiana);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 120%;
+  color: var(--Black);
+}
+.room-page .room-floorplan-image-wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.room-page .room-floorplan-image {
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 900px) {
+  .room-page .room-floorplan-section {
+    padding: 60px 20px;
+    gap: 24px;
+  }
 }
 
 /* ===========================

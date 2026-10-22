@@ -63,6 +63,42 @@
   font-family: var(--font-ko-main);
 }
 
+@media screen and (min-width: 961px) {
+  .footer-col[data-rooms-list] {
+    display: flex;
+    align-self: start;
+    max-height: 300px;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .footer-col[data-rooms-list]::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .footer-col[data-rooms-list]::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .footer-col[data-rooms-list]::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 999px;
+  }
+
+  .footer-col[data-rooms-list].is-scrolling {
+    scrollbar-color: var(--color-white) transparent;
+  }
+
+  .footer-col[data-rooms-list].is-scrolling::-webkit-scrollbar-thumb {
+    background-color: var(--color-white);
+  }
+}
+
 .footer-col-item {
   letter-spacing: -0.01em;
   font-weight: 500;
@@ -78,10 +114,10 @@
 /* 객실명 가로 200px 초과 시 말줄임(...) 처리 */
 .footer-col[data-rooms-list] .footer-col-item {
   display: block;
-  max-width: 200px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  max-width: 220px;
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .footer-info {
@@ -95,7 +131,7 @@
 
 .footer-logo {
   display: block;
-  width: 336px;
+  width: 200px;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -204,6 +240,32 @@
   .footer-nav-tab.is-open .footer-col {
     display: flex;
   }
+  .footer-nav-tab.is-open .footer-col[data-rooms-list] {
+    max-height: 280px;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  .footer-nav-tab.is-open .footer-col[data-rooms-list]::-webkit-scrollbar {
+    width: 3px;
+  }
+  .footer-nav-tab.is-open .footer-col[data-rooms-list]::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .footer-nav-tab.is-open .footer-col[data-rooms-list]::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 999px;
+  }
+  .footer-nav-tab.is-open .footer-col[data-rooms-list].is-scrolling {
+    scrollbar-color: var(--color-white) transparent;
+  }
+  .footer-nav-tab.is-open .footer-col[data-rooms-list].is-scrolling::-webkit-scrollbar-thumb {
+    background-color: var(--color-white);
+  }
 }
 
 /* ≤ 420px */
@@ -216,5 +278,29 @@
   }
   .footer-copyright {
     font-size: 11px;
+  }
+}
+
+/* ── 푸터 농어촌민박사업자 이미지 (템플릿 확장) ─────────────────────
+   customFields.footer.ruralStayMark 가 있을 때만 매퍼가 노출한다(마크업 기본 숨김).
+   로고는 그대로 두고, 로고와 연락처(전화번호/주소) 블록 사이에 가운데 정렬로 둔다.
+   표시마크 이미지는 세로형(마크 + 신고번호 박스)이라 높이를 고정하고 비율은 이미지에 맡긴다.
+   신고번호가 읽히도록 모바일에서도 64px 아래로 줄이지 않는다. */
+.footer-rural-stay-mark-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-rural-stay-mark {
+  display: block;
+  width: auto;
+  height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 960px) {
+  .footer-rural-stay-mark {
+    height: 64px;
   }
 }

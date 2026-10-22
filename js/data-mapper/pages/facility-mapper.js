@@ -115,7 +115,14 @@ class FacilityMapper extends BaseDataMapper {
 
         // 이용 안내
         const guideEl = this.safeSelect('[data-facility-usage-guide]');
-        if (guideEl) guideEl.innerHTML = this._formatTextWithLineBreaks(facility.usageGuide, '이용 안내');
+        const guideSection = guideEl?.closest('.bg6');
+        const usageGuide = (facility.usageGuide || '').trim();
+        if (guideSection) {
+            guideSection.style.display = usageGuide ? '' : 'none';
+        }
+        if (guideEl) {
+            guideEl.innerHTML = usageGuide ? this._formatTextWithLineBreaks(usageGuide, '') : '';
+        }
 
         // 이미지 3장
         const images = this.getFacilityImages(facility);
@@ -168,14 +175,11 @@ class FacilityMapper extends BaseDataMapper {
                 ? `url("${url}")`
                 : `url("${ImageHelpers.EMPTY_IMAGE_WITH_ICON}")`;
             if (!url) div.classList.add('empty-image-placeholder');
-            if (ariaHidden) {
-                div.setAttribute('aria-hidden', 'true');
-            } else {
-                div.style.cursor = 'pointer';
-                div.addEventListener('click', () => {
-                    window.location.href = `./facility.html?id=${facility.id}`;
-                });
-            }
+            if (ariaHidden) div.setAttribute('aria-hidden', 'true');
+            div.style.cursor = 'pointer';
+            div.addEventListener('click', () => {
+                window.location.href = `./facility.html?id=${facility.id}`;
+            });
             const label = document.createElement('div');
             label.className = 'specials-01';
             label.textContent = `Specials ${String(index + 1).padStart(2, '0')}`;
