@@ -24,7 +24,8 @@
   <!-- ===================== Navigation Panel (메뉴 토글 클릭 시 표시) ===================== -->
   <div class="navigation" hidden aria-hidden="true">
     <main class="navigation-off">
-      <img class="navigation-off-child" loading="lazy" alt="" src="./images/2149678960.jpg" />
+      <!-- 메뉴 패널 이미지 (현재 페이지 hero 첫 번째 이미지로 매핑) -->
+      <img class="navigation-off-child" loading="lazy" alt="" src="./images/2149678960.jpg" data-nav-image />
       <img class="navigation-off-item" alt="" src="./public/Line-4.svg" />
       <main class="navigation-off-inner">
         <div class="mask-group-parent">
@@ -60,7 +61,7 @@
             </div>
             <div class="txt">
               <!-- 하드코딩, 매핑x -->
-              <a class="reservation" href="./reservation.html">Reservation</a>
+              <a class="reservation" href="./reservation.html"><div class="div2">예약안내</div></a>
             </div>
           </section>
 

@@ -357,6 +357,7 @@
     // - .room-info-thumb 클릭 시 .room-info-feature-img src 교체
     // - 5초 자동 롤링 (수동 클릭 시 타이머 리셋)
     // ==========================================
+    var roomInfoAutoTimer = null;
     function initRoomInfoFeatureSlider() {
         var thumbs = document.querySelectorAll('.room-info-thumb');
         var wraps = document.querySelectorAll('.room-info-thumb-wrap');
@@ -366,7 +367,9 @@
         var current = 0;
         var AUTO_INTERVAL = 3000;     /* 3초 자동 롤링 */
         var FADE_MS = 250;
-        var autoTimer = null;
+
+        // 매퍼 재초기화 시 이전 타이머가 남아 중복 롤링되지 않도록 정리
+        if (roomInfoAutoTimer) { clearInterval(roomInfoAutoTimer); roomInfoAutoTimer = null; }
 
         function render(idx) {
             current = ((idx % thumbs.length) + thumbs.length) % thumbs.length;
@@ -389,16 +392,19 @@
         function startAuto() {
             stopAuto();
             if (thumbs.length <= 1) return;
-            autoTimer = setInterval(function () {
+            roomInfoAutoTimer = setInterval(function () {
                 render(current + 1);
             }, AUTO_INTERVAL);
         }
         function stopAuto() {
-            if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+            if (roomInfoAutoTimer) { clearInterval(roomInfoAutoTimer); roomInfoAutoTimer = null; }
         }
 
         // 클릭은 wrapper에 (img/wrap 어디 클릭해도 동작)
+        // 재초기화 시 리스너가 중복 등록되지 않도록 1회만 바인딩
         wraps.forEach(function (wrap, i) {
+            if (wrap.dataset.featureSliderBound === '1') return;
+            wrap.dataset.featureSliderBound = '1';
             wrap.addEventListener('click', function () {
                 render(i);
                 startAuto();

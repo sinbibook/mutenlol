@@ -12,6 +12,7 @@ class IndexMapper extends BaseDataMapper {
 
         try {
             this.updateMetaTags();
+            this.mapVideoSection();
             this.mapPropertyName();
             this.mapGallerySection();
             this.mapHeroSection();
@@ -29,6 +30,54 @@ class IndexMapper extends BaseDataMapper {
         if (typeof window.initSliderSection === 'function') window.initSliderSection();
         if (typeof window.initPrologueSection === 'function') window.initPrologueSection();
         if (typeof window.initSpecialSection === 'function') window.initSpecialSection();
+    }
+
+    // ============================================================================
+    // 🎥 VIDEO SECTION
+    // ============================================================================
+
+    /**
+     * 히어로 위 영상 영역 매핑
+     * homepage.customFields.pages.index.sections.0.signature → [data-video-section]
+     * - mediaType === 'video' 이고 선택된 영상이 있을 때만 노출, 아니면 영역째 숨김
+     */
+    mapVideoSection() {
+        const wrap = this.safeSelect('[data-video-section]');
+        if (!wrap) return;
+
+        const signatureData = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.signature');
+        const video = signatureData?.mediaType === 'video'
+            ? (signatureData.videos || [])
+                .filter(v => v.isSelected === true && v.url)
+                .sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0))[0]
+            : null;
+        const url = video?.url || '';
+
+        // 동일 데이터로 재호출 시 재생이 처음으로 리셋되지 않도록 스킵
+        const sig = url || 'none';
+        if (wrap.dataset.videoSig === sig) return;
+        wrap.dataset.videoSig = sig;
+
+        wrap.innerHTML = '';
+        if (!url) {
+            wrap.style.display = 'none';
+            return;
+        }
+        wrap.style.display = '';
+
+        const videoEl = document.createElement('video');
+        videoEl.className = 'video-section-video';
+        videoEl.src = url;
+        videoEl.autoplay = true;
+        videoEl.loop = true;
+        videoEl.muted = true;
+        videoEl.playsInline = true;
+        // 속성으로도 넣어야 일부 모바일 브라우저(iOS)에서 자동재생이 막히지 않음
+        videoEl.setAttribute('autoplay', '');
+        videoEl.setAttribute('loop', '');
+        videoEl.setAttribute('muted', '');
+        videoEl.setAttribute('playsinline', '');
+        wrap.appendChild(videoEl);
     }
 
     // ============================================================================
@@ -289,6 +338,11 @@ class IndexMapper extends BaseDataMapper {
 
         appendBlock(false);  // 원본 블록
         appendBlock(true);   // 복제 블록 (끊김 없는 루프)
+
+        const blockCardCount = repeat * sortedRooms.length;
+        const SCROLL_SPEED_PX_PER_SEC = 1900 / 35;
+        const duration = Math.round((blockCardCount * cardSlot) / SCROLL_SPEED_PX_PER_SEC);
+        track.style.setProperty('--room-scroll-duration', `${duration}s`);
     }
 
     // ============================================================================

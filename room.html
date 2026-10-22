@@ -26,14 +26,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="강릉 뮤튼롤 - 객실안내" />
   <meta property="og:description" content="아름다운 바다를 품고있는 뮤튼롤입니다. 자연과 하나되는 공간에서 온전한 쉼을 느끼고 가세요" />
-  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/05/4YNv5sMZyWjR.jpg" />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/13/ZlRfuQ3SLqrb.jpg" />
   <meta property="og:url" content="https://mutenlol.kr" />
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="강릉 뮤튼롤 - 객실안내" />
   <meta name="twitter:description" content="아름다운 바다를 품고있는 뮤튼롤입니다. 자연과 하나되는 공간에서 온전한 쉼을 느끼고 가세요" />
-  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/05/4YNv5sMZyWjR.jpg" />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/13/ZlRfuQ3SLqrb.jpg" />
 </head>
 <body>
     <!-- direction 클래스: directions.css와 공통 헤더/hero 디자인 공유, room-page: room 전용 스타일 스코프 -->
@@ -73,6 +73,12 @@
         </section>
       </main>
 
+      <!-- ===================== ROOM GROUP TABS (같은 groupName으로 묶인 객실 간 전환) ===================== -->
+      <!-- data-* : data-room-group-tabs | 현재 객실이 멤버 2개 이상인 그룹에 속할 때만 노출 (room-mapper.js: mapRoomTabs) -->
+      <nav class="room-group-tabs" data-room-group-tabs style="display: none;">
+        <!-- 동적 생성 -->
+      </nav>
+
       <!-- ===================== ROOM INFO 섹션 (Room info + 큰 이미지 + 4개 썸네일) ===================== -->
       <section class="room-info-section">
         <div class="room-info-header">
@@ -81,11 +87,11 @@
           <!-- 객실명 매핑 -->
           <h3 class="room-info-sub" data-room-name></h3>
         </div>
-        <!-- 객실 이미지 매핑 (roomtype_interior 0번째) -->
+        <!-- 객실 대표 이미지 (썸네일 슬라이더가 크게 보여주는 영역 / 초기값은 썸네일 1번째) -->
         <div class="room-info-feature" data-room-images>
           <img class="room-info-feature-img" loading="lazy" alt="" src="" />
         </div>
-        <!-- 객실 썸네일 이미지 매핑 (roomtype_interior 1~4번째) -->
+        <!-- 객실 썸네일 이미지 매핑 (roomtype_interior 1~4번째) - 클릭 시 위 대표 이미지 교체 -->
         <div class="room-info-thumbs" data-room-images>
           <div class="room-info-thumb-wrap"><img class="room-info-thumb" loading="lazy" alt="" src="" /></div>
           <div class="room-info-thumb-wrap"><img class="room-info-thumb" loading="lazy" alt="" src="" /></div>
@@ -155,6 +161,18 @@
           </div>
         </div>
       </main>
+
+      <!-- ===================== ROOM FLOORPLAN 섹션 (객실 평면도, 크롤링 이미지가 있을 때만 노출) ===================== -->
+      <!-- data-* : data-room-floorplan-section / data-room-floorplan-image
+           roomtypes[current]의 roomtype_floorplan 이미지 → 없으면 섹션 전체 미노출 (room-mapper.js) -->
+      <section class="room-floorplan-section" data-room-floorplan-section style="display: none;">
+        <div class="room-floorplan-header">
+          <h2 class="room-floorplan-title">Floor Plan</h2>
+        </div>
+        <div class="room-floorplan-image-wrap">
+          <img class="room-floorplan-image" alt="객실 평면도" data-room-floorplan-image />
+        </div>
+      </section>
 
       <!-- ===================== CON3 (Roomview - 4개 카테고리 + 미리보기) 별도 섹션 ===================== -->
       <section class="con3-parent">

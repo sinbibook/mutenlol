@@ -34,6 +34,24 @@ img {
 }
 
 /* ===========================
+   0. VIDEO (히어로 위 영상 영역 — 영상 없으면 JS가 display:none)
+   =========================== */
+.video-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  line-height: 0;
+}
+
+.video-section-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ===========================
    1. HERO
    =========================== */
 .hero {
@@ -52,7 +70,7 @@ img {
 }
 
 .hero-title-text {
-  margin: 70px 0 -30px 0;       /* top 100→70 (-30px 위로) / bottom -30 (gallery와 간격 -30) */
+  margin: 100px 0 -30px 0;      /* top 100 (슬라이더와 간격) / bottom -30 (gallery와 간격 -30) */
   font-size: 180px;
   font-family: var(--font-italiana);
   font-weight: 400;
@@ -66,7 +84,7 @@ img {
    2. GALLERY (Infinite Rolling — 풀와이드)
    =========================== */
 .gallery-section {
-  padding: 8px 0;
+  padding: 40px 0;
   overflow: hidden;
 }
 
@@ -107,7 +125,6 @@ img {
   min-height: 960px;
   padding: 158px 200px 42px;
   gap: 80px;
-  margin-top: -30px;        /* 이 섹션부터 하단 전체 30px 위로 이동 */
 }
 
 .slider-bg-wrap {
@@ -345,7 +362,7 @@ img {
   display: flex;
   gap: 22px;
   width: max-content;
-  animation: room-scroll 25s linear infinite;     /* 40s → 25s (조금 더 빠르게) */
+  animation: room-scroll var(--room-scroll-duration, 45s) linear infinite;
 }
 
 .room-slider:hover .room-slider-track {
@@ -1075,7 +1092,7 @@ a.room-card:hover {
   }
 
   .room-slider-track {
-    animation-duration: 30s;
+    --room-scroll-duration: 45s;
   }
 
   .special-content {
@@ -1216,6 +1233,7 @@ a.room-card:hover {
   }
 
   .hero-title-text {
+    margin: 40px 0 -30px 0;
     font-size: 60px;
     line-height: 1.1;
   }
@@ -1227,6 +1245,11 @@ a.room-card:hover {
 
   .gallery-track {
     animation-duration: 22s;
+  }
+
+  /* 타이틀(margin-bottom -30)과 조각컷이 겹치지 않게 위쪽만 8 → 40 */
+  .gallery-section {
+    padding-top: 40px;
   }
 
   .header {
@@ -1332,7 +1355,7 @@ a.room-card:hover {
 
   .room-slider-track {
     gap: 16px;                 /* 22 → 16 (좁은 화면에서 카드 사이 여백 축소) */
-    animation-duration: 24s;
+    --room-scroll-duration: 40s;
   }
 
   /* gap이 22 → 16으로 줄었으므로 seamless loop 보정값도 11 → 8로 조정 */

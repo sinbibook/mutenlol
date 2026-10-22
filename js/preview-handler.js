@@ -689,6 +689,9 @@ class PreviewHandler {
                 case 'property':
                     mapper.mapPropertyName();
                     break;
+                case 'signature':
+                    mapper.mapVideoSection();
+                    break;
                 case 'gallery':
                     mapper.mapGallerySection();
                     break;

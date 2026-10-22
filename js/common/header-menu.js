@@ -6,7 +6,21 @@
 (function () {
     'use strict';
 
-    var MOBILE_BREAKPOINT = 768;
+    var MOBILE_BREAKPOINT = 960;
+
+    function bindTransientScrollbar(el) {
+        if (!el || el.dataset.scrollbarBound === 'true') return;
+        el.dataset.scrollbarBound = 'true';
+
+        var timer = null;
+        el.addEventListener('scroll', function () {
+            el.classList.add('is-scrolling');
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                el.classList.remove('is-scrolling');
+            }, 700);
+        }, { passive: true });
+    }
 
     /**
      * 모바일에서 .title의 4개 specials 버튼과 .room-parent의 4개 컬럼을
@@ -90,6 +104,7 @@
             panel.scrollTop = 0;
             var scrollableInner = panel.querySelector('.navigation-off');
             if (scrollableInner) scrollableInner.scrollTop = 0;
+            panel.querySelectorAll('[data-rooms-sub], .nav-mobile-accordion .room.nav-tab-content').forEach(bindTransientScrollbar);
             // 다음 프레임에 클래스 추가 → opacity transition 트리거
             requestAnimationFrame(function () {
                 panel.classList.add('is-open');

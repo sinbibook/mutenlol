@@ -49,19 +49,46 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="강릉 뮤튼롤 - 홈" />
   <meta property="og:description" content="아름다운 바다를 품고있는 뮤튼롤입니다. 자연과 하나되는 공간에서 온전한 쉼을 느끼고 가세요" />
-  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/05/4YNv5sMZyWjR.jpg" />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/13/ZlRfuQ3SLqrb.jpg" />
   <meta property="og:url" content="https://mutenlol.kr" />
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="강릉 뮤튼롤 - 홈" />
   <meta name="twitter:description" content="아름다운 바다를 품고있는 뮤튼롤입니다. 자연과 하나되는 공간에서 온전한 쉼을 느끼고 가세요" />
-  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/05/4YNv5sMZyWjR.jpg" />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/13/ZlRfuQ3SLqrb.jpg" />
 </head>
 <body>
     <div class="page">
       <!-- header.html include -->
       <div id="header-container"></div>
+      <!-- ===================== 3. CON-2: SLIDER (인덱스 맨 위) ===================== -->
+      <section class="slider-section" data-hero-section>
+        <!-- CUSTOM FIELD : 홈 메인 소개 섹션 이미지 매핑 -->
+        <div class="slider-bg-wrap" data-hero-images>
+          <!-- 동적 생성 (index-mapper.js) -->
+        </div>
+        <div class="slider-content">
+          <!-- CUSTOM FIELD : 홈 메인 소개 섹션 설명 매핑 -->
+          <div class="slider-heading" data-hero-description></div>
+          <div class="slider-bottom">
+            <!-- CUSTOM FIELD : 홈 메인 소개 섹션 타이틀 매핑 -->
+            <h3 class="slider-subtitle" data-hero-title></h3>
+            <div class="slider-arrows">
+              <img class="arrow-line" loading="lazy" alt="" src="./images/Rectangle-37.svg" />
+              <h3 class="arrow-num">01</h3>
+              <div class="arrow-divider"></div>
+              <h3 class="arrow-num">00</h3>
+              <img class="arrow-line arrow-line-flip" loading="lazy" alt="" src="./images/Rectangle-37.svg" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===================== 0. VIDEO ===================== -->
+      <!-- CUSTOM FIELD : 홈 시그니처 섹션 영상 매핑 (mediaType==='video' 이면 videos[isSelected] 재생, 없으면 영역째 비노출) -->
+      <section class="video-section" data-video-section style="display:none;">
+        <!-- 동적 생성 (index-mapper.js) -->
+      </section>
       <!-- ===================== 1. HERO ===================== -->
       <section class="hero">
         <!-- HOMEPAGE Property : 숙소명 매핑 -->
@@ -75,29 +102,7 @@
             <!-- 동적 생성 (index-mapper.js) -->
           </div>
         </div>
-
-        <!-- ===================== 3. CON-2: SLIDER ===================== -->
-        <div class="slider-section" data-hero-section>
-          <!-- CUSTOM FIELD : 홈 메인 소개 섹션 이미지 매핑 -->
-          <div class="slider-bg-wrap" data-hero-images>
-            <!-- 동적 생성 (index-mapper.js) -->
-          </div>
-          <div class="slider-content">
-            <!-- CUSTOM FIELD : 홈 메인 소개 섹션 설명 매핑 -->
-            <div class="slider-heading" data-hero-description></div>
-            <div class="slider-bottom">
-              <!-- CUSTOM FIELD : 홈 메인 소개 섹션 타이틀 매핑 -->
-              <h3 class="slider-subtitle" data-hero-title></h3>
-              <div class="slider-arrows">
-                <img class="arrow-line" loading="lazy" alt="" src="./images/Rectangle-37.svg" />
-                <h3 class="arrow-num">01</h3>
-                <div class="arrow-divider"></div>
-                <h3 class="arrow-num">00</h3>
-                <img class="arrow-line arrow-line-flip" loading="lazy" alt="" src="./images/Rectangle-37.svg" />
-              </div>
-            </div>
-          </div>
-        </section>
+      </section>
       </div>
 
       <!-- ===================== 4. CON-3: PROLOGUE ===================== -->
